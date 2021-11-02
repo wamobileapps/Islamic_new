@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/islamic_app.iml" filepath="$PROJECT_DIR$/.idea/modules/islamic_app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/445154070/islamic_app.@react-native-community_async-storage.iml" filepath="$PROJECT_DIR$/.idea/modules/445154070/islamic_app.@react-native-community_async-storage.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/islamic_app.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/islamic_app.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-264763569/islamic_app.react-native-art.iml" filepath="$PROJECT_DIR$/.idea/modules/-264763569/islamic_app.react-native-art.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/65469064/islamic_app.react-native-background-timer.iml" filepath="$PROJECT_DIR$/.idea/modules/65469064/islamic_app.react-native-background-timer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-264763569/islamic_app.react-native-community_art.iml" filepath="$PROJECT_DIR$/.idea/modules/-264763569/islamic_app.react-native-community_art.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/445154070/islamic_app.react-native-community_async-storage.iml" filepath="$PROJECT_DIR$/.idea/modules/445154070/islamic_app.react-native-community_async-storage.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/620226327/islamic_app.react-native-community_checkbox.iml" filepath="$PROJECT_DIR$/.idea/modules/620226327/islamic_app.react-native-community_checkbox.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/985676786/islamic_app.react-native-community_geolocation.iml" filepath="$PROJECT_DIR$/.idea/modules/985676786/islamic_app.react-native-community_geolocation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1823699765/islamic_app.react-native-community_slider.iml" filepath="$PROJECT_DIR$/.idea/modules/1823699765/islamic_app.react-native-community_slider.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-789568348/islamic_app.react-native-gesture-handler.iml" filepath="$PROJECT_DIR$/.idea/modules/-789568348/islamic_app.react-native-gesture-handler.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/722286818/islamic_app.react-native-image-picker.iml" filepath="$PROJECT_DIR$/.idea/modules/722286818/islamic_app.react-native-image-picker.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-181025180/islamic_app.react-native-keychain.iml" filepath="$PROJECT_DIR$/.idea/modules/-181025180/islamic_app.react-native-keychain.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-250142546/islamic_app.react-native-orientation.iml" filepath="$PROJECT_DIR$/.idea/modules/-250142546/islamic_app.react-native-orientation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-214883592/islamic_app.react-native-reanimated.iml" filepath="$PROJECT_DIR$/.idea/modules/-214883592/islamic_app.react-native-reanimated.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/2085397517/islamic_app.react-native-safe-area-context.iml" filepath="$PROJECT_DIR$/.idea/modules/2085397517/islamic_app.react-native-safe-area-context.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/752238693/islamic_app.react-native-screens.iml" filepath="$PROJECT_DIR$/.idea/modules/752238693/islamic_app.react-native-screens.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/2067034946/islamic_app.react-native-svg.iml" filepath="$PROJECT_DIR$/.idea/modules/2067034946/islamic_app.react-native-svg.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1656448842/islamic_app.react-native-thumbnail.iml" filepath="$PROJECT_DIR$/.idea/modules/1656448842/islamic_app.react-native-thumbnail.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1947413070/islamic_app.react-native-vector-icons.iml" filepath="$PROJECT_DIR$/.idea/modules/-1947413070/islamic_app.react-native-vector-icons.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1787864359/islamic_app.react-native-video.iml" filepath="$PROJECT_DIR$/.idea/modules/-1787864359/islamic_app.react-native-video.iml" />
+    </modules>
+  </component>
+</project>

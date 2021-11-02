@@ -1,0 +1,6 @@
+module Pods_islamic_app {
+  umbrella header "Pods-islamic_app-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,14 @@
+com/islamic_app/MainActivity.java
+ com.islamic_app.MainActivity
+com/islamic_app/MainApplication.java
+ com.islamic_app.MainApplication
+ com.islamic_app.MainApplication$1
+com/islamic_app/ReactNativeFlipper.java
+ com.islamic_app.ReactNativeFlipper
+ com.islamic_app.ReactNativeFlipper$1
+ com.islamic_app.ReactNativeFlipper$2
+ com.islamic_app.ReactNativeFlipper$2$1
+com/islamic_app/BuildConfig.java
+ com.islamic_app.BuildConfig
+com/facebook/react/PackageList.java
+ com.facebook.react.PackageList
