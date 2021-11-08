@@ -30,10 +30,10 @@ global.windowWidth = windowWidth-70
 // const paddingTopBottomCircle =  '7%'
 // const marginBottom =  '4%'
 
-const paddingTopBottom = windowHeight > 630 ? '7.5%' : '4.5%'
-const marGinBottom = windowHeight > 630 ? '7%' : '4%'
-const paddingTopBottomCircle = windowHeight > 630 ? '7%' : '4%'
-const marginBottom = windowHeight > 630 ? '4.5%' : '4%'
+const paddingTopBottom = windowHeight > 630 ? '7.5%' : '1%'
+const marGinBottom = windowHeight > 630 ? '7%' : '2%'
+const paddingTopBottomCircle = windowHeight > 630 ? '7%' : '2%'
+const marginBottom = windowHeight > 630 ? '4.5%' : '1%'
 
 
 const largeCircleWidth = Math.round((windowWidth - 20) / 7.5)
@@ -69,7 +69,7 @@ const Home = ({ navigation }) => {
 
   useEffect(() => {
     Orientation.lockToPortrait();
-    requestLocationPermission();
+    getBeginsData()
 
     var currentDate = new Date(),
       month = ("0" + (currentDate.getMonth() + 1)).slice(-2),
@@ -233,7 +233,7 @@ const Home = ({ navigation }) => {
         Geolocation.getCurrentPosition(info => {
 
 
-          getBeginsData(info)
+          
 
           console.log("info=====>", info)
         },
@@ -258,21 +258,21 @@ const Home = ({ navigation }) => {
 
   };
 
-  const getBeginsData = async (data) => {
-    console.log("get given date data====>", data);
-    axios.get(`https://api.aladhan.com/v1/timings/${data.timestamp}?latitude=${data.coords.latitude}&longitude=${data.coords.longitude}`, {
+  const getBeginsData = async () => {
+    axios.get(`https://api.pray.zone/v2/times/today.json?city=london`, {
       headers: {
         'auth-token': token
       }
     })
       .then((response) => {
-        console.log("get given date data====>", response.data.data.timings);
-        setLocationStatus(response.data.data.timings)
-        global.fajr = response.data.data.timings.Fajr
-        global.zuhr = response.data.data.timings.Dhuhr
-        global.asr = response.data.data.timings.Asr
-        global.maghrib = response.data.data.timings.Maghrib
-        global.isha = response.data.data.timings.Isha
+        console.log("get given date data====>", response.data.results.datetime[0].times);
+       
+      
+        global.fajr = response.data.results.datetime[0].times.Fajr
+        global.zuhr = response.data.results.datetime[0].times.Dhuhr
+        global.asr = response.data.results.datetime[0].times.Asr
+        global.maghrib = response.data.results.datetime[0].times.Maghrib
+        global.isha = response.data.results.datetime[0].times.Isha
       })
       .catch((error) => {
         console.log('error', error)
@@ -554,7 +554,7 @@ const Home = ({ navigation }) => {
           console.log("value of x===>", width, "height", height)
         }} style={{ top: windowHeight > 630 ? '4%' : '4%' }}>
 
-          <View style={{ backgroundColor: 'white',flexDirection: 'row', marginLeft: 20, paddingTop: paddingTopBottom, paddingBottom: paddingTopBottom, alignItems: 'flex-start', justifyContent: 'center', marginBottom: marGinBottom, marginRight: 20, elevation: 5, borderRadius: 20 }}>
+          <View style={{ backgroundColor: 'white',flexDirection: 'row', marginLeft: 20, paddingTop: 20, paddingBottom: 20, alignItems: 'flex-start', justifyContent: 'center', marginBottom: marGinBottom, marginRight: 20, elevation: 5, borderRadius: 20 }}>
           <View style={{  marginLeft: 20,  justifyContent: 'center'}}>
               <Text style={{  fontFamily: 'Montserrat-SemiBold', fontSize: RFValue(12), color: '#363636' }}></Text>
               <Text style={{  fontFamily: 'Montserrat-SemiBold', fontSize: RFValue(12), color: '#C18446',  marginTop: 10  }}>Begins</Text>
@@ -692,7 +692,7 @@ const Home = ({ navigation }) => {
           </View>
 
 
-          <View style={{ backgroundColor: 'white', marginLeft: 20, marginBottom: 10, marginRight: 20, marginTop: marGinBottom, paddingTop: paddingTopBottom, paddingBottom: paddingTopBottom, elevation: 5, borderRadius: 20 }}>
+          <View style={{ backgroundColor: 'white', marginLeft: 20, marginBottom: 10, marginRight: 20, marginTop: 10, paddingTop: 10, paddingBottom: 10, elevation: 5, borderRadius: 20 }}>
 
             <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
               <View style={{ width: '43%', borderWidth: 1, borderColor: '#ECC090', borderStyle: 'dashed', borderRadius: 8, height: 45, backgroundColor: '#FCF5EC', marginBottom: marginBottom, marginLeft: 15, justifyContent: 'center', alignItems: 'center' }}>

@@ -341,7 +341,7 @@ const PinLogin = ({ route, navigation }) => {
                    console.log(global.userId);
                     setVal(!val)
                    dashboardData()
-                   navigation.navigate('Drawer')  
+                   navigation.navigate('Setting')  
                    }
                   
                 })

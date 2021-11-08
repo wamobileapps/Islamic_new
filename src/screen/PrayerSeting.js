@@ -1,138 +1,100 @@
-// import React, { useEffect, useState } from 'react';
-// import { View, Text, ActivityIndicator, StatusBar, TouchableOpacity, StyleSheet } from 'react-native';
-// import Iconback from 'react-native-vector-icons/Entypo';
-// import { baseUrl } from '../Api/COntstant';
-// import { RFValue } from 'react-native-responsive-fontsize';
-// import { Table, TableWrapper, Row, Rows, Col, Cols, Cell } from 'react-native-table-component';
-// import axios from 'axios';
-
-// const tableData = [];
-// const rowData = [];
-// const PrayerSetting = (props) => {
-//    const [tableHead, settableHead] = useState(['', 'Day', 'Fajr', 'Sunr', "Dhuhr", "Asr", "Magrb", "Isha"])
-//    const [tableTitle, settableTitle] = useState(['01', '02', '03', '04'])
-// //    const [tableData, settableData] = useState([['1', '2', '3',  '4', '5', '6', '7', ],
-// //    ['a', 'b', 'c', 'd', 'e', 'f', 'g' ],
-// //    ['1', '2', '3',  '4', '5', '6', '7'],
-// //    ['a', 'b', 'c', 'd', 'e', 'f', 'g' ]])
-   
-
-//    useEffect(()=>{
-    
-//     for (let i = 0; i < 30; i += 1) {
-     
-//       for (let j = 0; j < 9; j += 1) {
-//         rowData.push(`${i}${j}`);
-//       }
-//       tableData.push(rowData);
-//     }
-//        getPrayerData()
-//    },[])
-
-//    const getPrayerData=()=>{
-//        axios.get('http://api.aladhan.com/v1/calendar?latitude=51.508515&longitude=-0.1254872&method=2&month=4&year=2017&juristicSchool=1&latiudeAdjustment=3')
-//        .then((res)=>{
-//            console.log("prayer response===>",res);
-//        })
-//    }
-
-//     return (
-//         <View style={{ flex: 1, backgroundColor: 'white' }}>
-
-//             <StatusBar hidden />
-
-//             <View style={{ backgroundColor: '#FAE9D7', height: 47, width: '100%', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
-
-//                 <TouchableOpacity onPress={() => props.navigation.goBack()} style={{ flexDirection: 'row', alignItems: 'center' }}>
-//                     <Iconback name='chevron-left' size={24} color='#000' style={{ marginLeft: 10, }} />
-//                     <Text style={{ fontSize: RFValue(12), color: '#000', color: '#454545', fontFamily: 'Montserrat-Bold', marginLeft: 5, }}>Settings</Text>
-//                 </TouchableOpacity>
-//                 {/* <Image source={require('../images/nafs.png')} style={{ width: 26, height: 26, marginRight: 20 }} /> */}
-//             </View>
-
-//           <View style={styles.container}>
-//           <Table borderStyle={{borderWidth: 1, borderColor: '#C1C0B9'}}>
-//                 {
-//                   tableData.map((rowData, index) => (
-//                       <Rows data={rowData} flexArr={[1, 1, 1,1,1,1,1,1]} style={styles.row} textStyle={styles.text}/>
-//                     // <Row
-//                     //   key={index}
-//                     //   data={rowData}
-//                     //   widthArr={state.widthArr}
-//                     //   style={[styles.row, index%2 && {backgroundColor: '#F7F6E7'}]}
-//                     //   textStyle={styles.text}
-//                     // />
-//                   ))
-//                 }
-//               </Table>
-//             {/* <Table borderStyle={{borderBottomWidth: 1, marginTop: 50}}>
-//           <Row data={tableHead}  style={styles.head} textStyle={styles.text}/>
-//           <TableWrapper style={styles.wrapper}>
-//             <Col data={tableTitle}  style={styles.title}  heightArr={[28,28]} textStyle={styles.text}/>
-//             <Rows data={tableData} flexArr={[1, 1, 1,1,1,1,1,1]} style={styles.row} textStyle={styles.text}/>
-//           </TableWrapper>
-//         </Table> */}
-//         </View>
-//         </View>
-//     )
-
-// }
-
-// const styles = StyleSheet.create({
-//     container: { flex: 1, padding: 16, paddingTop: 30, backgroundColor: '#fff' },
-//     head: {  height: 40,  backgroundColor: '#f1f8ff'  },
-//     wrapper: { flexDirection: 'row' },
-//     title: { flex: 1, backgroundColor: '#f6f8fa', },
-//     row: {  height: 28  },
-//     text: { textAlign: 'center' }
-//   });
-
-// export default PrayerSetting
-
-
 import React, { Component } from 'react';
-import { StyleSheet, View, ScrollView, TouchableOpacity, Text, StatusBar } from 'react-native';
-import { Table, TableWrapper, Row, Col } from 'react-native-table-component';
+import { StyleSheet, View, ScrollView, TouchableOpacity, Text, StatusBar, Image } from 'react-native';
+import { Table, TableWrapper, Row, Col, Cols } from 'react-native-table-component';
 import Iconback from 'react-native-vector-icons/Entypo';
 import { RFValue } from 'react-native-responsive-fontsize';
 import axios from 'axios';
-
+import moment from 'moment';
+import { TextInput } from 'react-native-paper';
+import { baseUrl } from '../Api/COntstant';
+import AsyncStorage from '@react-native-community/async-storage';
 
 const dayData = []
+const fajrData = []
+const sunhrData = []
+const duhrData = []
+const asrData = []
+const magrbData = []
+const ishaData = []
+var color = ''
+var month = ''
 export default class ExampleThree extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      tableHead: ['', 'Day', 'Fajr', 'Sunr', "Dhuhr", "Asr", "Magrb", "Isha"],
+      tableHead: ['    ', 'Day ', 'Fajr   ', 'Sunr ', "Dhuhr ", " Asr", "Magrb", "Isha "],
       widthArr: [36, 36, 36, 36, 36, 36, 36, 36, 36],
       tableTitle: ['01', '02', '03', '04'],
-      dayDataa: []
+      dayDataa: [],
+      color: 'green', 
     }
   }
 
 
-  componentDidMount(){
-      this.getPrayerData()
+  componentDidMount() {
+    this.getData()
+    
+  }
+
+  getData= async()=>{
+    const token = await AsyncStorage.getItem('token')
+        console.log("auth token bio", token)
+
+        axios.get(baseUrl + 'setting/view/617fd4e32533f5595a927948', {
+            headers: {
+                'auth-token': token
+            }
+        })
+            .then((response) => {
+              
+                this.getPrayerData(response.data[0])
+              
+            })
+            .catch((error) => {
+                console.log('error', error)
+            })
+
+
+    
+  
+  
+
   }
 
 
-      getPrayerData=()=>{
-       axios.get('http://api.aladhan.com/v1/calendar?latitude=51.508515&longitude=-0.1254872&method=2&month=4&year=2017&juristicSchool=1&latiudeAdjustment=3')
-       .then((res)=>{
-          
-            this.setState({dayDataa: res.data.data})
-        
-            console.log("prayer response===x>",res.data.data[0]);
+  getPrayerData = (data) => {
+    console.log('response-===', data)
+    axios.get(`http://api.aladhan.com/v1/calendarByCity?city=London&country=United Kingdom&method=${data.asr_method}&month=04&year=2017`)
+      .then((res) => {
+
+        this.setState({ dayDataa: res.data.data })
+
+        console.log("prayer response===x>", res.data.data);
 
 
-       })
+      })
 
-   }
- 
+  }
+
+  previousData=()=>{
+    var date = new Date();
+    var firstDay =
+      new Date(date.getFullYear(), date.getMonth(), 1);
+    global.month =  moment(firstDay-1).format("MMM"); 
+    console.log("moment(firstDay).format()====>", global.month);
+  }
+
+  nextData=()=>{
+    var date = new Date();
+    var firstDay =
+      new Date(date.getFullYear(), date.getMonth(), 1);
+      global.month =  moment(firstDay+ 1).format("MMM"); 
+  }
+
   render() {
     const state = this.state;
     const tableData = [];
-    const colData=[]
+    const colData = []
     for (let i = 1; i < 30; i += 1) {
       const rowData = [];
       for (let j = 0; j < 9; j += 1) {
@@ -141,71 +103,154 @@ export default class ExampleThree extends Component {
       tableData.push(rowData);
     }
 
-    for(let i = 1; i <= 31; i += 1){
-       colData.push(i)
+    for (let i = 1; i <= 31; i += 1) {
+
     }
 
-    console.log("column data===>", colData);
-    
+
+    this.state.dayDataa.forEach(function (val, i) {
+
+      if (i % 2 == 0) {
+        color = 'orange'
+      }
+      else {
+        color = '#F2DAC9'
+      }
+      colData.push(i + 1)
+      console.log("column datas===>", "val", i);
+      var d = val.date.gregorian.weekday.en.slice(0, 3)
+      var fajr = val.timings.Fajr.slice(0, 5)
+      var sunhr = val.timings.Fajr.slice(0, 5)
+      var dhuhr = val.timings.Dhuhr.slice(0, 5)
+      var asr = val.timings.Asr.slice(0, 5)
+      var maghrib = val.timings.Maghrib.slice(0, 5)
+      var isha = val.timings.Isha.slice(0, 5)
+      dayData.push(d)
+      fajrData.push(fajr)
+      sunhrData.push(sunhr)
+      duhrData.push(dhuhr)
+      asrData.push(asr)
+      magrbData.push(maghrib)
+      ishaData.push(isha)
+    })
+
+   
+
+    var date = new Date();
+    var firstDay =
+      new Date(date.getFullYear(), date.getMonth(), 1);
+
+    var lastDay =
+      new Date(date.getFullYear(), date.getMonth() + 1, 0);
 
 
-       for(var i = 0; i< this.state.dayDataa.length ; i++){
-           var d  = this.state.dayDataa[i].date.gregorian.weekday.en.slice(0, 3)
-               dayData.push(d)
-               
-           }
+      global.month =  moment(firstDay).format("MMM"); 
+    var start_date = moment(firstDay).format("DD"); 
+    var year = moment(firstDay).format("YYYY");
 
+    var last_date = moment(lastDay).format("DD"); 
+
+   var s_Date= `${start_date} ${global.month} ${year}-`
+   var l_Date= `${last_date} ${global.month} ${year}`
+
+  
 
     return (
       <View style={styles.container}>
-          <StatusBar hidden />
+        <StatusBar hidden />
 
-             <View style={{ backgroundColor: '#FAE9D7', height: 47, width: '100%', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
+        <View style={{ backgroundColor: '#FAE9D7', height: 47, width: '100%', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
 
-                 <TouchableOpacity onPress={() => this.props.navigation.goBack()} style={{ flexDirection: 'row', alignItems: 'center' }}>
-                     <Iconback name='chevron-left' size={24} color='#000' style={{ marginLeft: 10, }} />
-                     <Text style={{ fontSize: RFValue(12), color: '#000', color: '#454545', fontFamily: 'Montserrat-Bold', marginLeft: 5, }}>Settings</Text>
-                 </TouchableOpacity>
-                 {/* <Image source={require('../images/nafs.png')} style={{ width: 26, height: 26, marginRight: 20 }} /> */}
-             </View>
-
-                          {/* <Table borderStyle={{borderBottomWidth: 1, marginTop: 50}}>
-//           <Row data={tableHead}  style={styles.head} textStyle={styles.text}/>
-//           <TableWrapper style={styles.wrapper}>
-//             <Col data={tableTitle}  style={styles.title}  heightArr={[28,28]} textStyle={styles.text}/>
-//             <Rows data={tableData} flexArr={[1, 1, 1,1,1,1,1,1]} style={styles.row} textStyle={styles.text}/>
-//           </TableWrapper>
-//         </Table> */}
+          <TouchableOpacity onPress={() => this.props.navigation.goBack()} style={{ flexDirection: 'row', alignItems: 'center' }}>
+            <Iconback name='chevron-left' size={24} color='#000' style={{ marginLeft: 10, }} />
+            <Text style={{ fontSize: RFValue(12), color: '#000', color: '#454545', fontFamily: 'Montserrat-Bold', marginLeft: 5, }}>Settings</Text>
+          </TouchableOpacity>
+          {/* <Image source={require('../images/nafs.png')} style={{ width: 26, height: 26, marginRight: 20 }} /> */}
+        </View>
 
 
-        <ScrollView horizontal={true} style={{padding: 16, paddingTop: 30,}}>
-          <View>
-            <Table borderStyle={{borderWidth: 1, borderColor: '#C1C0B9'}}>
-            <Row data={state.tableHead}  style={styles.header} textStyle={styles.text}/>
-            </Table>
-            <ScrollView style={styles.dataWrapper}>
-            <TableWrapper style={styles.wrapper}>
-             <Col data={colData}  style={styles.title}  heightArr={[28,28]} textStyle={styles.text}/>
-            {dayData == [] ? null 
-            :  
-                <Col data={dayData}  style={styles.title}   heightArr={[28,28]} textStyle={styles.text}/>
-            } 
+        <View style={{  height: 48, backgroundColor: '#EAC1A3', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginTop: 30, marginLeft: '5%', marginRight: '5%', borderTopLeftRadius: 6, borderTopRightRadius: 6 }}>
+          <TouchableOpacity onPress={()=>this.previousData()} >
+          <Image  source={require('../images/leftCircle.png')} style={{ width: 16, height: 16, marginLeft:15, }} />
+          </TouchableOpacity>
 
-              <Table borderStyle={{borderWidth: 1, borderColor: '#C1C0B9'}}>
-                {
-                  tableData.map((rowData, index) => (
-                    <Row
-                      key={index}
-                      data={rowData}
-                      widthArr={state.widthArr}
-                      style={[styles.row, index%2 && {backgroundColor: '#F7F6E7'}]}
-                      textStyle={styles.text}
-                    />
-                  ))
+          <View style={{ alignItems: 'center'}}>
+          <View style={{flexDirection: 'row', alignItems: 'center'}}>
+            <Text style={{fontFamily: 'Montserrat-Bold', fontSize: RFValue(13)}}>{s_Date}</Text>
+            <Text style={{fontFamily: 'Montserrat-Bold', fontSize: RFValue(13)}}>{l_Date}</Text>
+          </View>
+          <Text style={{fontFamily: 'Montserrat-Bold', fontSize: RFValue(10)}}>Sunnah Fasts (15)</Text>
+          </View>
+
+          <TouchableOpacity onPress={()=>this.nextData()}>
+          <Image source={require('../images/rightCircle.png')} style={{ width: 16, height: 16, marginRight: 20, }} />
+          </TouchableOpacity>
+         
+        </View>
+        <ScrollView horizontal={true} style={{ marginLeft: '5%', marginRight: '5%', borderRadius: 15 }}>
+
+
+
+          <View style={{ width: '100%', justifyContent: 'center', alignItems: 'center', borderRadius: 20 }}>
+            <Row data={state.tableHead} style={styles.header} textStyle={{ textAlign: 'center', fontWeight: '100', padding: 5, fontSize: RFValue(12), fontFamily: 'Montserrat-Bold' }} />
+
+            <ScrollView showsVerticalScrollIndicator={false} style={styles.dataWrapper}>
+              <TableWrapper borderStyle={{ borderWidth: 0.4, borderColor: '#F1EDEA' }} style={{ flexDirection: 'row', width: '100%' }}>
+              {colData == [] ? null
+              :
+                <Col data={colData} style={{ backgroundColor: color, }} heightArr={[28, 28]}  textStyle={{ textAlign: 'center', fontWeight: '100', margin: 5, fontSize: RFValue(12), fontFamily: 'Montserrat-SemiBold' }} />
+              }
+
+                {dayData == [] ? null
+                  :
+                  <Col data={dayData} style={{ backgroundColor: color, }} heightArr={[28, 28]}  textStyle={styles.text} />
                 }
-              </Table>
-           
-            </TableWrapper>
+
+                {fajrData == [] ? null
+                  :
+                  <Col data={fajrData} style={{ backgroundColor: color, }} heightArr={[28, 28]}  textStyle={styles.text} />
+                }
+
+                {sunhrData == [] ? null
+                  :
+                  <Col data={sunhrData} style={{ backgroundColor: color, }} heightArr={[28, 28]}  textStyle={styles.text} />
+                }
+
+                {duhrData == [] ? null
+                  :
+                  <Col data={duhrData} style={{ backgroundColor: color, }} heightArr={[28, 28]}  textStyle={styles.text} />
+                }
+
+                {asrData == [] ? null
+                  :
+                  <Col data={asrData} style={{ backgroundColor: color, }} heightArr={[28, 28]}  textStyle={styles.text} />
+                }
+
+                {magrbData == [] ? null
+                  :
+                  <Col data={magrbData} style={{ backgroundColor: color, }} heightArr={[28, 28]}  textStyle={styles.text} />
+                }
+
+                {ishaData == [] ? null
+                  :
+                  <Col data={ishaData} style={{ backgroundColor: color, }} heightArr={[28, 28]} textStyle={styles.text} />
+                }
+
+                {/* <Table borderStyle={{ borderWidth: 1, borderColor: '#C1C0B9' }}>
+                  {
+                    tableData.map((rowData, index) => (
+                      <Row
+                        key={index}
+                        data={rowData}
+                        widthArr={state.widthArr}
+                        style={[styles.row, index % 2 && { backgroundColor: '#F7F6E7' }]}
+                        textStyle={styles.text}
+                      />
+                    ))
+                  }
+                </Table> */}
+
+              </TableWrapper>
             </ScrollView>
           </View>
         </ScrollView>
@@ -213,13 +258,13 @@ export default class ExampleThree extends Component {
     )
   }
 }
- 
+
 const styles = StyleSheet.create({
-  container: { flex: 1,  backgroundColor: '#fff' },
-  header: { height: 50, backgroundColor: '#537791' },
-  text: { textAlign: 'center', fontWeight: '100' },
-  dataWrapper: { marginTop: -1 },
+  container: { flex: 1, backgroundColor: '#fff' },
+  header: { height: 50, backgroundColor: '#F2DDD0', },
+  text: { textAlign: 'center', fontWeight: '100', padding: 5, fontSize: RFValue(12), fontFamily: 'Montserrat-SemiBold' },
+  dataWrapper: { marginTop: -1, },
   row: { height: 40, backgroundColor: '#E7E6E1' },
-  title: { flex: 1, backgroundColor: '#f6f8fa', },
-  wrapper: { flexDirection: 'row' },
+  title: { flex: 1, },
+  wrapper: { flexDirection: 'row', },
 });

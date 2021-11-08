@@ -1,6 +1,6 @@
 
 import React, { Component, useState, useRef, useEffect } from 'react';
-import { View, Text, Modal, ScrollView, TouchableOpacity, StyleSheet, Image, TextInput, Picker, FlatList, KeyboardAvoidingView } from 'react-native';
+import { View, Text, Modal, ScrollView, TouchableOpacity, StyleSheet, Image, TextInput, Picker, FlatList, KeyboardAvoidingView, } from 'react-native';
 import { RFValue } from 'react-native-responsive-fontsize';
 import IconDown from 'react-native-vector-icons/FontAwesome';
 import DropDownPicker from 'react-native-dropdown-picker';
@@ -8,22 +8,25 @@ import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplet
 import { baseUrl } from '../Api/COntstant';
 import AsyncStorage from '@react-native-community/async-storage';
 import axios from 'axios'
+import Iconback from 'react-native-vector-icons/Entypo';
 
 
 const data = [
   {
     name: 'Hanafi',
-    index: 0
+    index: 0,
+    id: 1
   },
   {
     name: 'Shafi',
-    index: 1
+    index: 1, id: 2
   }
 ]
 
 let selectId = ''
 let selectItemm = ''
-function Setting() {
+
+function Setting(props) {
   const [goToData, setGoToData] = useState('')
   const [timing, setTiming] = useState('')
   const [selectedId, setSelectedId] = useState(null)
@@ -32,6 +35,8 @@ function Setting() {
   const [open, setOpen] = useState(false);
   const [value, setValue] = useState(null);
   const [address, setAddress] = useState('')
+  const [country, setCountry] = useState('')
+  const [city, setCity] = useState('')
   const [items, setItems] = useState([
     { label: 'Middle of the Night Method', value: '1' },
     { label: 'One Seventh Rule', value: '2' },
@@ -58,10 +63,14 @@ function Setting() {
   ]);
 
 
+  useEffect(() => {
+    console.log("user id====>", global.userId);
+  }, [])
+
   const selectItem = (id, item) => {
     setSelectedId(id)
     selectId = id
-    selectItemm = item.name
+    selectItemm = item.id
     saveSettingData()
   }
 
@@ -69,15 +78,21 @@ function Setting() {
     const token = await AsyncStorage.getItem('token')
 
     var param = {
-      "location": address,
+      "location": country,
       "go_to": goToData,
       "timing": timing,
       "high_lat_method": value,
       "prayer_method": value1,
       "asr_method": selectItemm,
-      "user_id": global.userId
+      "user_id": '61125c7d32945d177ef458b6'
 
-
+      // "location":"India",
+      // "go_to":"test",
+      // "timing":"Fazrr",
+      // "high_lat_method":"dummy",
+      // "prayer_method":"method",
+      // "asr_method":"asr_method",
+      // "user_id":"61125c7d32945d177ef458b6"
 
     }
 
@@ -90,8 +105,8 @@ function Setting() {
       }
     })
       .then((response) => {
-        console.log('params of settings==---=> ', response.data)
-
+        console.log('params of settings==---=> ', response)
+        props.navigation.navigate("Drawer")
 
       })
       .catch((error) => {
@@ -110,109 +125,66 @@ function Setting() {
   return (
 
     <View style={{ flex: 1, backgroundColor: 'white', }}>
-      <ScrollView style={{ flex: 1, marginTop: 40, margin: 20 }}>
+      <View style={{ backgroundColor: '#FAE9D7', height: 47, width: '100%', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
+
+        <TouchableOpacity onPress={() => this.props.navigation.goBack()} style={{ flexDirection: 'row', alignItems: 'center' }}>
+          <Iconback name='chevron-left' size={24} color='#000' style={{ marginLeft: 10, }} />
+          <Text style={{ fontSize: RFValue(12), color: '#000', color: '#454545', fontFamily: 'Montserrat-Bold', marginLeft: 5, }}>Settings</Text>
+        </TouchableOpacity>
+        {/* <Image source={require('../images/nafs.png')} style={{ width: 26, height: 26, marginRight: 20 }} /> */}
+      </View>
+
+
+      <ScrollView showsVerticalScrollIndicator={false} style={{ flex: 1, marginTop: 20, margin: 20 }}>
 
         <KeyboardAvoidingView style={{}} behavior="padding" enabled >
           <Text style={{ fontSize: RFValue(12), fontFamily: 'Montserrat-Bold', }}>Locaion:</Text>
 
-          <TouchableOpacity style={{
+          <View style={{
             justifyContent: 'space-between',
-            height: 44, marginTop: 8, alignItems: 'center', flexDirection: 'row', width: '40%', shadowColor: '#000000',
+            height: 40, marginTop: 8, alignItems: 'center', flexDirection: 'row', width: '40%', shadowColor: '#000000',
             backgroundColor: '#fff', borderRadius: 8, borderWidth: 1, borderColor: '#F2DEC9'
           }}>
 
-            <Text style={{ fontSize: RFValue(10), fontFamily: 'Montserrat-SemiBold', textAlign: 'center', paddingLeft: 20 }}>Location</Text>
-
-            <IconDown name='chevron-down' type='Entypo' size={10} style={{ marginRight: 20 }} />
-
-
-          </TouchableOpacity>
-
-
-          <TextInput
-            placeholder="Enter data"
-            value={address}
-            style={{ paddingLeft: 20, fontSize: RFValue(10), fontFamily: 'Montserrat-SemiBold', width: '90%', }}
-            onChangeText={(text) => setAddress(text)}
-          />
-
-          <GooglePlacesAutocomplete
-            placeholder='Search Place/Event Location'
-            minLength={2}
-            autoFocus={false}
-            returnKeyType={'search'}
-            keyboardAppearance={'light'}
-            fetchDetails={true}
-            value={address}
-            renderDescription={row => row.description}
-            onPress={(data, details = null) => {
-              console.log("data", details, data);
+            <TextInput
+              placeholder="Enter Country"
+              value={country}
+              style={{ paddingLeft: 20, fontSize: RFValue(10), fontFamily: 'Montserrat-SemiBold', width: '90%', }}
+              onChangeText={(text) => setCountry(text)}
+            />
 
 
 
-            }}
-
-            getDefaultValue={() => ''}
-            listViewDisplayed={false}
+          </View>
 
 
-            query={{
-              key: 'AIzaSyCV5HmY_q1S8_0Kp0uhAxEchmaruTxwD0g',
-              // key: ' AIzaSyBo845OUtzzTagCIIJ_SlwZxI9-W65zAxY',
-              language: 'en',
+          <View style={{
+            justifyContent: 'space-between',
+            height: 40, marginTop: 8, alignItems: 'center', flexDirection: 'row', width: '40%', shadowColor: '#000000',
+            backgroundColor: '#fff', borderRadius: 8, borderWidth: 1, borderColor: '#F2DEC9'
+          }}>
 
-            }}
-            textInputProps={{
-              onFocus: () => shouldDisplayListView = true,
-              onBlur: () => shouldDisplayListView = false
-            }}
 
-            styles={{
-              textInputContainer: {
-                backgroundColor: '#fff',
-                width: '100%',
-                borderWidth: 1,
-                borderColor: "#ddd",
-                borderRadius: 15,
-                marginTop: 25,
-                marginBottom: 15,
-                height: 55,
-                fontFamily: 'NunitoSans-Light'
-              },
-              description: {
-                fontFamily: 'NunitoSans-Light'
-              },
-              predefinedPlacesDescription: {
-                color: '#1faadb'
-              },
-              loader: { color: "#1797DE", backgroundColor: '#1797DE', fontSize: 25, width: 20, height: 20 }
-            }}
+            <TextInput
+              placeholder="Enter City"
+              value={city}
+              style={{ paddingLeft: 20, fontSize: RFValue(10), fontFamily: 'Montserrat-SemiBold', width: '90%', }}
+              onChangeText={(text) => setCity(text)}
+            />
 
-            nearbyPlacesAPI='GooglePlacesSearch'
-            GoogleReverseGeocodingQuery={{
-            }}
-            GooglePlacesSearchQuery={{
-              rankby: 'distance',
-              type: 'cafe'
-            }}
 
-            GooglePlacesDetailsQuery={{
-              fields: 'formatted_address',
-            }}
-
-            filterReverseGeocodingByTypes={['locality', 'administrative_area_level_3']} // filter the reverse geocoding results by types - ['locality', 'administrative_area_level_3'] if you want to display only cities
-
-            debounce={200}
-
-          />
+          </View>
 
 
 
-          <Text style={{ fontSize: RFValue(12), fontFamily: 'Montserrat-Bold', marginTop: 100 }}>Go To:</Text>
+
+
+
+          <Text style={{ fontSize: RFValue(12), fontFamily: 'Montserrat-Bold', marginTop: 20 }}>Go To:</Text>
 
           <TouchableOpacity style={{
             justifyContent: 'space-between',
-            height: 44, marginTop: 8, alignItems: 'center', flexDirection: 'row', width: '36%', shadowColor: '#000000',
+            height: 40, marginTop: 8, alignItems: 'center', flexDirection: 'row', width: '36%', shadowColor: '#000000',
             backgroundColor: '#fff', borderRadius: 8, borderWidth: 1, borderColor: '#F2DEC9'
           }}>
 
@@ -227,11 +199,11 @@ function Setting() {
           </TouchableOpacity>
 
 
-          <Text style={{ fontSize: RFValue(12), fontFamily: 'Montserrat-Bold', marginTop: 30 }}>Timing:</Text>
+          <Text style={{ fontSize: RFValue(12), fontFamily: 'Montserrat-Bold', marginTop: 20 }}>Timing:</Text>
 
           <TouchableOpacity style={{
             justifyContent: 'space-between',
-            height: 44, marginTop: 8, alignItems: 'center', flexDirection: 'row', width: '38%', shadowColor: '#000000',
+            height: 40, marginTop: 8, alignItems: 'center', flexDirection: 'row', width: '38%', shadowColor: '#000000',
             backgroundColor: '#fff', borderRadius: 8, borderWidth: 1, borderColor: '#F2DEC9'
           }}>
 
@@ -246,12 +218,12 @@ function Setting() {
           </TouchableOpacity>
 
 
-          <Text style={{ fontSize: RFValue(12), fontFamily: 'Montserrat-Bold', marginTop: 30 }}>High Latitude Method:</Text>
+          <Text style={{ fontSize: RFValue(12), fontFamily: 'Montserrat-Bold', marginTop: 20 }}>High Latitude Method:</Text>
 
 
 
           <DropDownPicker
-            style={{ width: '45%', height: 44, borderColor: '#F2DEC9', fontSize: 10, marginTop: 8, }}
+            style={{ width: '45%', height: 40, borderColor: '#F2DEC9', fontSize: 10, marginTop: 8, }}
             open={open}
             value={value}
             items={items}
@@ -265,11 +237,11 @@ function Setting() {
 
 
 
-          <Text style={{ fontSize: RFValue(12), fontFamily: 'Montserrat-Bold', marginTop: 30 }}>Prayer Method:</Text>
+          <Text style={{ fontSize: RFValue(12), fontFamily: 'Montserrat-Bold', marginTop: 20 }}>Prayer Method:</Text>
 
 
           <DropDownPicker
-            style={{ width: '70%', height: 44, borderColor: '#F2DEC9', fontSize: 10, marginTop: 8, }}
+            style={{ width: '70%', height: 40, borderColor: '#F2DEC9', fontSize: 10, marginTop: 8, }}
             open={open1}
             value={value1}
             items={items1}
@@ -282,7 +254,7 @@ function Setting() {
           />
 
 
-          <Text style={{ fontSize: RFValue(12), fontFamily: 'Montserrat-Bold', marginTop: 30 }}>Asar Method:</Text>
+          <Text style={{ fontSize: RFValue(12), fontFamily: 'Montserrat-Bold', marginTop: 20 }}>Asar Method:</Text>
 
           <View style={{ justifyContent: 'center', alignItems: 'center', marginTop: 10 }}>
             <FlatList
