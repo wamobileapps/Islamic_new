@@ -47,6 +47,7 @@ import Tree from '../screen/MyTree';
 import MyMoodGraph from '../screen/MyModdGraph';
 import Setting from "../screen/Setting";
 import PrayerSetting from '../screen/PrayerSeting';
+import ManuallyTime from '../screen/ManaulyTime'
 
 const Stack = createStackNavigator();
 
@@ -105,6 +106,7 @@ const AppNavigation = () => {
         <Stack.Screen name="MyMoodGraph" component={MyMoodGraph} options={{gestureEnabled: false}} />
         <Stack.Screen name="Setting" component={Setting} options={{gestureEnabled: false}} />
         <Stack.Screen name="PrayerSetting" component={PrayerSetting} options={{gestureEnabled: false}} />
+        <Stack.Screen name="ManuallyTime" component={ManuallyTime} options={{gestureEnabled: false}} />
 
       </Stack.Navigator>
     </NavigationContainer>

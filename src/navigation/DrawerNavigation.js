@@ -42,6 +42,7 @@ const MyDrawer=({navigation})=> {
     global.moodData = []
     getGraphData()
     moodGraph()
+    getDataMonth()
     const token = await AsyncStorage.getItem('token')
     console.log("auth token", token)
 
@@ -68,6 +69,29 @@ const MyDrawer=({navigation})=> {
       })
 
 
+  }
+
+  const getDataMonth=()=>{
+    var date = new Date();
+    global.month = date.getMonth()
+    var firstDay =
+      new Date(date.getFullYear(),global.month, 1);
+
+    var lastDay =
+      new Date(date.getFullYear(),global.month + 1, 0);
+
+      
+      var month =  moment(firstDay).format("MMM"); 
+    var start_date = moment(firstDay).format("DD"); 
+    var year = moment(firstDay).format("YYYY");
+
+    var last_date = moment(lastDay).format("DD"); 
+
+    var s_Date= `${start_date} ${month} ${year}-`
+    global.sDate = s_Date
+    
+    var l_Date= `${last_date} ${month} ${year}`
+    global.lDate = l_Date
   }
 
   const moodGraph = async () => {

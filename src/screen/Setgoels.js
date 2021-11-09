@@ -125,40 +125,40 @@ class Setgoals extends React.Component {
 
 
     saveGoal = async () => {
-        // if(this.state.ageId != '' && this.state.financial != ''){
-        //     alert("Please add all fields")
-        // }
-        // else{
+        if(this.state.ageId != '' && this.state.financial != ''){
+            alert("Please add all fields")
+        }
+        else{
 
-        // const token = await AsyncStorage.getItem('token')
+        const token = await AsyncStorage.getItem('token')
 
-        // let params = {
-
-
-        //     "age": this.state.ageId,
-        //     "financial_needed": this.state.financial,
-        //     "goals": goalSet,
-        //     "user_id": global.userId,
-
-        // }
+        let params = {
 
 
+            "age": this.state.ageId,
+            "financial_needed": this.state.financial,
+            "goals": goalSet,
+            "user_id": global.userId,
 
-        // axios.post(`http://112.196.64.119:8000/api/user/goal/set`, params, {
-        //     headers: {
-        //         'auth-token': token
-        //     }
-        // })
-        //     .then((response) => {
-        //         console.log('====>goal list updated data', response)
-        //         this.getGoalGraphData()
-        //         this.setState({ moodModal: false })
+        }
+
+
+
+        axios.post(`http://112.196.64.119:8000/api/user/goal/set`, params, {
+            headers: {
+                'auth-token': token
+            }
+        })
+            .then((response) => {
+                console.log('====>goal list updated data', response)
+                this.getGoalGraphData()
+                this.setState({ moodModal: false })
                 this.props.navigation.navigate("MyLifePlan")
-        //     })
-        //     .catch((error) => {
-        //         console.log('error', error)
-        //     })
-        // }
+            })
+            .catch((error) => {
+                console.log('error', error)
+            })
+        }
     }
 
     async getGoalGraphData() {

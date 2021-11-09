@@ -56,36 +56,36 @@ class Goal extends React.Component {
 
  saveIncome=async()=>{
 
-  // if(this.state.age != '' && this.state.income != ''){
-  //   alert("Please add all fields")
-  // }
-  // else{
+  if(this.state.age != '' && this.state.income != ''){
+    alert("Please add all fields")
+  }
+  else{
    
-  //   const token = await AsyncStorage.getItem('token')
+    const token = await AsyncStorage.getItem('token')
 
-  //   let params = {
+    let params = {
 
 
-  //       "age": this.state.age,
-  //       "income": this.state.income,
-  //       "user_id": global.userId
+        "age": this.state.age,
+        "income": this.state.income,
+        "user_id": global.userId
 
-  //   }
+    }
 
-  //   axios.post(baseUrl+ `setIncome`, params, {
-  //       headers: {
-  //           'auth-token': token
-  //       }
-  //   })
-  //       .then((response) => {
-  //           console.log('====>mood list updated data', response)
+    axios.post(baseUrl+ `setIncome`, params, {
+        headers: {
+            'auth-token': token
+        }
+    })
+        .then((response) => {
+            console.log('====>mood list updated data', response)
             this.props.navigation.navigate("Setgoals")
 
-  //       })
-  //       .catch((error) => {
-  //           console.log('error', error)
-  //       })
-  //     }
+        })
+        .catch((error) => {
+            console.log('error', error)
+        })
+      }
  }
 
 

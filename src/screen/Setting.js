@@ -78,22 +78,16 @@ function Setting(props) {
     const token = await AsyncStorage.getItem('token')
 
     var param = {
-      "location": country,
+      "country": country,
+      "city": city,
       "go_to": goToData,
       "timing": timing,
       "high_lat_method": value,
       "prayer_method": value1,
       "asr_method": selectItemm,
-      "user_id": '61125c7d32945d177ef458b6'
+      "user_id":  global.userId
 
-      // "location":"India",
-      // "go_to":"test",
-      // "timing":"Fazrr",
-      // "high_lat_method":"dummy",
-      // "prayer_method":"method",
-      // "asr_method":"asr_method",
-      // "user_id":"61125c7d32945d177ef458b6"
-
+      
     }
 
 
@@ -106,7 +100,7 @@ function Setting(props) {
     })
       .then((response) => {
         console.log('params of settings==---=> ', response)
-        props.navigation.navigate("Drawer")
+        props.navigation.navigate("ManuallyTime")
 
       })
       .catch((error) => {

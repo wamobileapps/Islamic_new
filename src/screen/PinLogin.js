@@ -144,6 +144,7 @@ const PinLogin = ({ route, navigation }) => {
 
     const dashboardData = async () => {
         requestLocationPermission()
+        getData()
         var currentDate = new Date(),
             month = ("0" + (currentDate.getMonth() + 1)).slice(-2),
             day = ("0" + currentDate.getDate()).slice(-2),
@@ -216,6 +217,32 @@ const PinLogin = ({ route, navigation }) => {
                 console.log('error', error)
             })
     }
+
+    const getData = async () => {
+        const token = await AsyncStorage.getItem('token')
+        console.log("auth token bio", token)
+    
+        axios.get(baseUrl + 'setting/view', {
+          headers: {
+            'auth-token': token
+          }
+        })
+          .then((response) => {
+    
+           global.cityData = response.data[0].city
+    
+    
+          })
+          .catch((error) => {
+            console.log('error', error)
+          })
+    
+    
+    
+    
+    
+    
+      }
 
 
 

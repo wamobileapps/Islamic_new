@@ -11,6 +11,7 @@ import Orientation from 'react-native-orientation';
 import { RFValue } from "react-native-responsive-fontsize";
 import { baseUrl } from '../Api/COntstant';
 import Geolocation from '@react-native-community/geolocation';
+import moment from 'moment';
 
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
@@ -53,14 +54,15 @@ const config = {
 }
 
 global.entry = []
-const Home = ({ navigation }) => {
+const Home = ({ navigation, route }) => {
 
   const [total, totalTravlled] = useState('')
   const [minutesOnEarth, setMinutesOnEarth] = useState('')
   const [totalHeartBeats, setTotalHeartBeats] = useState('')
   const [bloodCirculated, setBloodCirculated] = useState('')
-  const [locationStatus, setLocationStatus] = useState('');
-
+  const [city, setCity] = useState('');
+ 
+  //  alert(moment().add("11", 'minutes').format('hh:mm'))
 
   var heartBeats = 100000 / 86400;
   var totalbreaths = 20000 / 86400;
@@ -258,8 +260,12 @@ const Home = ({ navigation }) => {
 
   };
 
+  
+
+
+
   const getBeginsData = async () => {
-    axios.get(`https://api.pray.zone/v2/times/today.json?city=london`, {
+    axios.get(`https://api.pray.zone/v2/times/today.json?city=${global.cityData}`, {
       headers: {
         'auth-token': token
       }

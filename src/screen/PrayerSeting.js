@@ -5,10 +5,10 @@ import Iconback from 'react-native-vector-icons/Entypo';
 import { RFValue } from 'react-native-responsive-fontsize';
 import axios from 'axios';
 import moment from 'moment';
-import { TextInput } from 'react-native-paper';
 import { baseUrl } from '../Api/COntstant';
 import AsyncStorage from '@react-native-community/async-storage';
 
+var newdatae = parseInt(global.month);
 const dayData = []
 const fajrData = []
 const sunhrData = []
@@ -17,78 +17,168 @@ const asrData = []
 const magrbData = []
 const ishaData = []
 var color = ''
-var month = ''
+
+
 export default class ExampleThree extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      tableHead: ['    ', 'Day ', 'Fajr   ', 'Sunr ', "Dhuhr ", " Asr", "Magrb", "Isha "],
+      tableHead: ['   ', 'Day', 'Fajr  ', 'Sunr', "Dhuhr", "Asr", "Magrb", "Isha "],
       widthArr: [36, 36, 36, 36, 36, 36, 36, 36, 36],
       tableTitle: ['01', '02', '03', '04'],
       dayDataa: [],
-      color: 'green', 
+      color: 'green',
+      previousMonth: moment().month(global.month).format("MMM"),
+      city: '',
+      country: '',
+      asrMethod: '',
+      month: '',
+      year: '',
+      count: 1,
+      count1: 1
     }
+    
   }
 
+
+  
 
   componentDidMount() {
+
+
+// this.setState({previousMonth: moment().month(global.month).format("MMM")})
+// alert(this.state.previousMonth)
     this.getData()
-    
+
   }
 
-  getData= async()=>{
+  getData = async () => {
     const token = await AsyncStorage.getItem('token')
-        console.log("auth token bio", token)
+    console.log("auth token bio", token)
 
-        axios.get(baseUrl + 'setting/view/617fd4e32533f5595a927948', {
-            headers: {
-                'auth-token': token
-            }
-        })
-            .then((response) => {
-              
-                this.getPrayerData(response.data[0])
-              
-            })
-            .catch((error) => {
-                console.log('error', error)
-            })
+    axios.get(baseUrl + 'setting/view', {
+      headers: {
+        'auth-token': token
+      }
+    })
+      .then((response) => {
+
+        var date = new Date();
+        var month = date.getMonth() + 1
+        var year = date.getFullYear()
 
 
-    
-  
-  
+        this.setState({ city: response.data[0].city })
+        this.setState({ country: response.data[0].country })
+        this.setState({ asrMethod: response.data[0].asr_method })
+        this.setState({ month: month })
+        this.setState({ year: year })
+        this.getPrayerData(response.data[0])
+
+
+      })
+      .catch((error) => {
+        console.log('error', error)
+      })
+
+
+
+
+
 
   }
 
 
   getPrayerData = (data) => {
-    console.log('response-===', data)
-    axios.get(`http://api.aladhan.com/v1/calendarByCity?city=London&country=United Kingdom&method=${data.asr_method}&month=04&year=2017`)
+    console.log('response-===', this.state.month, this.state.year,this.state.city,this.state.country, this.state.asrMethod  )
+
+
+    axios.get(`http://api.aladhan.com/v1/calendarByCity?city=${this.state.city}&country=${this.state.country}&method=${this.state.asrMethod}&month=${this.state.month}&year=${this.state.year}`)
       .then((res) => {
 
         this.setState({ dayDataa: res.data.data })
 
-        console.log("prayer response===x>", res.data.data);
+        console.log("prayer response===x>", res.data.data[0].timings);
+        global.prayerDat = res.data.data
 
 
       })
 
   }
 
-  previousData=()=>{
+  previousData = () => {
+    //  newdatae = parseInt(global.month);
+    var month
+    if (newdatae == 0) {
+      newdatae = 13;
+     
+    }
+    newdatae--;
+
+
     var date = new Date();
-    var firstDay =
-      new Date(date.getFullYear(), date.getMonth(), 1);
-    global.month =  moment(firstDay-1).format("MMM"); 
-    console.log("moment(firstDay).format()====>", global.month);
+    var firstDay = new Date(date.getFullYear(), date.getMonth() - this.state.count, 1);
+    var lastDay = new Date(date.getFullYear(), newdatae , 0);
+
+
+     month = moment(JSON.stringify(newdatae)).format("MMM");
+    
+    var start_date = moment(firstDay).format("DD");
+    var year = moment(firstDay).format("YYYY");
+    // global.month = month
+    alert(newdatae)
+    
+    
+    this.setState({month: moment().month(month).format("M"), year: year})
+
+    
+    var last_date = moment(lastDay).format("DD");
+
+
+    var s_Date = `${start_date} ${month} ${year}-`
+    global.sDate = s_Date
+    var l_Date = `${last_date} ${month} ${year}`
+    global.lDate = l_Date
+
+    console.log("pre next data===>",last_date);
+    this.setState({month: moment().month(month).format("M"), year: year})
+    this.getPrayerData()
+
   }
 
-  nextData=()=>{
+  nextData = () => {
+    var month
+    if (newdatae == 12) {
+      newdatae = 1;
+       month = moment(JSON.stringify(newdatae)).format("MMM");
+    }
+    else{
+    
+    newdatae++;
+
+
     var date = new Date();
-    var firstDay =
-      new Date(date.getFullYear(), date.getMonth(), 1);
-      global.month =  moment(firstDay+ 1).format("MMM"); 
+    var firstDay = new Date(date.getFullYear(), date.getMonth() + this.state.count, 1);
+    var lastDay = new Date(date.getFullYear(), newdatae, 0);
+
+
+     month = moment(JSON.stringify(newdatae)).format("MMM");
+    var start_date = moment(firstDay).format("DD");
+    var year = moment(firstDay).format("YYYY");
+
+    // global.month = month
+    
+    var last_date = moment(lastDay).format("DD");
+
+    var s_Date = `${start_date} ${month} ${year}-`
+    global.sDate = s_Date
+    var l_Date = `${last_date} ${month} ${year}`
+    global.lDate = l_Date
+
+    console.log("pre next data===>",last_date  );
+    this.setState({month: moment().month(month).format("M"), year: year})
+    this.getPrayerData()
+    }
   }
 
   render() {
@@ -107,17 +197,24 @@ export default class ExampleThree extends Component {
 
     }
 
-
-    this.state.dayDataa.forEach(function (val, i) {
+    const dayData = []
+const fajrData = []
+const sunhrData = []
+const duhrData = []
+const asrData = []
+const magrbData = []
+const ishaData = []
+    
+    global.prayerDat.forEach(function (val, i) {
 
       if (i % 2 == 0) {
-        color = 'orange'
+        color = '#F2DAC9'
       }
       else {
         color = '#F2DAC9'
       }
       colData.push(i + 1)
-      console.log("column datas===>", "val", i);
+      console.log("column datas===>", "val", val.timings.Fajr.slice(0, 5));
       var d = val.date.gregorian.weekday.en.slice(0, 3)
       var fajr = val.timings.Fajr.slice(0, 5)
       var sunhr = val.timings.Fajr.slice(0, 5)
@@ -134,26 +231,11 @@ export default class ExampleThree extends Component {
       ishaData.push(isha)
     })
 
-   
-
-    var date = new Date();
-    var firstDay =
-      new Date(date.getFullYear(), date.getMonth(), 1);
-
-    var lastDay =
-      new Date(date.getFullYear(), date.getMonth() + 1, 0);
 
 
-      global.month =  moment(firstDay).format("MMM"); 
-    var start_date = moment(firstDay).format("DD"); 
-    var year = moment(firstDay).format("YYYY");
 
-    var last_date = moment(lastDay).format("DD"); 
 
-   var s_Date= `${start_date} ${global.month} ${year}-`
-   var l_Date= `${last_date} ${global.month} ${year}`
 
-  
 
     return (
       <View style={styles.container}>
@@ -169,25 +251,25 @@ export default class ExampleThree extends Component {
         </View>
 
 
-        <View style={{  height: 48, backgroundColor: '#EAC1A3', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginTop: 30, marginLeft: '5%', marginRight: '5%', borderTopLeftRadius: 6, borderTopRightRadius: 6 }}>
-          <TouchableOpacity onPress={()=>this.previousData()} >
-          <Image  source={require('../images/leftCircle.png')} style={{ width: 16, height: 16, marginLeft:15, }} />
+        <View style={{ height: 48, backgroundColor: '#EAC1A3', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginTop: 30, marginLeft: '7%', marginRight: '5%', borderTopLeftRadius: 6, borderTopRightRadius: 6 }}>
+          <TouchableOpacity onPress={() => this.previousData()} >
+            <Image source={require('../images/leftCircle.png')} style={{ width: 16, height: 16, marginLeft: 15, }} />
           </TouchableOpacity>
 
-          <View style={{ alignItems: 'center'}}>
-          <View style={{flexDirection: 'row', alignItems: 'center'}}>
-            <Text style={{fontFamily: 'Montserrat-Bold', fontSize: RFValue(13)}}>{s_Date}</Text>
-            <Text style={{fontFamily: 'Montserrat-Bold', fontSize: RFValue(13)}}>{l_Date}</Text>
-          </View>
-          <Text style={{fontFamily: 'Montserrat-Bold', fontSize: RFValue(10)}}>Sunnah Fasts (15)</Text>
+          <View style={{ alignItems: 'center' }}>
+            <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+              <Text style={{ fontFamily: 'Montserrat-Bold', fontSize: RFValue(13) }}>{global.sDate}</Text>
+              <Text style={{ fontFamily: 'Montserrat-Bold', fontSize: RFValue(13) }}>{global.lDate}</Text>
+            </View>
+            <Text style={{ fontFamily: 'Montserrat-Bold', fontSize: RFValue(10) }}>Sunnah Fasts (15)</Text>
           </View>
 
-          <TouchableOpacity onPress={()=>this.nextData()}>
-          <Image source={require('../images/rightCircle.png')} style={{ width: 16, height: 16, marginRight: 20, }} />
+          <TouchableOpacity onPress={() => this.nextData()}>
+            <Image source={require('../images/rightCircle.png')} style={{ width: 16, height: 16, marginRight: 20, }} />
           </TouchableOpacity>
-         
+
         </View>
-        <ScrollView horizontal={true} style={{ marginLeft: '5%', marginRight: '5%', borderRadius: 15 }}>
+        <ScrollView horizontal={true} style={{ marginLeft: '7%', marginRight: '5%', borderRadius: 15 }}>
 
 
 
@@ -196,39 +278,39 @@ export default class ExampleThree extends Component {
 
             <ScrollView showsVerticalScrollIndicator={false} style={styles.dataWrapper}>
               <TableWrapper borderStyle={{ borderWidth: 0.4, borderColor: '#F1EDEA' }} style={{ flexDirection: 'row', width: '100%' }}>
-              {colData == [] ? null
-              :
-                <Col data={colData} style={{ backgroundColor: color, }} heightArr={[28, 28]}  textStyle={{ textAlign: 'center', fontWeight: '100', margin: 5, fontSize: RFValue(12), fontFamily: 'Montserrat-SemiBold' }} />
-              }
+                {colData == [] ? null
+                  :
+                  <Col data={colData} style={{ backgroundColor: color, }} heightArr={[28, 28]} textStyle={{ textAlign: 'center', fontWeight: '100', margin: 5, fontSize: RFValue(12), fontFamily: 'Montserrat-SemiBold' }} />
+                }
 
                 {dayData == [] ? null
                   :
-                  <Col data={dayData} style={{ backgroundColor: color, }} heightArr={[28, 28]}  textStyle={styles.text} />
+                  <Col data={dayData} style={{ backgroundColor: color, }} heightArr={[28, 28]} textStyle={styles.text} />
                 }
 
                 {fajrData == [] ? null
                   :
-                  <Col data={fajrData} style={{ backgroundColor: color, }} heightArr={[28, 28]}  textStyle={styles.text} />
+                  <Col data={fajrData} style={{ backgroundColor: color, }} heightArr={[28, 28]} textStyle={styles.text} />
                 }
 
                 {sunhrData == [] ? null
                   :
-                  <Col data={sunhrData} style={{ backgroundColor: color, }} heightArr={[28, 28]}  textStyle={styles.text} />
+                  <Col data={sunhrData} style={{ backgroundColor: color, }} heightArr={[28, 28]} textStyle={styles.text} />
                 }
 
                 {duhrData == [] ? null
                   :
-                  <Col data={duhrData} style={{ backgroundColor: color, }} heightArr={[28, 28]}  textStyle={styles.text} />
+                  <Col data={duhrData} style={{ backgroundColor: color, }} heightArr={[28, 28]} textStyle={styles.text} />
                 }
 
                 {asrData == [] ? null
                   :
-                  <Col data={asrData} style={{ backgroundColor: color, }} heightArr={[28, 28]}  textStyle={styles.text} />
+                  <Col data={asrData} style={{ backgroundColor: color, }} heightArr={[28, 28]} textStyle={styles.text} />
                 }
 
                 {magrbData == [] ? null
                   :
-                  <Col data={magrbData} style={{ backgroundColor: color, }} heightArr={[28, 28]}  textStyle={styles.text} />
+                  <Col data={magrbData} style={{ backgroundColor: color, }} heightArr={[28, 28]} textStyle={styles.text} />
                 }
 
                 {ishaData == [] ? null

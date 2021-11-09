@@ -57,37 +57,37 @@ class Goal extends React.Component {
 
 
  saveGoal=async()=>{
-//     if(this.state.achieveGoal != '' && this.state.money != '' && this.state.achieve != '' &&  this.state.value != ''){
-//       alert("Please add all fields")
-//     }
-//     else {
-//     const token = await AsyncStorage.getItem('token')
+    if(this.state.achieveGoal != '' && this.state.money != '' && this.state.achieve != '' &&  this.state.value != ''){
+      alert("Please add all fields")
+    }
+    else {
+    const token = await AsyncStorage.getItem('token')
 
-// let formdata = new FormData();
+let formdata = new FormData();
     
    
-//     formdata.append("name",this.state.achieveGoal)
-//     formdata.append("required_money",this.state.money)
-//     formdata.append("steps", this.state.achieve)
-//     formdata.append("progress",this.state.value)
-//     formdata.append("image",{ uri: this.state.image.uri, name: this.state.image.fileName, type: 'image/jpeg'})
-//     formdata.append("user_id", global.userId)
+    formdata.append("name",this.state.achieveGoal)
+    formdata.append("required_money",this.state.money)
+    formdata.append("steps", this.state.achieve)
+    formdata.append("progress",this.state.value)
+    formdata.append("image",{ uri: this.state.image.uri, name: this.state.image.fileName, type: 'image/jpeg'})
+    formdata.append("user_id", global.userId)
 
-//     console.log("paramsssss",formdata);
-//     axios.post(baseUrl+ `goal/create`, formdata, {
-//         headers: {
-//             'auth-token': token
-//         }
-//     })
-//         .then((response) => {
-//             console.log('====>mood list updated data', response)
-//             this.setState({ moodModal: false })
+    console.log("paramsssss",formdata);
+    axios.post(baseUrl+ `goal/create`, formdata, {
+        headers: {
+            'auth-token': token
+        }
+    })
+        .then((response) => {
+            console.log('====>mood list updated data', response)
+            this.setState({ moodModal: false })
             this.props.navigation.navigate("SetIncome")
-//         })
-//         .catch((error) => {
-//             console.log('error', error)
-//         })
-//       }
+        })
+        .catch((error) => {
+            console.log('error', error)
+        })
+      }
  }
 
 
