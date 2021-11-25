@@ -21,7 +21,7 @@ var arrayOfArrays = [];
     
 
         useEffect(() => {
-            console.log("chndfjnv===>", global.moodData, global.windowHeight, global.windowWidth);
+            console.log("chndfjnv===>", global.moodData);
             function _onOrientationDidChange(orientation) {
                 if (orientation == 'PORTRAIT') {
                   Orientation.lockToLandscapeRight();
@@ -65,7 +65,59 @@ var arrayOfArrays = [];
                 <View style={{ marginBottom: 20, flexDirection: 'row', alignItems: 'center', marginLeft: 30 }}>
 
                     {/* <Svg style={{ width: wp('100%'), height: "100%", marginLeft: -20, }}> */}
-                    <VictoryChart   width={global.windowWidth} height={global.windowHeight}   >
+
+
+                    <VictoryChart width={global.windowHeight} height={global.windowWidth} domain={{ x: [0, 6] }}  >
+                <VictoryAxis
+
+                  dependentAxis={true}
+                  style={{
+                    grid: { strokeDasharray: "5", stroke: "#F1D2BC", },
+                    ticks: { stroke: 'none' },
+                  }}
+                />
+
+                <VictoryAxis
+                  style={{
+                  }} />
+
+
+                <VictoryGroup  offset={4}
+                  colorScale={"qualitative"}
+                >
+
+
+
+                   {global.moodData.map((item,index) => {
+                    // console.log("item---", item[index].x);
+                    return ( 
+                       <VictoryBar
+                        barWidth={2}
+                        // domainPadding={{ x: 30 }}
+                        style={{
+                          data: { fill: "#BF8B65" }
+                        }}
+                        data={item}
+                          events={[{
+                        target: "data",
+                        
+                      }]}
+                      /> 
+
+                     );
+                  })
+                }
+
+
+                      
+</VictoryGroup>
+                       </VictoryChart>
+
+                    
+
+
+
+                    {/* <VictoryChart   width={global.windowHeight} height={global.windowWidth}   >
                         <VictoryAxis
 
                             dependentAxis={true}
@@ -80,16 +132,10 @@ var arrayOfArrays = [];
                             }} />
 
 
-                        <VictoryGroup scale={{ x: "linear", y: "log" }} offset={7}
-                            
-                        >
+                        <VictoryGroup scale={{ x: "linear", y: "log" }} offset={7}>
 
-                            {/* { global.moodData.map((item, index) => {
-                                console.log("itemda---", item); */}
-                                {/* return ( */}
                                     <VictoryBar
                                         barWidth={5}
-                                        // domainPadding={{ x: 30 }}
                                         style={{
                                             data: { fill: "#BF8B65" }
                                         }}
@@ -111,14 +157,11 @@ var arrayOfArrays = [];
                                             }
                                         }]}
                                     />
-                                {/* ) */}
-                                    {/* })
-                                } */}
-                                
+                               
                 
 
                         </VictoryGroup>
-                    </VictoryChart>
+                    </VictoryChart> */}
                     {/* </Svg> */}
                 </View>
 

@@ -14,13 +14,28 @@ const { width, height } = Dimensions.get("window");
 
 const loginn = require('../images/login.png');
 const videos = require('../videos/login.mp4')
-
+const dayData = []
+const fajrData = []
+const sunhrData = []
+const duhrData = []
+const asrData = []
+const magrbData = []
+const ishaData = []
+const colData = []
+global.dayData = []
+global.fData =[]
+global.sData = []
+global.dData = []
+global.aData = []
+global.mData = []
+global.iData = []
+global.colData = []
 
 const PinLogin = ({ route, navigation }) => {
     const pinView = useRef(null)
     const [showRemoveButton, setShowRemoveButton] = useState(false)
     const [enteredPin, setEnteredPin] = useState("")
-    const [showCompletedButton, setShowCompletedButton] = useState(false)
+    const [resposneData, setResponseData] = useState()
     const [token, setToken] = useState('')
     const [modal, setModal] = useState(false)
     const [timeEStimate, setTimeEstimate] = useState(false)
@@ -30,6 +45,7 @@ const PinLogin = ({ route, navigation }) => {
     const [established, setestablished] = useState(false)
 
     const pin = route.params
+   
 
     useEffect(async () => {
         console.log("global.arrayData====>", global.arrayData)
@@ -67,11 +83,11 @@ const PinLogin = ({ route, navigation }) => {
     
     
     
-              getBeginsData(info)
+             
     
               console.log("info=====>", info)
             },
-              (error) => alert("Error: Are location services on?"),
+            //   (error) => alert("Error: Are location services on?"),
               // { enableHighAccuracy: true }
               {
                 enableHighAccuracy: false,
@@ -93,27 +109,26 @@ const PinLogin = ({ route, navigation }) => {
       };
     
       const getBeginsData = async (data) => {
-        console.log("get given date data====>", data);
-        axios.get(`https://api.aladhan.com/v1/timings/${data.timestamp}?latitude=${data.coords.latitude}&longitude=${data.coords.longitude}`, {
-          headers: {
-            'auth-token': token
-          }
-        })
-          .then((response) => {
-            console.log("get given date data====>", response.data.data.timings);
-            global.fajr = response.data.data.timings.Fajr
-            global.zuhr = response.data.data.timings.Dhuhr
-            global.asr = response.data.data.timings.Asr
-            global.maghrib = response.data.data.timings.Maghrib
-            global.isha = response.data.data.timings.Isha
-    
+
+        axios.get(`https://api.pray.zone/v2/times/today.json?city=${global.calCity}`)
+        .then((response) => {
+            console.log("get given date data====>", response.data.results.datetime[0].times);
+           
+          
+            global.fajr = response.data.results.datetime[0].times.Fajr
+            global.sun = response.data.results.datetime[0].times.Sunrise
+            global.zuhr = response.data.results.datetime[0].times.Dhuhr
+            global.asr = response.data.results.datetime[0].times.Asr
+            global.maghrib = response.data.results.datetime[0].times.Maghrib
+            global.isha = response.data.results.datetime[0].times.Isha
           })
-          .catch((error) => {
-            console.log('error', error)
-          })
+
+
+        
       };
 
     const getProfile = async () => {
+        getBeginsData()
         const token = await AsyncStorage.getItem('token')
         console.log("auth token", token)
 
@@ -121,11 +136,11 @@ const PinLogin = ({ route, navigation }) => {
 
 
 
-        axios.post(baseUrl+ 'me', data, {
-            headers: {
-                "auth-token": token
-            }
-        })
+        axios.post(baseUrl + 'me', data, {
+                headers: {
+                    "auth-token": token
+                }
+            })
             .then((response) => {
                 console.log('response user', response.data)
                 setToken(response.data.token)
@@ -141,10 +156,62 @@ const PinLogin = ({ route, navigation }) => {
 
     }
 
+    const getPrayerList = async () => {
+        const token = await AsyncStorage.getItem('token')
+    
+        axios.get('http://112.196.64.119:8000/api/user/manualprayerstime/list', {
+          headers: {
+            'auth-token': token
+          }
+        })
+          .then((response) => {
+            console.log("setting response data===>", response.data.data[0]);
+            global.fajrrBegins = response.data.data[0].type1.begins_time
+            global.fajrrJamah = response.data.data[0].type1.jamah_time
+            global.fajrrAlarm = response.data.data[0].type1.alarm_time
+            global.fajrPrayer = response.data.data[0].type1.prayerTime
+    
+            global.zuhrBegins = response.data.data[0].type2.begins_time
+            global.zuhrJamah = response.data.data[0].type2.jamah_time
+            global.zuhrAlarm = response.data.data[0].type2.alarm_time
+            global.duhrPrayer = response.data.data[0].type2.prayerTime
+    
+            global.asrBegins = response.data.data[0].type3.begins_time
+            global.asrJamah = response.data.data[0].type3.jamah_time
+            global.asrAlarm = response.data.data[0].type3.alarm_time
+            global.asrPrayer = response.data.data[0].type3.prayerTime
+    
+            global.maghribBegins = response.data.data[0].type4.begins_time
+            global.maghribJamah = response.data.data[0].type4.jamah_time
+            global.maghribAlarm = response.data.data[0].type4.alarm_time
+            global.magribPrayer = response.data.data[0].type4.prayerTime
+    
+            global.ishaBegins = response.data.data[0].type5.begins_time
+            global.ishaJamah = response.data.data[0].type5.jamah_time
+            global.ishaAlarm = response.data.data[0].type5.alarm_time
+            global.ishaPrayer = response.data.data[0].type5.prayerTime
+    
+            // global.ishaBegins = response.data.data[0].type5.begins_time
+            // global.ishaJamah = response.data.data[0].type5.jamah_time
+            // global.ishaAlarm = response.data.data[0].type5.alarm_time
+            global.sunPrayer = response.data.data[0].type6.prayerTime
+    
+    
+    
+            // props.navigation.navigate('Drawer')
+          })
+    
+          .catch((error) => {
+            console.log('error', error)
+          })
+      }
+
 
     const dashboardData = async () => {
-        requestLocationPermission()
+        getPrayerList()
+        // requestLocationPermission()
         getData()
+        get
         var currentDate = new Date(),
             month = ("0" + (currentDate.getMonth() + 1)).slice(-2),
             day = ("0" + currentDate.getDate()).slice(-2),
@@ -201,8 +268,6 @@ const PinLogin = ({ route, navigation }) => {
                         }
 
 
-
-                        // 
                         return entry;
                     });
 
@@ -219,6 +284,14 @@ const PinLogin = ({ route, navigation }) => {
     }
 
     const getData = async () => {
+        const dayData = []
+const fajrData = []
+const sunhrData = []
+const duhrData = []
+const asrData = []
+const magrbData = []
+const ishaData = []
+const colData = []
         const token = await AsyncStorage.getItem('token')
         console.log("auth token bio", token)
     
@@ -228,9 +301,69 @@ const PinLogin = ({ route, navigation }) => {
           }
         })
           .then((response) => {
-    
-           global.cityData = response.data[0].city
-    
+          console.log("city response ata===>", response.data);
+          if(response.data == ''){
+  
+            console.log("prayer response===x>", response);
+          }
+          else {
+          setResponseData(response.data)
+
+          var date = new Date();
+          var month = date.getMonth() + 1
+          var year = date.getFullYear()
+
+
+          global.resposneData = response.data
+          global.calCity= response.data[0].city
+          global.calCountry= response.data[0].country
+          global.calAsr= response.data[0].asr_method
+          global.calMonth= response.data[0].go_to
+
+           global.calYear= year
+           axios.get(`http://api.aladhan.com/v1/calendarByCity?city=${global.calCity}&country=${global.calCountry}&method=${global.calAsr}&month=${global.calMonth}&year=${global.calYear}`)
+           .then((res) => {
+     
+     
+             global.prayerDat = res.data.data
+             global.calendarPrayerData = res.data.data
+             console.log("prayer response===x> d", global.prayerDat, global.calMonth);
+   
+             global.prayerDat.forEach(function (val, i) {
+   
+              
+               colData.push(i + 1)
+              
+               var d = val.date.gregorian.weekday.en.slice(0, 3)
+               var fajr = val.timings.Fajr.slice(0, 5)
+               var sunhr = val.timings.Sunrise.slice(0, 5)
+               var dhuhr = val.timings.Dhuhr.slice(0, 5)
+               var asr = val.timings.Asr.slice(0, 5)
+               var maghrib = val.timings.Maghrib.slice(0, 5)
+               var isha = val.timings.Isha.slice(0, 5)
+               dayData.push(d)
+               fajrData.push(fajr)
+               sunhrData.push(sunhr)
+               duhrData.push(dhuhr)
+               asrData.push(asr)
+               magrbData.push(maghrib)
+               ishaData.push(isha)
+         
+               global.dayData = dayData
+               global.fData = fajrData
+               global.sData = sunhrData
+               global.dData = duhrData
+               global.aData = asrData
+               global.mData = magrbData
+               global.iData = ishaData
+               global.colData = colData
+         
+               console.log("pre column datas===>", dayData, fajrData);
+             })
+     
+     
+           })
+          }
     
           })
           .catch((error) => {
@@ -360,15 +493,26 @@ const PinLogin = ({ route, navigation }) => {
 
                   global.seconds = '00'
                   setestablished(false)
-                 setTimeout(()=>{
-                    setModal(false)
-                    // setestablished(false)
-                 },1000)
+                    setTimeout(()=>{
+                        setModal(false)
+                        // setestablished(false)
+                    },1000)
                 
                    console.log(global.userId);
-                    setVal(!val)
+                   setVal(!val)
                    dashboardData()
-                   navigation.navigate('Setting')  
+                   console.log("resposneData------>", global.resposneData)
+                //    alert(typeof global.fajrrBegins)
+
+                if(global.resposneData == undefined){
+                    navigation.navigate('Setting')
+                }
+                else{
+                    navigation.navigate('Drawer')
+                }
+
+
+                //    global.resposneData == '' ? navigation.navigate('Setting') : navigation.navigate('Drawer')  
                    }
                   
                 })
@@ -383,7 +527,7 @@ const PinLogin = ({ route, navigation }) => {
 
     return (
         <>
-            <StatusBar barStyle="light-content" />
+            <StatusBar hidden />
             <Video
         source={videos}
         style={styles.backgroundVideo}

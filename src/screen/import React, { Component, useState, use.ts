@@ -31,7 +31,7 @@ global.colData = []
 
 const PrayerSetting=({navigation})=> {
  
-  // alert(global.calMonth)
+
 
   const [tableHead, settableHead] = useState(['   ', 'Day', 'Fajr', 'Sun', "Zuhr", "Asr", "Mgrb", "Isha "])
   const [widthArr, setwidthArr] = useState([36, 36, 36, 36, 36, 36, 36, 36, 36])
@@ -45,20 +45,27 @@ const PrayerSetting=({navigation})=> {
   const [month, setmonth] = useState('')
   const [year, setyear] = useState('');
   const [count, setcount] = useState(1)
-  const [man, setMan] = useState(global.calendarPrayerData)
+
 
 
 
   useEffect(() => {
-  
+    setdayDataa(global.prayerDat)
+    getPrayerData()
+    updateData()
+    getData()
+
+
     const unsubscribe = navigation.addListener('focus', () => {
-      console.log('use effect');
+      updateData()
     });
     return () => unsubscribe;
-  },[]
+  }, [] 
   )
 
-  const previousData = () => {
+
+  const updateData= async()=>{
+
     const dayData = []
 const fajrData = []
 const sunhrData = []
@@ -68,6 +75,104 @@ const magrbData = []
 const ishaData = []
 const colData = []
 
+
+   
+    global.prayerDat.forEach(function (val, i) {
+
+      // if (i % 2 == 0) {
+      //   color = '#FAE9D7'
+      // }
+      // else {
+      //   color = '#FAE9D7'
+      // }
+      colData.push(i + 1)
+     
+      var d = val.date.gregorian.weekday.en.slice(0, 3)
+      var fajr = val.timings.Fajr.slice(0, 5)
+      var sunhr = val.timings.Sunrise.slice(0, 5)
+      var dhuhr = val.timings.Dhuhr.slice(0, 5)
+      var asr = val.timings.Asr.slice(0, 5)
+      var maghrib = val.timings.Maghrib.slice(0, 5)
+      var isha = val.timings.Isha.slice(0, 5)
+      dayData.push(d)
+      fajrData.push(fajr)
+      sunhrData.push(sunhr)
+      duhrData.push(dhuhr)
+      asrData.push(asr)
+      magrbData.push(maghrib)
+      ishaData.push(isha)
+
+      global.dayData = dayData
+      global.fData = fajrData
+      global.sData = sunhrData
+      global.dData = duhrData
+      global.aData = asrData
+      global.mData = magrbData
+      global.iData = ishaData
+      global.colData = colData
+
+      console.log("column datas===>", dayData, global.dayData);
+    })
+  }
+
+  const getData = async () => {
+    const token = await AsyncStorage.getItem('token')
+    console.log("auth token bio", token)
+
+    axios.get(baseUrl + 'setting/view', {
+      headers: {
+        'auth-token': token
+      }
+    })
+      .then((response) => {
+
+        var date = new Date();
+        var month = date.getMonth() + 1
+        var year = date.getFullYear()
+
+        global.resposneData = response.data
+        setcity(response.data[0].city)
+        setcountry(response.data[0].country)
+        setasrMethod(response.data[0].asr_method)
+        setmonth(month)
+        setyear(year)
+
+        
+        getPrayerData(response.data[0])
+
+
+      })
+      .catch((error) => {
+        console.log('error', error)
+      })
+
+
+
+
+
+
+  }
+
+
+  const getPrayerData = async (data) => {
+
+   
+
+    axios.get(`http://api.aladhan.com/v1/calendarByCity?city=${global.calCity}&country=${global.calCountry}&method=${global.calAsr}&month=${global.calMonth}&year=${global.calYear}`)
+      .then((res) => {
+        setdayDataa(res.data.data)
+
+        global.prayerDat = res.data.data
+        // console.log("prayer response===x>", global.prayerDat);
+        
+
+        // updateData()
+      })
+
+  }
+
+  const previousData = () => {
+    //  newdatae = parseInt(global.month);
     var month
 
     if (global.calMonth == 0) {
@@ -75,7 +180,7 @@ const colData = []
       var lMonth = parseInt(global.calMonth)
 
       var date = new Date();
-      var firstDay = new Date(date.getFullYear(), lMonth , 1);
+      var firstDay = new Date(date.getFullYear(), lMonth - count, 1);
       var lastDay = new Date(date.getFullYear(), lMonth, 0);
 
 
@@ -98,68 +203,21 @@ const colData = []
       var l_Date = ` ${last_date} ${month} ${year}`
       global.lDate = l_Date
 
+      console.log("pre next data===>", s_Date);
 
       global.calMonth = moment().month(month).format("M");
       setmonth(moment().month(month).format("M"))
       setyear(year)
 
-      axios.get(`http://api.aladhan.com/v1/calendarByCity?city=${global.calCity}&country=${global.calCountry}&method=${global.calAsr}&month=${global.calMonth}&year=${global.calYear}`)
-      .then((res) => {
-     
-
-        
-        global.prayerDat = res.data.data
-        global.calendarPrayerData = res.data.data
-        
-        global.calendarPrayerData.forEach(function (val, i) {
-
-          colData.push(i + 1)
-         
-          var d = val.date.gregorian.weekday.en.slice(0, 3)
-          var fajr = val.timings.Fajr.slice(0, 5)
-          var sunhr = val.timings.Sunrise.slice(0, 5)
-          var dhuhr = val.timings.Dhuhr.slice(0, 5)
-          var asr = val.timings.Asr.slice(0, 5)
-          var maghrib = val.timings.Maghrib.slice(0, 5)
-          var isha = val.timings.Isha.slice(0, 5)
-          dayData.push(d)
-          fajrData.push(fajr)
-          sunhrData.push(sunhr)
-          duhrData.push(dhuhr)
-          asrData.push(asr)
-          magrbData.push(maghrib)
-          ishaData.push(isha)
-    
-          global.dayData = dayData
-          global.fData = fajrData
-          global.sData = sunhrData
-          global.dData = duhrData
-          global.aData = asrData
-          global.mData = magrbData
-          global.iData = ishaData
-          global.colData = colData
-    
-        })
-        setMan(res.data.data)
-      });
-      console.log('previous if');
-
+      getPrayerData()
+      updateData()
     }
     else {
-      const dayData = []
-      const fajrData = []
-      const sunhrData = []
-      const duhrData = []
-      const asrData = []
-      const magrbData = []
-      const ishaData = []
-      const colData = []
-      
       global.calMonth--;
       var lMonth = parseInt(global.calMonth)
 
       var date = new Date();
-      var firstDay = new Date(date.getFullYear(), lMonth, 1);
+      var firstDay = new Date(date.getFullYear(), lMonth - count, 1);
       var lastDay = new Date(date.getFullYear(), lMonth, 0);
 
 
@@ -182,21 +240,71 @@ const colData = []
       var l_Date = ` ${last_date} ${month} ${year}`
       global.lDate = l_Date
 
+      console.log("pre next data===>", s_Date);
       setmonth(moment().month(month).format("M"))
       setyear(year)
       
       global.calMonth = moment().month(month).format("M");
+      getPrayerData()
+      updateData()
+    }
+  }
+
+  const nextData = () => {
+
+        const dayData = []
+const fajrData = []
+const sunhrData = []
+const duhrData = []
+const asrData = []
+const magrbData = []
+const ishaData = []
+const colData = []
+
+// console.log("pre prayer response===x>", global.calCity,global.calCountry, global.calAsr, global.calMonth,global.calYear );
+
+
+    var month
+
+    if (global.calMonth == 12) {
+      global.calMonth = 1;
+      var lMonth = parseInt(global.calMonth)
+      var date = new Date();
+      var firstDay = new Date(date.getFullYear(), lMonth + count, 1);
+      var lastDay = new Date(date.getFullYear(), lMonth, 0);
+
+
+      month = moment(JSON.stringify(lMonth)).format("MMM");
+      var start_date = moment(firstDay).format("DD");
+      var year = moment(firstDay).format("YYYY");
+
+      // global.month = month
+
+      var last_date = moment(lastDay).format("DD");
+      global.last_date = last_date
+      var s_Date = `${start_date} ${month} ${year} -`
+      global.sDate = s_Date
+      var l_Date = ` ${last_date} ${month} ${year}`
+      global.lDate = l_Date
+
+      console.log("pre next data===>", s_Date);
+
+      setmonth(moment().month(month).format("M"))
+      setyear(year)
+
+      global.calMonth = moment().month(month).format("M");
+      // console.log("pre prayer response===x>", global.calCity,global.calCountry, global.calAsr, global.calMonth,global.calYear );
+
       axios.get(`http://api.aladhan.com/v1/calendarByCity?city=${global.calCity}&country=${global.calCountry}&method=${global.calAsr}&month=${global.calMonth}&year=${global.calYear}`)
       .then((res) => {
      
 
         
         global.prayerDat = res.data.data
-        global.calendarPrayerData = res.data.data
         
-        global.calendarPrayerData.forEach(function (val, i) {
+        global.prayerDat.forEach(function (val, i) {
 
-          console.log("prayer next if data ====>", global.prayerDat);
+          console.log("prayer data ====>", global.prayerDat);
           colData.push(i + 1)
          
           var d = val.date.gregorian.weekday.en.slice(0, 3)
@@ -224,121 +332,29 @@ const colData = []
           global.colData = colData
     
           console.log("pre column datas===>", dayData, fajrData);
-      console.log('previous else');
-
         })
-        setMan(res.data.data)
-      })
-    }
-  }
-  
-  const nextData = () => {
-    const dayData = []
-    const fajrData = []
-    const sunhrData = []
-    const duhrData = []
-    const asrData = []
-    const magrbData = []
-    const ishaData = []
-    const colData = []
-
-// console.log("pre prayer response===x>", global.calCity,global.calCountry, global.calAsr, global.calMonth,global.calYear );
-
-    var month
-
-    if (global.calMonth == 12) {
-      global.calMonth = 1;
-      var lMonth = parseInt(global.calMonth)
-      var date = new Date();
-      var firstDay = new Date(date.getFullYear(), lMonth, 1);
-      var lastDay = new Date(date.getFullYear(), lMonth, 0);
-
-
-      month = moment(JSON.stringify(lMonth)).format("MMM");
-      var start_date = moment(firstDay).format("DD");
-      var year = moment(firstDay).format("YYYY");
-
-      // global.month = month
-
-      var last_date = moment(lastDay).format("DD");
-      global.last_date = last_date
-      var s_Date = `${start_date} ${month} ${year} -`
-     
-      var l_Date = ` ${last_date} ${month} ${year}`
-     
-
-
-      // setmonth(moment().month(month).format("M"))
-      setyear(year)
-
-      global.calMonth = moment().month(month).format("M");
-
-
-
-      
-
-      // console.log("pre prayer response===x>", global.calCity,global.calCountry, global.calAsr, global.calMonth,global.calYear );
-      axios.get(`http://api.aladhan.com/v1/calendarByCity?city=${global.calCity}&country=${global.calCountry}&method=${global.calAsr}&month=${global.calMonth}&year=${global.calYear}`)
-      .then((res) => {
-     
-
-        
-        global.prayerDat = res.data.data
-        global.calendarPrayerData = res.data.data
-        global.calendarPrayerData.forEach(function (val, i) {
-
-          console.log("prayer data next if====>", global.prayerDat);
-          colData.push(i + 1)
-         
-          var d = val.date.gregorian.weekday.en.slice(0, 3)
-          var fajr = val.timings.Fajr.slice(0, 5)
-          var sunhr = val.timings.Sunrise.slice(0, 5)
-          var dhuhr = val.timings.Dhuhr.slice(0, 5)
-          var asr = val.timings.Asr.slice(0, 5)
-          var maghrib = val.timings.Maghrib.slice(0, 5)
-          var isha = val.timings.Isha.slice(0, 5)
-          dayData.push(d)
-          fajrData.push(fajr)
-          sunhrData.push(sunhr)
-          duhrData.push(dhuhr)
-          asrData.push(asr)
-          magrbData.push(maghrib)
-          ishaData.push(isha)
-    
-          global.dayData = dayData
-          global.fData = fajrData
-          global.sData = sunhrData
-          global.dData = duhrData
-          global.aData = asrData
-          global.mData = magrbData
-          global.iData = ishaData
-          global.colData = colData
-    
-          console.log('next if');
-        })
-        setMan(res.data.data)
       })
  
-      global.sDate = s_Date
-      global.lDate = l_Date
+      
+     
     }
     else {
 
-//           const dayData = []
-// const fajrData = []
-// const sunhrData = []
-// const duhrData = []
-// const asrData = []
-// const magrbData = []
-// const ishaData = []
-// const colData = []
+          const dayData = []
+const fajrData = []
+const sunhrData = []
+const duhrData = []
+const asrData = []
+const magrbData = []
+const ishaData = []
+const colData = []
 
 
       global.calMonth++;
 
       var lMonth = parseInt(global.calMonth)
       var date = new Date();
-      var firstDay = new Date(date.getFullYear(), lMonth, 1);
+      var firstDay = new Date(date.getFullYear(), lMonth + count, 1);
       var lastDay = new Date(date.getFullYear(), lMonth, 0);
 
 
@@ -351,33 +367,26 @@ const colData = []
       var last_date = moment(lastDay).format("DD");
       global.last_date = last_date
       var s_Date = `${start_date} ${month} ${year} -`
-      // global.sDate = s_Date
+      global.sDate = s_Date
       var l_Date = ` ${last_date} ${month} ${year}`
-      // global.lDate = l_Date
+      global.lDate = l_Date
 
+      console.log("pre next data===>", s_Date);
 
       setmonth(moment().month(month).format("M"))
       setyear(year)
 
       global.calMonth = moment().month(month).format("M");
 
-
       // console.log("pre prayer response===x>", global.calCity,global.calCountry, global.calAsr, global.calMonth,global.calYear );
 
       axios.get(`http://api.aladhan.com/v1/calendarByCity?city=${global.calCity}&country=${global.calCountry}&method=${global.calAsr}&month=${global.calMonth}&year=${global.calYear}`)
       .then((res) => {
         // setdayDataa(res.data.data)
-        
 
-        global.prayerDat =res.data.data
-        global.calendarPrayerData = res.data.data
-        // if(man == res.data.data){
-        //   console.log("next if");
-        // }else{
-        //   console.log("next else");
-        // }
-        
-        global.calendarPrayerData.forEach(function (val, i) {
+
+        global.prayerDat = res.data.data
+        global.prayerDat.forEach(function (val, i) {
           
        
           colData.push(i + 1)
@@ -391,6 +400,7 @@ const colData = []
           var maghrib = val.timings.Maghrib.slice(0, 5)
           var isha = val.timings.Isha.slice(0, 5)
           dayData.push(d)
+          console.log("prayer data ====>", global.prayerDat, dayData);
           fajrData.push(fajr)
           sunhrData.push(sunhr)
           duhrData.push(dhuhr)
@@ -407,17 +417,10 @@ const colData = []
           global.iData = ishaData
           global.colData = colData
     
-          console.log('next else');
-          console.log("prayer next else data ====>", global.prayerDat);
-          
-
-
+          console.log("pre column datas===>", dayData, fajrData);
         })
-
-setMan(res.data.data)
       })
-      global.sDate = s_Date
-      global.lDate = l_Date
+ 
     }
   }
 
@@ -433,8 +436,8 @@ setMan(res.data.data)
 
 
 
+
     return (
-      console.log('tarika 1',man),
       <View onLayout={(event) => {
         var { x, y, width, height } = event.nativeEvent.layout;
 
@@ -452,9 +455,6 @@ setMan(res.data.data)
             <Image source={require('../images/setting.png')} style={{ width: 26, height: 26, marginRight: 20 }} />
           </TouchableOpacity>
         </View>
-
-
-        
 
 
         <View style={{ height: 48, backgroundColor: '#EAC1A3', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginTop: 30, marginLeft: '2%', marginRight: '2%', borderTopLeftRadius: 6, borderTopRightRadius: 6 }}>
@@ -475,10 +475,6 @@ setMan(res.data.data)
           </TouchableOpacity>
 
         </View>
-
-        {/* <View style={{flexDirection: 'row', margin:5}}>
-          <Text>{global.dayData}</Text>
-        </View> */}
         {/* <ScrollView horizontal={true} style={{ borderRadius: 15, marginLeft: windowWidth  * 0.1  }}>
 
 
@@ -507,32 +503,32 @@ setMan(res.data.data)
 
                 {global.fData == [] ? null
                   :
-                  <Col data={global.fData} style={{ backgroundColor: "#FAE9D7", }} heightArr={[28, 28]} textStyle={styles.text} />
+                  <Col data={global.fData} style={{ backgroundColor: "#F2DAC9", }} heightArr={[28, 28]} textStyle={styles.text} />
                 }
 
                 {global.sData == [] ? null
                   :
-                  <Col data={global.sData} style={{ backgroundColor: "#FAE9D7", }} heightArr={[28, 28]} textStyle={styles.text} />
+                  <Col data={global.sData} style={{ backgroundColor: "#F2DAC9", }} heightArr={[28, 28]} textStyle={styles.text} />
                 }
 
                 {global.dData == [] ? null
                   :
-                  <Col data={global.dData} style={{ backgroundColor: "#FAE9D7", }} heightArr={[28, 28]} textStyle={styles.text} />
+                  <Col data={global.dData} style={{ backgroundColor: "#F2DAC9", }} heightArr={[28, 28]} textStyle={styles.text} />
                 }
 
                 {global.aData == [] ? null
                   :
-                  <Col data={global.aData} style={{ backgroundColor: "#FAE9D7", }} heightArr={[28, 28]} textStyle={styles.text} />
+                  <Col data={global.aData} style={{ backgroundColor: "#F2DAC9", }} heightArr={[28, 28]} textStyle={styles.text} />
                 }
 
                 {global.mData == [] ? null
                   :
-                  <Col data={global.mData} style={{ backgroundColor: "#FAE9D7", }} heightArr={[28, 28]} textStyle={styles.text} />
+                  <Col data={global.mData} style={{ backgroundColor: "#F2DAC9", }} heightArr={[28, 28]} textStyle={styles.text} />
                 }
 
                 {global.iData == [] ? null
                   :
-                  <Col data={global.iData} style={{ backgroundColor: "#FAE9D7", }} heightArr={[28, 28]} textStyle={styles.text} />
+                  <Col data={global.iData} style={{ backgroundColor: "#F2DAC9", }} heightArr={[28, 28]} textStyle={styles.text} />
                 }
 
                 {/* <Table borderStyle={{ borderWidth: 1, borderColor: '#C1C0B9' }}>

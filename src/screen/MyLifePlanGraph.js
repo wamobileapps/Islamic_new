@@ -120,7 +120,7 @@ const colorRating = ["#DAA67F", "#D3A079", "#C59069", "#E3BFA4", "#DFB392", "#D3
 
                     <TouchableOpacity onPress={() => navigation.goBack()} style={{ flexDirection: 'row', alignItems: 'center' }}>
                         <Iconback name='chevron-left' size={24} color='#000' style={{ marginLeft: 10, }} />
-                        <Text style={{ fontSize: RFValue(13), color: '#000', color: '#454545', fontFamily: 'Montserrat-Bold', marginLeft: 5, }}>24 Hours in my life</Text>
+                        <Text style={{ fontSize: RFValue(13), color: '#000', color: '#454545', fontFamily: 'Montserrat-Bold', marginLeft: 5, }}>24 Hours In My Life</Text>
                     </TouchableOpacity>
                     <Image source={require('../images/life.png')} style={{ width: 26, height: 26, marginRight: 20 }} />
                 </View>

@@ -23,7 +23,7 @@ const img9 = require('../images/9.png')
 const img10 = require('../images/10.png')
 
 
-
+var ratingArray = []
 var updatedArrayX = [];
 const updatedArrayIndex = []
 const allID = []
@@ -243,7 +243,10 @@ export default class myMood extends Component {
         })
             .then((response) => {
 
-                console.log('====>mood list updated data', response)
+                console.log('====>mood list updated data', response.data.data.rating)
+               
+
+
                 this.setState({ moodModal: false, circleX: false, circleY: false })
 
             })

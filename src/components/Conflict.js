@@ -240,8 +240,8 @@ export default class Conflict extends Component {
     });
 
     if (this.state.dataToRenderCircleZ.length == 3) {
-      alert("y")
-      // this.submitAPi()
+      // alert("y")
+      this.submitAPi()
     }
 
   };

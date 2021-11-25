@@ -280,7 +280,7 @@ class App extends React.Component {
 
 
     your_data = videoData
-    // console.log("video data", videoData);
+    console.log("video data", videoData);
 
     var myarray = [];
     for (var i = 0; i < videoData.length; i++) {
@@ -299,7 +299,7 @@ class App extends React.Component {
     for (var i = 0; i < myarray.length; i += size) {
       arrayOfArrays.push(myarray.slice(i, i + size));
     }
-    // console.log("value of i---->", arrayOfArrays); 
+    console.log("value of i---->", myarray); 
     // videoData.forEach(( index) => {
     //    console.log("jwecx", index);
     // })

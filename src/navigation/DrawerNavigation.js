@@ -22,8 +22,9 @@ var videoData = []
 var arrayOfArrays = [];
 var countryArray = [];
 global.moodData = []
-const MyDrawer=({navigation})=> {
 
+const MyDrawer=({navigation})=> {
+  
   const [name, setName] = useState('')
   const[number, setNumber] = useState('')
   const[imageUser, setUserImage] = useState('')
@@ -71,26 +72,36 @@ const MyDrawer=({navigation})=> {
 
   }
 
+  
   const getDataMonth=()=>{
     var date = new Date();
     global.month = date.getMonth()
+  
+    var lMonth = parseInt(global.calMonth)
+    // alert(global.calMonth)
+    
     var firstDay =
-      new Date(date.getFullYear(),global.month, 1);
+      new Date(date.getFullYear(),lMonth, 1);
 
     var lastDay =
-      new Date(date.getFullYear(),global.month + 1, 0);
+      new Date(date.getFullYear(),lMonth, 0);
 
       
-      var month =  moment(firstDay).format("MMM"); 
+      global.selectMonth =  moment(firstDay).format("MMM"); 
+      var month  = global.selectMonth
+     
     var start_date = moment(firstDay).format("DD"); 
     var year = moment(firstDay).format("YYYY");
 
     var last_date = moment(lastDay).format("DD"); 
+   global.last_date = last_date
+    console.log("get month daya--->",  lastDay, "====", global.calMonth);
 
-    var s_Date= `${start_date} ${month} ${year}-`
+    var s_Date= `${start_date} ${month} ${year} -`
     global.sDate = s_Date
     
-    var l_Date= `${last_date} ${month} ${year}`
+    
+    var l_Date= ` ${last_date} ${month} ${year}`
     global.lDate = l_Date
   }
 
@@ -103,47 +114,103 @@ const MyDrawer=({navigation})=> {
             'auth-token': token
         }
     })
-        .then((response) => {
+        .then((res) => {
+
+        //  console.log("graph data===>", res.data);
+
           
-          
-          for (var i = 0; i < response.data.length; i++) {
-            var country = response.data[i].rating;
-            var date = moment(response.data[i].date).format('DD')
+          var videoData = []
+          var ratinglength = []
+          var ratingArray = []
+          var rootArray = [];
+          var len = res.data.length;
+          for (let ii = 0; ii < len; ii++) {
+
+            var date = moment(res.data[ii].date).format('DD')
            
-            var videoItem = {  y: country, x: date }
+            ratinglength = res.data[ii].rating;
+            var  a = (30 - ratinglength.length)
 
-         
-            // for (var x = 0; x < response.data[i].moods.length; x++) {
-            //   
-            //     countryArray.push(videoItem);
-            // }
-      
-            videoData.push(videoItem);
-            global.moodData = videoData
-        }
-
-      
-       
-      
-        var myarray = [];
-        // for (var i = 0; i < videoData.length; i++) {
-        //     for (let j = 0; j < videoData.length; j++) {
-        //         myarray.push(videoData[j][i]);
-        //     }
-      
-        // }
-        console.log("=====>", global.moodData);
-      
-        // myarray = myarray.filter(function (element) {
-        //     return element !== undefined;
-        // });
-      
-        // var size = videoData.length;
-        // for (var i = 0; i < myarray.length; i += size) {
-        //     arrayOfArrays.push(myarray.slice(i, i + size));
+            for (let i = 1; i <= a; i++) {
+             
+                if(ratinglength.length > i){
+                  ratinglength.push(0);
+                  // ratingArray.push(0)
+                    }
+                    
+                    
+            }
             
-        // }
+            for (let index = 0; index < 30; index++) {
+              var d = Array(30).fill(date)
+
+            }
+
+           
+            
+            var videoItem = { x: d, y: ratinglength }
+            rootArray.push(videoItem)
+           
+
+            var myarray = [];
+        
+    for (let i = 0; i < rootArray.length; i++) {
+      for (let j = 0; j < rootArray[i].x.length; j++) {
+        var d ={x: rootArray[i].x[j],  y : rootArray[i].y[j] }
+        myarray.push(d);
+      }
+
+    }
+
+    var arrayOfArrays = [];
+    var arrayOfArrayss = []
+    for (let id = 0; id < myarray.length; id += 30) {
+      arrayOfArrays.push(myarray.slice(id, id + 30));
+    }
+  
+            // console.log("mood data graph===>",arrayOfArrayss);
+           
+           
+            // global.moodData = videoData
+            // videoData.push(ratinglength);
+        }
        
+
+        var myarrayy = [];
+        for (let i = 0; i <= 30; i++) {
+          for (let j = 0; j < arrayOfArrays.length; j++) {
+            myarrayy.push(arrayOfArrays[j][i]);
+            // console.log(j,i);
+          
+          }
+    
+        }
+    
+    
+        myarrayy = myarrayy.filter(function (element) {
+          return element !== undefined;
+        });
+    
+        var size = arrayOfArrays.length;
+        for (let i = 0; i < myarrayy.length; i += size) {
+          arrayOfArrayss.push(myarrayy.slice(i, i + size));
+        }
+    
+    console.log("arrayOfArrayss: ",arrayOfArrayss);
+    global.moodData = arrayOfArrayss
+
+        // var myarray = [];
+        // for (var i = 0; i < videoData.length; i++) {
+        //   for (let j = 0; j < videoData.length; j++) {
+        //     myarray.push(videoData[j][i]);
+        //   }
+    
+        // }
+
+// var mynew  = [];
+//         rootArray.map((item) => {
+//           mynew
+//         })
         
         })
         .catch((error) => {
@@ -218,7 +285,7 @@ const MyDrawer=({navigation})=> {
 
             console.log("category type===>", response.data.CategoryList);
             global.CategoryList = response.data.CategoryList
-            global.list =arrayData
+            global.list = arrayData
             global.colorData = arrayColor
             console.log("list----> d", global.colorData);
 
@@ -295,7 +362,7 @@ const MyDrawer=({navigation})=> {
 
             <TouchableOpacity onPress={()=>props.navigation.navigate('Nafz')} style={{ flexDirection: 'row', marginLeft: 20, marginTop: 15, }}>
               <Image source={require('../images/nafz.png')} style={{ width: 14, height: 12, marginLeft: 12 }} />
-              <Text style={{ marginLeft: 22, color: '#454545', fontSize: 13, fontFamily: 'Montserrat-SemiBold' }}>Nafz</Text>
+              <Text style={{ marginLeft: 16, color: '#454545', fontSize: 13, fontFamily: 'Montserrat-SemiBold' }}>Nafz</Text>
             </TouchableOpacity>
 
             <TouchableOpacity onPress={()=>props.navigation.navigate('Setting')} style={{ flexDirection: 'row', marginLeft: 20, marginTop: 15,  }}>
@@ -328,9 +395,14 @@ const MyDrawer=({navigation})=> {
               <Text style={{ marginLeft: 15, color: '#454545', fontSize: 13, fontFamily: 'Montserrat-SemiBold' }}>My Mood Graph</Text>
             </TouchableOpacity>
 
+            <TouchableOpacity onPress={()=>props.navigation.navigate('Setting')} style={{ flexDirection: 'row', marginLeft: 20, marginTop: 15 }}>
+              <Image source={require('../images/goal.png')} style={{ width: 15, height: 15, marginLeft: 10 }} />
+              <Text style={{ marginLeft: 15, color: '#454545', fontSize: 13, fontFamily: 'Montserrat-SemiBold' }}>Prayer Times Settings</Text>
+            </TouchableOpacity>
+
             <TouchableOpacity onPress={()=>props.navigation.navigate('PrayerSetting')} style={{ flexDirection: 'row', marginLeft: 20, marginTop: 15 }}>
               <Image source={require('../images/goal.png')} style={{ width: 15, height: 15, marginLeft: 10 }} />
-              <Text style={{ marginLeft: 15, color: '#454545', fontSize: 13, fontFamily: 'Montserrat-SemiBold' }}>Prayer Time</Text>
+              <Text style={{ marginLeft: 15, color: '#454545', fontSize: 13, fontFamily: 'Montserrat-SemiBold' }}>Calendar</Text>
             </TouchableOpacity>
 
             <View style={{ flexDirection: 'row', marginLeft: 20, marginTop: 15 }}>
