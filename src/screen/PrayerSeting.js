@@ -28,10 +28,8 @@ global.iData = []
 global.colData = []
 
 
-
 const PrayerSetting=({navigation})=> {
- 
-  // alert(global.calMonth)
+
 
   const [tableHead, settableHead] = useState(['   ', 'Day', 'Fajr', 'Sun', "Zuhr", "Asr", "Mgrb", "Isha "])
   const [widthArr, setwidthArr] = useState([36, 36, 36, 36, 36, 36, 36, 36, 36])
@@ -44,7 +42,7 @@ const PrayerSetting=({navigation})=> {
   const [asrMethod, setasrMethod] = useState('');
   const [month, setmonth] = useState('')
   const [year, setyear] = useState('');
-  const [count, setcount] = useState(1)
+  const [count, setcount] = useState(parseInt(global.calMonth))
   const [man, setMan] = useState(global.calendarPrayerData)
 
 
@@ -59,48 +57,51 @@ const PrayerSetting=({navigation})=> {
   )
 
   const previousData = () => {
+    
     const dayData = []
 const fajrData = []
 const sunhrData = []
 const duhrData = []
 const asrData = []
 const magrbData = []
-const ishaData = []
+const ishaData = []              
 const colData = []
 
-    var month
+var month
+// global.calMonth = count
 
-    if (global.calMonth == 0) {
-      global.calMonth = 12;
-      var lMonth = parseInt(global.calMonth)
+if (global.calMonth == 1) {
+  // setcount(12)
+  global.calMonth = 12;
+  global.calYear--
+  var lMonth = parseInt(global.calMonth)
 
       var date = new Date();
-      var firstDay = new Date(date.getFullYear(), lMonth , 1);
+      var firstDay = new Date(date.getFullYear(), lMonth - 1 , 1);
       var lastDay = new Date(date.getFullYear(), lMonth, 0);
 
 
-      month = moment(JSON.stringify(lMonth)).format("MMM");
-
+    
+      global.selectMonth =  moment(lMonth, 'MM').format('MMM');
+      var monthh  = moment(lMonth, 'MM').format('MMM')
+       month = moment(firstDay).format("MMM")
       var start_date = moment(firstDay).format("DD");
-      var year = moment(firstDay).format("YYYY");
-      // global.month = month
-      // alert(newdatae)
-
-      setmonth(moment().month(month).format("M"))
+      // var year = moment(firstDay).format("YYYY");
+       var year = global.calYear
+      setmonth(moment().month(monthh).format("M"))
       setyear(year)
 
 
       var last_date = moment(lastDay).format("DD");
-
       global.last_date = last_date
-      var s_Date = `${start_date} ${month} ${year} -`
+      var s_Date = `${start_date} ${monthh} ${year} -`
       global.sDate = s_Date
-      var l_Date = ` ${last_date} ${month} ${year}`
+      var l_Date = ` ${last_date} ${monthh} ${year}`
       global.lDate = l_Date
 
 
-      global.calMonth = moment().month(month).format("M");
-      setmonth(moment().month(month).format("M"))
+      global.calMonth = moment().month(monthh).format("M")
+      setmonth(moment().month(monthh).format("M"))
       setyear(year)
 
       axios.get(`http://api.aladhan.com/v1/calendarByCity?city=${global.calCity}&country=${global.calCountry}&method=${global.calAsr}&month=${global.calMonth}&year=${global.calYear}`)
@@ -154,38 +155,42 @@ const colData = []
       const magrbData = []
       const ishaData = []
       const colData = []
-      
+      // setcount(count- 1)
       global.calMonth--;
+
       var lMonth = parseInt(global.calMonth)
+      
 
       var date = new Date();
       var firstDay = new Date(date.getFullYear(), lMonth, 1);
       var lastDay = new Date(date.getFullYear(), lMonth, 0);
 
 
-      month = moment(JSON.stringify(lMonth)).format("MMM");
-
+      global.selectMonth =  moment(lMonth, 'MM').format('MMM'); 
+      //  month  = moment(lMonth, 'MM').format('MMM')
+       month = moment(firstDay).format("MMM")
+       var monthh  = moment(lMonth, 'MM').format('MMM')
       var start_date = moment(firstDay).format("DD");
-      var year = moment(firstDay).format("YYYY");
+      // var year = moment(firstDay).format("YYYY");
+      var year = global.calYear
       // global.month = month
-      // alert(newdatae)
 
 
-      setmonth(moment().month(month).format("M"))
+      setmonth(moment().month(monthh).format("M"))
       setyear(year)
 
       var last_date = moment(lastDay).format("DD");
-
       global.last_date = last_date
-      var s_Date = `${start_date} ${month} ${year} -`
+      var s_Date = `${start_date} ${monthh} ${year} -`
       global.sDate = s_Date
-      var l_Date = ` ${last_date} ${month} ${year}`
+      var l_Date = ` ${last_date} ${monthh} ${year}`
       global.lDate = l_Date
 
-      setmonth(moment().month(month).format("M"))
+      setmonth(moment().month(monthh).format("M"))
       setyear(year)
       
-      global.calMonth = moment().month(month).format("M");
+      // global.calMonth = moment(lMonth, 'MM').format('MMM')
+      global.calMonth = moment().month(monthh).format("M")
       axios.get(`http://api.aladhan.com/v1/calendarByCity?city=${global.calCity}&country=${global.calCountry}&method=${global.calAsr}&month=${global.calMonth}&year=${global.calYear}`)
       .then((res) => {
      
@@ -233,6 +238,7 @@ const colData = []
   }
   
   const nextData = () => {
+   
     const dayData = []
     const fajrData = []
     const sunhrData = []
@@ -242,38 +248,43 @@ const colData = []
     const ishaData = []
     const colData = []
 
-// console.log("pre prayer response===x>", global.calCity,global.calCountry, global.calAsr, global.calMonth,global.calYear );
 
     var month
 
     if (global.calMonth == 12) {
       global.calMonth = 1;
+    var lYear = global.calYear++
+    var year = global.calYear;
       var lMonth = parseInt(global.calMonth)
+
       var date = new Date();
-      var firstDay = new Date(date.getFullYear(), lMonth, 1);
+      var firstDay = new Date(date.getFullYear(), lMonth + 1, 1);
       var lastDay = new Date(date.getFullYear(), lMonth, 0);
 
 
-      month = moment(JSON.stringify(lMonth)).format("MMM");
+      global.selectMonth =  moment(lMonth, 'MM').format('MMM'); 
+      //  month  = moment(lMonth, 'MM').format('MMM')
+      var monthh  = moment(lMonth, 'MM').format('MMM')
+       month = moment(firstDay).format("MMM")
       var start_date = moment(firstDay).format("DD");
-      var year = moment(firstDay).format("YYYY");
+      // var year = moment(firstDay).format("YYYY");
+      
+      console.log("set if data===>",firstDay, lastDay );
 
       // global.month = month
 
       var last_date = moment(lastDay).format("DD");
       global.last_date = last_date
-      var s_Date = `${start_date} ${month} ${year} -`
+      var s_Date = `${start_date} ${monthh} ${year} -`
      
-      var l_Date = ` ${last_date} ${month} ${year}`
-     
+      var l_Date = ` ${last_date} ${monthh} ${year}`
 
 
       // setmonth(moment().month(month).format("M"))
       setyear(year)
 
-      global.calMonth = moment().month(month).format("M");
-
-
+      // global.calMonth =moment(lMonth, 'MM').format('MMM')
+      global.calMonth = moment().month(monthh).format("M")
 
       
 
@@ -323,7 +334,8 @@ const colData = []
       global.lDate = l_Date
     }
     else {
-
+     
+      // setcount(count+ 1)≥
 //           const dayData = []
 // const fajrData = []
 // const sunhrData = []
@@ -333,36 +345,46 @@ const colData = []
 // const ishaData = []
 // const colData = []
 
-
+// setcount(prevState => {
+//    {prevState + 1}
+// })
+      // global.calMonth = count
+      
+      // global.calMonth= global.calMonth + 1
       global.calMonth++;
-
       var lMonth = parseInt(global.calMonth)
+      var lYear =global.calYear
       var date = new Date();
       var firstDay = new Date(date.getFullYear(), lMonth, 1);
-      var lastDay = new Date(date.getFullYear(), lMonth, 0);
-
-
-      month = moment(JSON.stringify(lMonth)).format("MMM");
+      var lastDay = new Date(date.getFullYear(), lMonth , 0);
+      
+      console.log("month: ",lMonth, firstDay, lastDay)
+      global.selectMonth =  moment(lMonth, 'MM').format('MMM'); 
+      //  month  = moment(lMonth, 'MM').format('MMM')
+       month = moment(firstDay).format("MMM")
+       var monthh  = moment(lMonth, 'MM').format('MMM')
       var start_date = moment(firstDay).format("DD");
-      var year = moment(firstDay).format("YYYY");
+      var year = global.calYear;
 
+      console.log("firstDay======>", month);
       // global.month = month
-
       var last_date = moment(lastDay).format("DD");
       global.last_date = last_date
-      var s_Date = `${start_date} ${month} ${year} -`
-      // global.sDate = s_Date
-      var l_Date = ` ${last_date} ${month} ${year}`
-      // global.lDate = l_Date
+      var s_Date = `${start_date} ${monthh} ${year} -`
+      global.sDate = s_Date
+      var l_Date = ` ${last_date} ${monthh} ${year}`
+      global.lDate = l_Date
+
+      console.log("start next date====>", firstDay, lastDay);
 
 
       setmonth(moment().month(month).format("M"))
       setyear(year)
 
-      global.calMonth = moment().month(month).format("M");
+      // global.calMonth = moment(lMonth, 'MM').format('MMM')
+      global.calMonth = moment().month(monthh).format("M")
 
-
-      // console.log("pre prayer response===x>", global.calCity,global.calCountry, global.calAsr, global.calMonth,global.calYear );
+      console.log("pre prayer response===x>", global.calCity,global.calCountry, global.calAsr, global.calMonth,global.calYear, "apiiiii=>", `http://api.aladhan.com/v1/calendarByCity?city=${global.calCity}&country=${global.calCountry}&method=${global.calAsr}&month=${global.calMonth}&year=${global.calYear}` );
 
       axios.get(`http://api.aladhan.com/v1/calendarByCity?city=${global.calCity}&country=${global.calCountry}&method=${global.calAsr}&month=${global.calMonth}&year=${global.calYear}`)
       .then((res) => {
@@ -372,7 +394,7 @@ const colData = []
         global.prayerDat =res.data.data
         global.calendarPrayerData = res.data.data
         // if(man == res.data.data){
-        //   console.log("next if");
+          console.log("next if");
         // }else{
         //   console.log("next else");
         // }
@@ -416,8 +438,8 @@ const colData = []
 
 setMan(res.data.data)
       })
-      global.sDate = s_Date
-      global.lDate = l_Date
+      // global.sDate = s_Date
+      // global.lDate = l_Date
     }
   }
 

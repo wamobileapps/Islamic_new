@@ -54,62 +54,61 @@
 28-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:11:7-39
 29        android:roundIcon="@mipmap/ic_launcher_round"
 29-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:13:7-52
-30        android:testOnly="true"
-31        android:theme="@style/AppTheme"
-31-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:16:7-38
-32        android:usesCleartextTraffic="true" >
-32-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:15:7-42
-33        <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" />
-33-->/Users/webastral/Downloads/islamic_app/android/app/src/debug/AndroidManifest.xml:11:9-86
-33-->/Users/webastral/Downloads/islamic_app/android/app/src/debug/AndroidManifest.xml:11:19-83
-34        <activity
-34-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:17:7-27:18
-35            android:name="com.islamic_app.MainActivity"
-35-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:18:9-37
-36            android:configChanges="keyboard|keyboardHidden|orientation|screenSize|uiMode"
-36-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:20:9-86
-37            android:label="@string/app_name"
-37-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:19:9-41
-38            android:launchMode="singleTask"
-38-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:21:9-40
-39            android:windowSoftInputMode="adjustResize" >
-39-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:22:9-51
-40            <intent-filter>
-40-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:23:9-26:25
-41                <action android:name="android.intent.action.MAIN" />
-41-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:24:13-65
-41-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:24:21-62
-42
-43                <category android:name="android.intent.category.LAUNCHER" />
-43-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:25:13-73
-43-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:25:23-70
-44            </intent-filter>
-45        </activity>
-46
-47        <meta-data
-47-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:29:7-31:64
-48            android:name="com.google.android.geo.API_KEY"
-48-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:30:7-52
-49            android:value="AIzaSyCV5HmY_q1S8_0Kp0uhAxEchmaruTxwD0g" />
-49-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:31:7-62
-50
-51        <provider
-51-->[:react-native-image-picker] /Users/webastral/Downloads/islamic_app/node_modules/react-native-image-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:12:9-20:20
-52            android:name="com.imagepicker.ImagePickerProvider"
-52-->[:react-native-image-picker] /Users/webastral/Downloads/islamic_app/node_modules/react-native-image-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:13:13-63
-53            android:authorities="com.islamic_app.imagepickerprovider"
-53-->[:react-native-image-picker] /Users/webastral/Downloads/islamic_app/node_modules/react-native-image-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:14:13-71
-54            android:exported="false"
-54-->[:react-native-image-picker] /Users/webastral/Downloads/islamic_app/node_modules/react-native-image-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:15:13-37
-55            android:grantUriPermissions="true" >
-55-->[:react-native-image-picker] /Users/webastral/Downloads/islamic_app/node_modules/react-native-image-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:16:13-47
-56            <meta-data
-56-->[:react-native-image-picker] /Users/webastral/Downloads/islamic_app/node_modules/react-native-image-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:17:13-19:70
-57                android:name="android.support.FILE_PROVIDER_PATHS"
-57-->[:react-native-image-picker] /Users/webastral/Downloads/islamic_app/node_modules/react-native-image-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:18:17-67
-58                android:resource="@xml/imagepicker_provider_paths" />
-58-->[:react-native-image-picker] /Users/webastral/Downloads/islamic_app/node_modules/react-native-image-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:19:17-67
-59        </provider>
-60    </application>
-61
-62</manifest>
+30        android:theme="@style/AppTheme"
+30-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:16:7-38
+31        android:usesCleartextTraffic="true" >
+31-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:15:7-42
+32        <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" />
+32-->/Users/webastral/Downloads/islamic_app/android/app/src/debug/AndroidManifest.xml:11:9-86
+32-->/Users/webastral/Downloads/islamic_app/android/app/src/debug/AndroidManifest.xml:11:19-83
+33        <activity
+33-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:17:7-27:18
+34            android:name="com.islamic_app.MainActivity"
+34-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:18:9-37
+35            android:configChanges="keyboard|keyboardHidden|orientation|screenSize|uiMode"
+35-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:20:9-86
+36            android:label="@string/app_name"
+36-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:19:9-41
+37            android:launchMode="singleTask"
+37-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:21:9-40
+38            android:windowSoftInputMode="adjustResize" >
+38-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:22:9-51
+39            <intent-filter>
+39-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:23:9-26:25
+40                <action android:name="android.intent.action.MAIN" />
+40-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:24:13-65
+40-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:24:21-62
+41
+42                <category android:name="android.intent.category.LAUNCHER" />
+42-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:25:13-73
+42-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:25:23-70
+43            </intent-filter>
+44        </activity>
+45
+46        <meta-data
+46-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:29:7-31:64
+47            android:name="com.google.android.geo.API_KEY"
+47-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:30:7-52
+48            android:value="AIzaSyCV5HmY_q1S8_0Kp0uhAxEchmaruTxwD0g" />
+48-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:31:7-62
+49
+50        <provider
+50-->[:react-native-image-picker] /Users/webastral/Downloads/islamic_app/node_modules/react-native-image-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:12:9-20:20
+51            android:name="com.imagepicker.ImagePickerProvider"
+51-->[:react-native-image-picker] /Users/webastral/Downloads/islamic_app/node_modules/react-native-image-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:13:13-63
+52            android:authorities="com.islamic_app.imagepickerprovider"
+52-->[:react-native-image-picker] /Users/webastral/Downloads/islamic_app/node_modules/react-native-image-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:14:13-71
+53            android:exported="false"
+53-->[:react-native-image-picker] /Users/webastral/Downloads/islamic_app/node_modules/react-native-image-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:15:13-37
+54            android:grantUriPermissions="true" >
+54-->[:react-native-image-picker] /Users/webastral/Downloads/islamic_app/node_modules/react-native-image-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:16:13-47
+55            <meta-data
+55-->[:react-native-image-picker] /Users/webastral/Downloads/islamic_app/node_modules/react-native-image-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:17:13-19:70
+56                android:name="android.support.FILE_PROVIDER_PATHS"
+56-->[:react-native-image-picker] /Users/webastral/Downloads/islamic_app/node_modules/react-native-image-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:18:17-67
+57                android:resource="@xml/imagepicker_provider_paths" />
+57-->[:react-native-image-picker] /Users/webastral/Downloads/islamic_app/node_modules/react-native-image-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:19:17-67
+58        </provider>
+59    </application>
+60
+61</manifest>

@@ -17,6 +17,7 @@ MERGED from [:react-native-community_checkbox] /Users/webastral/Downloads/islami
 MERGED from [:react-native-community_geolocation] /Users/webastral/Downloads/islamic_app/node_modules/@react-native-community/geolocation/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-9:12
 MERGED from [:react-native-community_slider] /Users/webastral/Downloads/islamic_app/node_modules/@react-native-community/slider/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-9:12
 MERGED from [:react-native-background-timer] /Users/webastral/Downloads/islamic_app/node_modules/react-native-background-timer/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-13:12
+MERGED from [:react-native-geocoder] /Users/webastral/Downloads/islamic_app/node_modules/react-native-geocoder/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
 MERGED from [:react-native-gesture-handler] /Users/webastral/Downloads/islamic_app/node_modules/react-native-gesture-handler/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
 MERGED from [:react-native-image-picker] /Users/webastral/Downloads/islamic_app/node_modules/react-native-image-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-23:12
 MERGED from [:react-native-keychain] /Users/webastral/Downloads/islamic_app/node_modules/react-native-keychain/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-14:12
@@ -230,6 +231,8 @@ MERGED from [:react-native-community_slider] /Users/webastral/Downloads/islamic_
 MERGED from [:react-native-community_slider] /Users/webastral/Downloads/islamic_app/node_modules/@react-native-community/slider/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-background-timer] /Users/webastral/Downloads/islamic_app/node_modules/react-native-background-timer/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
 MERGED from [:react-native-background-timer] /Users/webastral/Downloads/islamic_app/node_modules/react-native-background-timer/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-geocoder] /Users/webastral/Downloads/islamic_app/node_modules/react-native-geocoder/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-geocoder] /Users/webastral/Downloads/islamic_app/node_modules/react-native-geocoder/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
 MERGED from [:react-native-gesture-handler] /Users/webastral/Downloads/islamic_app/node_modules/react-native-gesture-handler/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
 MERGED from [:react-native-gesture-handler] /Users/webastral/Downloads/islamic_app/node_modules/react-native-gesture-handler/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
 MERGED from [:react-native-image-picker] /Users/webastral/Downloads/islamic_app/node_modules/react-native-image-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41

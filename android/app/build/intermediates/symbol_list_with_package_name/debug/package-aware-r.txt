@@ -1428,6 +1428,7 @@ drawable src_images_home
 drawable src_images_ibadah
 drawable src_images_info
 drawable src_images_internalmujahadah
+drawable src_images_leftcircle
 drawable src_images_leftimage
 drawable src_images_life
 drawable src_images_lifeplan
@@ -1445,9 +1446,11 @@ drawable src_images_plus
 drawable src_images_profile
 drawable src_images_purification
 drawable src_images_question
+drawable src_images_rightcircle
 drawable src_images_rightimage
 drawable src_images_self
 drawable src_images_selff
+drawable src_images_setting
 drawable src_images_sign1
 drawable src_images_splash
 drawable src_images_tree
@@ -1964,6 +1967,7 @@ raw node_modules_haskkor_reactnativepincode_node_modules_reactnativevectoricons_
 raw node_modules_mdndata_css_atrules
 raw node_modules_mdndata_css_properties
 raw node_modules_mdndata_css_syntaxes
+raw node_modules_reactnativedropdownpicker_node_modules_reactnativevectoricons_glyphmaps_feather
 raw node_modules_reactnativevectoricons_glyphmaps_antdesign
 raw node_modules_reactnativevectoricons_glyphmaps_entypo
 raw node_modules_reactnativevectoricons_glyphmaps_evilicons

@@ -12,44 +12,44 @@
         "source": "/Users/webastral/Downloads/islamic_app/android/app/src/main/res/drawable-mdpi/src_images_3.png"
     },
     {
-        "merged": "/Users/webastral/Downloads/islamic_app/android/app/build/intermediates/res/merged/debug/raw_node_modules_entities_maps_legacy.json.flat",
-        "source": "/Users/webastral/Downloads/islamic_app/android/app/src/main/res/raw/node_modules_entities_maps_legacy.json"
-    },
-    {
         "merged": "/Users/webastral/Downloads/islamic_app/android/app/build/intermediates/res/merged/debug/raw_node_modules_reactnativevectoricons_glyphmaps_octicons.json.flat",
         "source": "/Users/webastral/Downloads/islamic_app/android/app/src/main/res/raw/node_modules_reactnativevectoricons_glyphmaps_octicons.json"
+    },
+    {
+        "merged": "/Users/webastral/Downloads/islamic_app/android/app/build/intermediates/res/merged/debug/raw_node_modules_entities_maps_legacy.json.flat",
+        "source": "/Users/webastral/Downloads/islamic_app/android/app/src/main/res/raw/node_modules_entities_maps_legacy.json"
     },
     {
         "merged": "/Users/webastral/Downloads/islamic_app/android/app/build/intermediates/res/merged/debug/drawable-hdpi_node_modules_reactnativecalendars_src_calendar_img_next.png.flat",
         "source": "/Users/webastral/Downloads/islamic_app/android/app/src/main/res/drawable-hdpi/node_modules_reactnativecalendars_src_calendar_img_next.png"
     },
     {
-        "merged": "/Users/webastral/Downloads/islamic_app/android/app/build/intermediates/res/merged/debug/drawable-mdpi_node_modules_reactnativedropdownpicker_src_themes_light_icons_tick.png.flat",
-        "source": "/Users/webastral/Downloads/islamic_app/android/app/src/main/res/drawable-mdpi/node_modules_reactnativedropdownpicker_src_themes_light_icons_tick.png"
+        "merged": "/Users/webastral/Downloads/islamic_app/android/app/build/intermediates/res/merged/debug/raw_app.json.flat",
+        "source": "/Users/webastral/Downloads/islamic_app/android/app/src/main/res/raw/app.json"
     },
     {
         "merged": "/Users/webastral/Downloads/islamic_app/android/app/build/intermediates/res/merged/debug/raw_node_modules_reactnativevectoricons_glyphmaps_ionicons.json.flat",
         "source": "/Users/webastral/Downloads/islamic_app/android/app/src/main/res/raw/node_modules_reactnativevectoricons_glyphmaps_ionicons.json"
     },
     {
-        "merged": "/Users/webastral/Downloads/islamic_app/android/app/build/intermediates/res/merged/debug/raw_app.json.flat",
-        "source": "/Users/webastral/Downloads/islamic_app/android/app/src/main/res/raw/app.json"
-    },
-    {
-        "merged": "/Users/webastral/Downloads/islamic_app/android/app/build/intermediates/res/merged/debug/drawable-mdpi_node_modules_reactnativedropdownpicker_src_themes_light_icons_arrowup.png.flat",
-        "source": "/Users/webastral/Downloads/islamic_app/android/app/src/main/res/drawable-mdpi/node_modules_reactnativedropdownpicker_src_themes_light_icons_arrowup.png"
+        "merged": "/Users/webastral/Downloads/islamic_app/android/app/build/intermediates/res/merged/debug/drawable-mdpi_node_modules_reactnativedropdownpicker_src_themes_light_icons_tick.png.flat",
+        "source": "/Users/webastral/Downloads/islamic_app/android/app/src/main/res/drawable-mdpi/node_modules_reactnativedropdownpicker_src_themes_light_icons_tick.png"
     },
     {
         "merged": "/Users/webastral/Downloads/islamic_app/android/app/build/intermediates/res/merged/debug/drawable-mdpi_node_modules_reactnativecalendars_src_img_up.png.flat",
         "source": "/Users/webastral/Downloads/islamic_app/android/app/src/main/res/drawable-mdpi/node_modules_reactnativecalendars_src_img_up.png"
     },
     {
-        "merged": "/Users/webastral/Downloads/islamic_app/android/app/build/intermediates/res/merged/debug/drawable-mdpi_src_images_rightimage.png.flat",
-        "source": "/Users/webastral/Downloads/islamic_app/android/app/src/main/res/drawable-mdpi/src_images_rightimage.png"
+        "merged": "/Users/webastral/Downloads/islamic_app/android/app/build/intermediates/res/merged/debug/drawable-mdpi_node_modules_reactnativedropdownpicker_src_themes_light_icons_arrowup.png.flat",
+        "source": "/Users/webastral/Downloads/islamic_app/android/app/src/main/res/drawable-mdpi/node_modules_reactnativedropdownpicker_src_themes_light_icons_arrowup.png"
     },
     {
         "merged": "/Users/webastral/Downloads/islamic_app/android/app/build/intermediates/res/merged/debug/drawable-hdpi_node_modules_reactnavigation_stack_src_views_assets_backicon.png.flat",
         "source": "/Users/webastral/Downloads/islamic_app/android/app/src/main/res/drawable-hdpi/node_modules_reactnavigation_stack_src_views_assets_backicon.png"
+    },
+    {
+        "merged": "/Users/webastral/Downloads/islamic_app/android/app/build/intermediates/res/merged/debug/drawable-mdpi_src_images_rightimage.png.flat",
+        "source": "/Users/webastral/Downloads/islamic_app/android/app/src/main/res/drawable-mdpi/src_images_rightimage.png"
     },
     {
         "merged": "/Users/webastral/Downloads/islamic_app/android/app/build/intermediates/res/merged/debug/drawable-mdpi_src_images_profile.png.flat",
@@ -68,10 +68,6 @@
         "source": "/Users/webastral/Downloads/islamic_app/android/app/src/main/res/drawable-mdpi/src_images_info.png"
     },
     {
-        "merged": "/Users/webastral/Downloads/islamic_app/android/app/build/intermediates/res/merged/debug/raw_node_modules_domserializer_node_modules_entities_lib_maps_legacy.json.flat",
-        "source": "/Users/webastral/Downloads/islamic_app/android/app/src/main/res/raw/node_modules_domserializer_node_modules_entities_lib_maps_legacy.json"
-    },
-    {
         "merged": "/Users/webastral/Downloads/islamic_app/android/app/build/intermediates/res/merged/debug/mipmap-hdpi_ic_launcher.png.flat",
         "source": "/Users/webastral/Downloads/islamic_app/android/app/src/main/res/mipmap-hdpi/ic_launcher.png"
     },
@@ -80,12 +76,16 @@
         "source": "/Users/webastral/Downloads/islamic_app/android/app/src/main/res/drawable-mdpi/src_images_download.png"
     },
     {
-        "merged": "/Users/webastral/Downloads/islamic_app/android/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi_ic_launcher_round.png.flat",
-        "source": "/Users/webastral/Downloads/islamic_app/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png"
+        "merged": "/Users/webastral/Downloads/islamic_app/android/app/build/intermediates/res/merged/debug/raw_node_modules_domserializer_node_modules_entities_lib_maps_legacy.json.flat",
+        "source": "/Users/webastral/Downloads/islamic_app/android/app/src/main/res/raw/node_modules_domserializer_node_modules_entities_lib_maps_legacy.json"
     },
     {
         "merged": "/Users/webastral/Downloads/islamic_app/android/app/build/intermediates/res/merged/debug/drawable-mdpi_src_images_ibadah.png.flat",
         "source": "/Users/webastral/Downloads/islamic_app/android/app/src/main/res/drawable-mdpi/src_images_ibadah.png"
+    },
+    {
+        "merged": "/Users/webastral/Downloads/islamic_app/android/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "/Users/webastral/Downloads/islamic_app/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png"
     },
     {
         "merged": "/Users/webastral/Downloads/islamic_app/android/app/build/intermediates/res/merged/debug/drawable-mdpi_src_images_10.png.flat",
@@ -150,6 +150,10 @@
     {
         "merged": "/Users/webastral/Downloads/islamic_app/android/app/build/intermediates/res/merged/debug/drawable-xhdpi_node_modules_reactnativecalendars_src_img_up.png.flat",
         "source": "/Users/webastral/Downloads/islamic_app/android/app/src/main/res/drawable-xhdpi/node_modules_reactnativecalendars_src_img_up.png"
+    },
+    {
+        "merged": "/Users/webastral/Downloads/islamic_app/android/app/build/intermediates/res/merged/debug/drawable-mdpi_src_images_leftcircle.png.flat",
+        "source": "/Users/webastral/Downloads/islamic_app/android/app/src/main/res/drawable-mdpi/src_images_leftcircle.png"
     },
     {
         "merged": "/Users/webastral/Downloads/islamic_app/android/app/build/intermediates/res/merged/debug/drawable-mdpi_src_images_plus.png.flat",
@@ -220,12 +224,12 @@
         "source": "/Users/webastral/Downloads/islamic_app/android/app/src/main/res/drawable-mdpi/src_images_goal.png"
     },
     {
-        "merged": "/Users/webastral/Downloads/islamic_app/android/app/build/intermediates/res/merged/debug/raw_node_modules_domserializer_node_modules_entities_lib_maps_decode.json.flat",
-        "source": "/Users/webastral/Downloads/islamic_app/android/app/src/main/res/raw/node_modules_domserializer_node_modules_entities_lib_maps_decode.json"
-    },
-    {
         "merged": "/Users/webastral/Downloads/islamic_app/android/app/build/intermediates/res/merged/debug/drawable-mdpi_src_images_tree.png.flat",
         "source": "/Users/webastral/Downloads/islamic_app/android/app/src/main/res/drawable-mdpi/src_images_tree.png"
+    },
+    {
+        "merged": "/Users/webastral/Downloads/islamic_app/android/app/build/intermediates/res/merged/debug/raw_node_modules_domserializer_node_modules_entities_lib_maps_decode.json.flat",
+        "source": "/Users/webastral/Downloads/islamic_app/android/app/src/main/res/raw/node_modules_domserializer_node_modules_entities_lib_maps_decode.json"
     },
     {
         "merged": "/Users/webastral/Downloads/islamic_app/android/app/build/intermediates/res/merged/debug/mipmap-xhdpi_ic_launcher_round.png.flat",
@@ -332,12 +336,12 @@
         "source": "/Users/webastral/Downloads/islamic_app/android/app/src/main/res/drawable-xhdpi/node_modules_reactnativecalendars_src_img_down.png"
     },
     {
-        "merged": "/Users/webastral/Downloads/islamic_app/android/app/build/intermediates/res/merged/debug/drawable-mdpi_src_images_upimage.png.flat",
-        "source": "/Users/webastral/Downloads/islamic_app/android/app/src/main/res/drawable-mdpi/src_images_upimage.png"
-    },
-    {
         "merged": "/Users/webastral/Downloads/islamic_app/android/app/build/intermediates/res/merged/debug/drawable-mdpi_src_images_7.png.flat",
         "source": "/Users/webastral/Downloads/islamic_app/android/app/src/main/res/drawable-mdpi/src_images_7.png"
+    },
+    {
+        "merged": "/Users/webastral/Downloads/islamic_app/android/app/build/intermediates/res/merged/debug/drawable-mdpi_src_images_upimage.png.flat",
+        "source": "/Users/webastral/Downloads/islamic_app/android/app/src/main/res/drawable-mdpi/src_images_upimage.png"
     },
     {
         "merged": "/Users/webastral/Downloads/islamic_app/android/app/build/intermediates/res/merged/debug/raw_node_modules_csstree_data_patch.json.flat",
@@ -452,6 +456,10 @@
         "source": "/Users/webastral/Downloads/islamic_app/android/app/src/main/res/raw/node_modules_reactnativevectoricons_glyphmaps_fontisto.json"
     },
     {
+        "merged": "/Users/webastral/Downloads/islamic_app/android/app/build/intermediates/res/merged/debug/raw_node_modules_reactnativedropdownpicker_node_modules_reactnativevectoricons_glyphmaps_feather.json.flat",
+        "source": "/Users/webastral/Downloads/islamic_app/android/app/src/main/res/raw/node_modules_reactnativedropdownpicker_node_modules_reactnativevectoricons_glyphmaps_feather.json"
+    },
+    {
         "merged": "/Users/webastral/Downloads/islamic_app/android/app/build/intermediates/res/merged/debug/drawable-xhdpi_node_modules_reactnavigation_drawer_src_views_assets_toggledrawericon.png.flat",
         "source": "/Users/webastral/Downloads/islamic_app/android/app/src/main/res/drawable-xhdpi/node_modules_reactnavigation_drawer_src_views_assets_toggledrawericon.png"
     },
@@ -480,8 +488,20 @@
         "source": "/Users/webastral/Downloads/islamic_app/android/app/src/main/res/drawable-mdpi/node_modules_reactnativedropdownpicker_src_themes_light_icons_arrowdown.png"
     },
     {
+        "merged": "/Users/webastral/Downloads/islamic_app/android/app/build/intermediates/res/merged/debug/drawable-mdpi_src_images_setting.png.flat",
+        "source": "/Users/webastral/Downloads/islamic_app/android/app/src/main/res/drawable-mdpi/src_images_setting.png"
+    },
+    {
         "merged": "/Users/webastral/Downloads/islamic_app/android/app/build/intermediates/res/merged/debug/drawable-mdpi_node_modules_reactnativedropdownpicker_src_themes_dark_icons_tick.png.flat",
         "source": "/Users/webastral/Downloads/islamic_app/android/app/src/main/res/drawable-mdpi/node_modules_reactnativedropdownpicker_src_themes_dark_icons_tick.png"
+    },
+    {
+        "merged": "/Users/webastral/Downloads/islamic_app/android/app/build/intermediates/res/merged/debug/drawable-mdpi_src_images_rightcircle.png.flat",
+        "source": "/Users/webastral/Downloads/islamic_app/android/app/src/main/res/drawable-mdpi/src_images_rightcircle.png"
+    },
+    {
+        "merged": "/Users/webastral/Downloads/islamic_app/android/app/build/intermediates/res/merged/debug/drawable-mdpi_src_images_4.png.flat",
+        "source": "/Users/webastral/Downloads/islamic_app/android/app/src/main/res/drawable-mdpi/src_images_4.png"
     },
     {
         "merged": "/Users/webastral/Downloads/islamic_app/android/app/build/intermediates/res/merged/debug/drawable-mdpi_src_images_self.png.flat",
@@ -490,10 +510,6 @@
     {
         "merged": "/Users/webastral/Downloads/islamic_app/android/app/build/intermediates/res/merged/debug/raw_node_modules_reactnativevectoricons_glyphmaps_fontawesome.json.flat",
         "source": "/Users/webastral/Downloads/islamic_app/android/app/src/main/res/raw/node_modules_reactnativevectoricons_glyphmaps_fontawesome.json"
-    },
-    {
-        "merged": "/Users/webastral/Downloads/islamic_app/android/app/build/intermediates/res/merged/debug/drawable-mdpi_src_images_4.png.flat",
-        "source": "/Users/webastral/Downloads/islamic_app/android/app/src/main/res/drawable-mdpi/src_images_4.png"
     },
     {
         "merged": "/Users/webastral/Downloads/islamic_app/android/app/build/intermediates/res/merged/debug/drawable-mdpi_src_images_1.png.flat",

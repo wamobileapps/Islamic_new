@@ -66,6 +66,8 @@ const config = {
 global.entry = []
 const Home = ({ navigation, route }) => {
 
+
+
   const [total, totalTravlled] = useState('')
   const [minutesOnEarth, setMinutesOnEarth] = useState('')
   const [totalHeartBeats, setTotalHeartBeats] = useState('')
@@ -81,55 +83,7 @@ const Home = ({ navigation, route }) => {
 
   useEffect(() => {
     Orientation.lockToPortrait();
-    getBeginsData()
-
-     var asrBegins = global.asrBegins
-     var asrJamah = global.asrJamah
-     var asrAlarm = global.asrAlarm
-     var maghribBegins = global.maghribBegins
-     var maghribJamah = global.maghribJamah
-     var maghribAlarm = global.maghribAlarm
-     var ishaBegins = global.ishaBegins
-     var ishaJamah = global.ishaJamah
-     var ishaAlarm = global.ishaAlarm
-    
-
-      var H = +asrBegins.substr(0, 2);
-      var h = (H % 12) || 12;
-      asrBeginns = h + asrBegins.substr(2, 3);
-
-      var H = +asrJamah.substr(0, 2);
-      var h = (H % 12) || 12;
-      asrJamahh = h + asrJamah.substr(2, 3);
-
-      var H = +asrAlarm.substr(0, 2);
-      var h = (H % 12) || 12;
-      asrAlarmm = h + asrAlarm.substr(2, 3);
-
-      var H = +maghribBegins.substr(0, 2);
-      var h = (H % 12) || 12;
-      maghribBeginns = h + maghribBegins.substr(2, 3);
-
-      var H = +maghribJamah.substr(0, 2);
-      var h = (H % 12) || 12;
-      maghribJamahh = h + maghribJamah.substr(2, 3);
-
-      var H = +maghribAlarm.substr(0, 2);
-      var h = (H % 12) || 12;
-      maghribAlarmm = h + maghribAlarm.substr(2, 3);
-
-      var H = +ishaBegins.substr(0, 2);
-      var h = (H % 12) || 12;
-      ishaBeginns = h + ishaBegins.substr(2, 3);
-
-      var H = +ishaJamah.substr(0, 2);
-      var h = (H % 12) || 12;
-      ishaJamahh = h + ishaJamah.substr(2, 3);
-
-      var H = +ishaAlarm.substr(0, 2);
-      var h = (H % 12) || 12;
-      ishaAlarmm = h + ishaAlarm.substr(2, 3);
-    
+   
 
     var currentDate = new Date(),
       month = ("0" + (currentDate.getMonth() + 1)).slice(-2),
@@ -322,21 +276,21 @@ const Home = ({ navigation, route }) => {
 
 
 
-  const getBeginsData = async () => {
-    const token = await AsyncStorage.getItem('token')
-    axios.get(`https://api.pray.zone/v2/times/today.json?city=${global.calCity}`)
-        .then((response) => {
-            console.log("get given date data====>", response.data.results.datetime[0].times);
+  // const getBeginsData = async () => {
+  //   const token = await AsyncStorage.getItem('token')
+  //   axios.get(`https://api.pray.zone/v2/times/today.json?city=${global.calCity}`)
+  //       .then((response) => {
+  //           console.log("get given date data====>", response.data.results.datetime[0].times);
            
           
-            global.fajr = response.data.results.datetime[0].times.Fajr
-            global.sun = response.data.results.datetime[0].times.Sunrise
-            global.zuhr = response.data.results.datetime[0].times.Dhuhr
-            global.asr = response.data.results.datetime[0].times.Asr
-            global.maghrib = response.data.results.datetime[0].times.Maghrib
-            global.isha = response.data.results.datetime[0].times.Isha
-          })
-  };
+  //           global.fajr = response.data.results.datetime[0].times.Fajr
+  //           global.sun = response.data.results.datetime[0].times.Sunrise
+  //           global.zuhr = response.data.results.datetime[0].times.Dhuhr
+  //           global.asr = response.data.results.datetime[0].times.Asr
+  //           global.maghrib = response.data.results.datetime[0].times.Maghrib
+  //           global.isha = response.data.results.datetime[0].times.Isha
+  //         })
+  // };
 
 
   const getDashboardData = async () => {
@@ -626,46 +580,46 @@ const Home = ({ navigation, route }) => {
             
             <View style={{  marginLeft: 10, justifyContent: 'center' , alignItems: 'center' }}>
               <Text style={{  fontFamily: 'Montserrat-Bold', fontSize: RFValue(10), color: '#363636' }}>Fajr</Text>
-              <Text style={{  fontFamily: 'Montserrat-SemiBold', fontSize: RFValue(10.5), color: '#363636',  marginTop: 10 }}>{global.fajrrBegins ? global.fajrrBegins  : global.fajr}</Text>
-              <Text style={{  fontFamily: 'Montserrat-SemiBold', fontSize: RFValue(10.5), color: '#363636' ,  marginTop: 10}}>{global.fajrrJamah ? global.fajrrJamah : global.fajr}</Text>
-              <Text style={{  fontFamily: 'Montserrat-SemiBold', fontSize: RFValue(10.5), color: '#363636' ,  marginTop: 10}}>{global.fajrrAlarm ? global.fajrrAlarm : global.fajr}</Text>
+              <Text style={{  fontFamily: 'Montserrat-SemiBold', fontSize: RFValue(9.5), color: '#363636',  marginTop: 10 }}>{global.fajrrBegins}</Text>
+              <Text style={{  fontFamily: 'Montserrat-SemiBold', fontSize: RFValue(9.5), color: '#363636' ,  marginTop: 10}}>{global.fajrrJamah}</Text>
+              <Text style={{  fontFamily: 'Montserrat-SemiBold', fontSize: RFValue(9.5), color: '#363636' ,  marginTop: 10}}>{global.fajrrAlarm}</Text>
             </View>
 
             <View style={{  marginLeft: 10, justifyContent: 'center' , alignItems: 'center' }}>
               <Text style={{  fontFamily: 'Montserrat-Bold', fontSize: RFValue(10), color: '#363636' }}>Sun</Text>
-              <Text style={{  fontFamily: 'Montserrat-SemiBold', fontSize: RFValue(10.5), color: '#363636',  marginTop: 10 }}>{global.sun}</Text>
-              <Text style={{  fontFamily: 'Montserrat-SemiBold', fontSize: RFValue(10.5), color: '#363636' ,  marginTop: 10}}>-</Text>
-              <Text style={{  fontFamily: 'Montserrat-SemiBold', fontSize: RFValue(10.5), color: '#363636' ,  marginTop: 10}}>-</Text>
+              <Text style={{  fontFamily: 'Montserrat-SemiBold', fontSize: RFValue(9.5), color: '#363636',  marginTop: 10 }}>{global.sun}</Text>
+              <Text style={{  fontFamily: 'Montserrat-SemiBold', fontSize: RFValue(9.5), color: '#363636' ,  marginTop: 10}}>-</Text>
+              <Text style={{  fontFamily: 'Montserrat-SemiBold', fontSize: RFValue(9.5), color: '#363636' ,  marginTop: 10}}>-</Text>
             </View>
 
             <View style={{  marginLeft: 10,  justifyContent: 'center', alignItems: 'center'}}>
               <Text style={{  fontFamily: 'Montserrat-Bold', fontSize: RFValue(10), color: '#363636' }}>Zuhr</Text>
-              <Text style={{  fontFamily: 'Montserrat-SemiBold', fontSize: RFValue(10.5), color: '#363636',  marginTop: 10 }}>{global.zuhrBegins ? global.zuhrBegins : global.zuhr}</Text>
-              <Text style={{  fontFamily: 'Montserrat-SemiBold', fontSize: RFValue(10.5), color: '#363636' ,  marginTop: 10}}>{global.zuhrJamah ? global.zuhrJamah : global.zuhr}</Text>
-              <Text style={{  fontFamily: 'Montserrat-SemiBold', fontSize: RFValue(10.5), color: '#363636' ,  marginTop: 10}}>{global.zuhrAlarm ? global.zuhrAlarm : global.zuhr}</Text>
+              <Text style={{  fontFamily: 'Montserrat-SemiBold', fontSize: RFValue(9.5), color: '#363636',  marginTop: 10 }}>{global.zuhrBegins}</Text>
+              <Text style={{  fontFamily: 'Montserrat-SemiBold', fontSize: RFValue(9.5), color: '#363636' ,  marginTop: 10}}>{global.zuhrJamah}</Text>
+              <Text style={{  fontFamily: 'Montserrat-SemiBold', fontSize: RFValue(9.5), color: '#363636' ,  marginTop: 10}}>{global.zuhrAlarm}</Text>
 
             </View>
 
             <View style={{  marginLeft: 10, justifyContent: 'center', alignItems: 'center'}}>
               <Text style={{  fontFamily: 'Montserrat-Bold', fontSize: RFValue(10), color: '#363636' }}>Asr</Text>
-              <Text style={{  fontFamily: 'Montserrat-SemiBold', fontSize: RFValue(10.5), color: '#363636',  marginTop: 10 }}>{global.asrBegins ? asrBeginns : global.asr}</Text>
-              <Text style={{  fontFamily: 'Montserrat-SemiBold', fontSize: RFValue(10.5), color: '#363636' ,  marginTop: 10}}>{global.asrJamah ? asrJamahh : global.asr}</Text>
-              <Text style={{  fontFamily: 'Montserrat-SemiBold', fontSize: RFValue(10.5), color: '#363636' ,  marginTop: 10}}>{global.asrAlarm ? asrAlarmm : global.asr}</Text>
+              <Text style={{  fontFamily: 'Montserrat-SemiBold', fontSize: RFValue(9.5), color: '#363636',  marginTop: 10 }}>{global.asrBegins}</Text>
+              <Text style={{  fontFamily: 'Montserrat-SemiBold', fontSize: RFValue(9.5), color: '#363636' ,  marginTop: 10}}>{global.asrJamah}</Text>
+              <Text style={{  fontFamily: 'Montserrat-SemiBold', fontSize: RFValue(9.5), color: '#363636' ,  marginTop: 10}}>{global.asrAlarm}</Text>
             </View>
 
             <View style={{  marginLeft: 10, justifyContent: 'center', alignItems: 'center'}}>
               <Text style={{  fontFamily: 'Montserrat-Bold', fontSize: RFValue(10), color: '#363636' }}>Magh</Text>
-              <Text style={{  fontFamily: 'Montserrat-SemiBold', fontSize: RFValue(10.5), color: '#363636',  marginTop: 10 }}>{global.maghribBegins ? maghribBeginns : global.maghrib}</Text>
-              <Text style={{  fontFamily: 'Montserrat-SemiBold', fontSize: RFValue(10.5), color: '#363636' ,  marginTop: 10}}>{global.maghribJamah ? maghribJamahh : global.maghrib}</Text>
-              <Text style={{  fontFamily: 'Montserrat-SemiBold', fontSize: RFValue(10.5), color: '#363636' ,  marginTop: 10}}>{global.maghribAlarm ? maghribAlarmm : global.maghrib}</Text>
+              <Text style={{  fontFamily: 'Montserrat-SemiBold', fontSize: RFValue(9.5), color: '#363636',  marginTop: 10 }}>{global.maghribBegins}</Text>
+              <Text style={{  fontFamily: 'Montserrat-SemiBold', fontSize: RFValue(9.5), color: '#363636' ,  marginTop: 10}}>{global.maghribJamah}</Text>
+              <Text style={{  fontFamily: 'Montserrat-SemiBold', fontSize: RFValue(9.5), color: '#363636' ,  marginTop: 10}}>{global.maghribAlarm}</Text>
 
             </View>
 
             <View style={{  marginLeft: 10,  justifyContent: 'center', alignItems: 'center', marginRight: 20}}>
               <Text style={{  fontFamily: 'Montserrat-Bold', fontSize: RFValue(10), color: '#363636' }}>Isha</Text>
-              <Text style={{  fontFamily: 'Montserrat-SemiBold', fontSize: RFValue(10.5), color: '#363636',  marginTop: 10 }}>{global.ishaBegins ? ishaBeginns : global.isha}</Text>
-              <Text style={{  fontFamily: 'Montserrat-SemiBold', fontSize: RFValue(10.5), color: '#363636' ,  marginTop: 10}}>{global.ishaJamah ? ishaJamahh : global.isha}</Text>
-              <Text style={{  fontFamily: 'Montserrat-SemiBold', fontSize: RFValue(10.5), color: '#363636' ,  marginTop: 10}}>{global.ishaAlarm ? ishaAlarmm : global.isha}</Text>
+              <Text style={{  fontFamily: 'Montserrat-SemiBold', fontSize: RFValue(9.5), color: '#363636',  marginTop: 10 }}>{global.ishaBegins}</Text>
+              <Text style={{  fontFamily: 'Montserrat-SemiBold', fontSize: RFValue(9.5), color: '#363636' ,  marginTop: 10}}>{global.ishaJamah}</Text>
+              <Text style={{  fontFamily: 'Montserrat-SemiBold', fontSize: RFValue(9.5), color: '#363636' ,  marginTop: 10}}>{global.ishaAlarm}</Text>
 
             </View>
 

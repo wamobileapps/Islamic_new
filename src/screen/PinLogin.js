@@ -108,27 +108,27 @@ const PinLogin = ({ route, navigation }) => {
     
       };
     
-      const getBeginsData = async (data) => {
+    //   const getBeginsData = async (data) => {
 
-        axios.get(`https://api.pray.zone/v2/times/today.json?city=${global.calCity}`)
-        .then((response) => {
-            console.log("get given date data====>", response.data.results.datetime[0].times);
+    //     axios.get(`https://api.pray.zone/v2/times/today.json?city=${global.calCity}`)
+    //     .then((response) => {
+    //         console.log("get given date data====>", response.data.results.datetime[0].times);
            
           
-            global.fajr = response.data.results.datetime[0].times.Fajr
-            global.sun = response.data.results.datetime[0].times.Sunrise
-            global.zuhr = response.data.results.datetime[0].times.Dhuhr
-            global.asr = response.data.results.datetime[0].times.Asr
-            global.maghrib = response.data.results.datetime[0].times.Maghrib
-            global.isha = response.data.results.datetime[0].times.Isha
-          })
+    //         global.fajr = response.data.results.datetime[0].times.Fajr
+    //         global.sun = response.data.results.datetime[0].times.Sunrise
+    //         global.zuhr = response.data.results.datetime[0].times.Dhuhr
+    //         global.asr = response.data.results.datetime[0].times.Asr
+    //         global.maghrib = response.data.results.datetime[0].times.Maghrib
+    //         global.isha = response.data.results.datetime[0].times.Isha
+    //       })
 
 
         
-      };
+    //   };
 
     const getProfile = async () => {
-        getBeginsData()
+        // getBeginsData()
         const token = await AsyncStorage.getItem('token')
         console.log("auth token", token)
 
@@ -156,6 +156,267 @@ const PinLogin = ({ route, navigation }) => {
 
     }
 
+    const convertFajrTime = (getFajr, begins, jamah, alarm) => {
+
+      var getHours = getFajr.slice(0, 2) //4
+      var getMinutes = getFajr.slice(3, 5) //53
+      var totalMin = (60 * getHours) //240
+      var sum = parseInt(totalMin) + parseInt(getMinutes) //293
+      var fajrBeginsValCheck = begins 
+      var fajrjamahValCheck = jamah 
+      var fajralarmValCheck = alarm 
+  
+  
+      var fajrTotalBegins = sum + parseInt(fajrBeginsValCheck)
+      var fajrTotalJamaah = sum + parseInt(fajrjamahValCheck)
+      var fajrTotalAlarm = sum + parseInt(fajralarmValCheck)
+  
+  
+      // alert(fajrTotalBegins)
+      var totalFajrBegingsHour = JSON.stringify(Math.floor(fajrTotalBegins / 60))
+      var totalFajrBegingsMinutes = JSON.stringify((fajrTotalBegins - Math.floor(fajrTotalBegins / 60) * 60))
+      var totalValFajeBegins
+  
+      totalValFajeBegins = `${totalFajrBegingsHour.length == 2 ?totalFajrBegingsHour:`0${totalFajrBegingsHour}`}:${totalFajrBegingsMinutes.length == 2 ?totalFajrBegingsMinutes:`0${totalFajrBegingsMinutes}`}` 
+            global.fajrrBegins =totalValFajeBegins
+           
+  
+  
+  
+      var totalFajrJamaahHour = JSON.stringify(Math.floor(fajrTotalJamaah / 60))
+      var totalFajrJammahMinutes = JSON.stringify((fajrTotalJamaah - Math.floor(fajrTotalJamaah / 60) * 60))
+      var totalValFajeJammah
+      totalValFajeJammah = `${totalFajrJamaahHour.length == 2 ?totalFajrJamaahHour:`0${totalFajrJamaahHour}`}:${totalFajrJammahMinutes.length == 2 ?totalFajrJammahMinutes:`0${totalFajrJammahMinutes}`}` 
+      global.fajrrJamah =totalValFajeJammah
+  
+     
+  
+  
+      var totalFajrAlarmHour = JSON.stringify(Math.floor(fajrTotalAlarm / 60))
+      var totalFajrAlarmMinutes = JSON.stringify((fajrTotalAlarm - Math.floor(fajrTotalAlarm / 60) * 60))
+      var totalValFajeAlarm
+      totalValFajeAlarm = `${totalFajrAlarmHour.length == 2 ?totalFajrAlarmHour:`0${totalFajrAlarmHour}`}:${totalFajrAlarmMinutes.length == 2 ?totalFajrAlarmMinutes:`0${totalFajrAlarmMinutes}`}` 
+      global.fajrrAlarm =totalValFajeAlarm
+  
+    }
+  
+  
+    
+  
+  
+    const convertDuhrTime = (getFajr, begins, jamah, alarm) => {
+  
+      var getHours = getFajr.slice(0, 2) //4
+      var getMinutes = getFajr.slice(3, 5) //53
+      var totalMin = (60 * getHours) //240
+      var sum = parseInt(totalMin) + parseInt(getMinutes) //293
+  
+  
+      var fajrBeginsValCheck = begins 
+      var fajrjamahValCheck = jamah 
+      var fajralarmValCheck = alarm
+  
+  
+      var fajrTotalBegins = sum + parseInt(fajrBeginsValCheck)
+      var fajrTotalJamaah = sum + parseInt(fajrjamahValCheck)
+      var fajrTotalAlarm = sum + parseInt(fajralarmValCheck)
+  
+  
+      console.log("fajr time----", fajrTotalBegins);
+  
+      var totalFajrBegingsHour = JSON.stringify(Math.floor(fajrTotalBegins / 60))
+      var totalFajrBegingsMinutes = JSON.stringify((fajrTotalBegins - Math.floor(fajrTotalBegins / 60) * 60))
+      var totalValFajeBegins
+  
+      totalValFajeBegins = `${totalFajrBegingsHour.length == 2 ?totalFajrBegingsHour:`0${totalFajrBegingsHour}`}:${totalFajrBegingsMinutes.length == 2 ?totalFajrBegingsMinutes:`0${totalFajrBegingsMinutes}`}` 
+            global.zuhrBegins =totalValFajeBegins
+           
+  
+  
+  
+      var totalFajrJamaahHour = JSON.stringify(Math.floor(fajrTotalJamaah / 60))
+      var totalFajrJammahMinutes = JSON.stringify((fajrTotalJamaah - Math.floor(fajrTotalJamaah / 60) * 60))
+      var totalValFajeJammah
+      totalValFajeJammah = `${totalFajrJamaahHour.length == 2 ?totalFajrJamaahHour:`0${totalFajrJamaahHour}`}:${totalFajrJammahMinutes.length == 2 ?totalFajrJammahMinutes:`0${totalFajrJammahMinutes}`}` 
+      global.zuhrJamah =totalValFajeJammah
+  
+     
+  
+  
+      var totalFajrAlarmHour = JSON.stringify(Math.floor(fajrTotalAlarm / 60))
+      var totalFajrAlarmMinutes = JSON.stringify((fajrTotalAlarm - Math.floor(fajrTotalAlarm / 60) * 60))
+      var totalValFajeAlarm
+      totalValFajeAlarm = `${totalFajrAlarmHour.length == 2 ?totalFajrAlarmHour:`0${totalFajrAlarmHour}`}:${totalFajrAlarmMinutes.length == 2 ?totalFajrAlarmMinutes:`0${totalFajrAlarmMinutes}`}` 
+      global.zuhrAlarm =totalValFajeAlarm
+  
+  
+  
+  
+     
+    }
+  
+  
+    const convertAsrTime = (getFajr, begins, jamah, alarm) => {
+  
+      var getHours = getFajr.slice(0, 2) //4
+      var getMinutes = getFajr.slice(3, 5) //53
+      var totalMin = (60 * getHours) //240
+      var sum = parseInt(totalMin) + parseInt(getMinutes) //293
+  
+  
+  
+      var fajrBeginsValCheck = begins 
+      var fajrjamahValCheck = jamah 
+      var fajralarmValCheck = alarm 
+  
+  
+      var fajrTotalBegins = sum + parseInt(fajrBeginsValCheck)
+      var fajrTotalJamaah = sum + parseInt(fajrjamahValCheck)
+      var fajrTotalAlarm = sum + parseInt(fajralarmValCheck)
+  
+  
+      console.log("fajr time----", fajrTotalBegins);
+  
+      var totalFajrBegingsHour = JSON.stringify(Math.floor(fajrTotalBegins / 60))
+      var totalFajrBegingsMinutes = JSON.stringify((fajrTotalBegins - Math.floor(fajrTotalBegins / 60) * 60))
+      var totalValFajeBegins
+  
+      totalValFajeBegins = `${totalFajrBegingsHour.length == 2 ?totalFajrBegingsHour:`0${totalFajrBegingsHour}`}:${totalFajrBegingsMinutes.length == 2 ?totalFajrBegingsMinutes:`0${totalFajrBegingsMinutes}`}` 
+            global.asrBegins =totalValFajeBegins
+           
+  
+  
+  
+      var totalFajrJamaahHour = JSON.stringify(Math.floor(fajrTotalJamaah / 60))
+      var totalFajrJammahMinutes = JSON.stringify((fajrTotalJamaah - Math.floor(fajrTotalJamaah / 60) * 60))
+      var totalValFajeJammah
+      totalValFajeJammah = `${totalFajrJamaahHour.length == 2 ?totalFajrJamaahHour:`0${totalFajrJamaahHour}`}:${totalFajrJammahMinutes.length == 2 ?totalFajrJammahMinutes:`0${totalFajrJammahMinutes}`}` 
+      global.asrJamah =totalValFajeJammah
+  
+     
+  
+  
+      var totalFajrAlarmHour = JSON.stringify(Math.floor(fajrTotalAlarm / 60))
+      var totalFajrAlarmMinutes = JSON.stringify((fajrTotalAlarm - Math.floor(fajrTotalAlarm / 60) * 60))
+      var totalValFajeAlarm
+      totalValFajeAlarm = `${totalFajrAlarmHour.length == 2 ?totalFajrAlarmHour:`0${totalFajrAlarmHour}`}:${totalFajrAlarmMinutes.length == 2 ?totalFajrAlarmMinutes:`0${totalFajrAlarmMinutes}`}` 
+      global.asrAlarm =totalValFajeAlarm
+  
+  
+  
+  
+  
+     
+  
+    }
+  
+  
+    const convertMaghribTime = (getFajr, begins, jamah, alarm) => {
+  
+      var getHours = getFajr.slice(0, 2) //4
+      var getMinutes = getFajr.slice(3, 5) //53
+      var totalMin = (60 * getHours) //240
+      var sum = parseInt(totalMin) + parseInt(getMinutes) //293
+  
+  
+  
+      var fajrBeginsValCheck = begins 
+      var fajrjamahValCheck = jamah 
+      var fajralarmValCheck = alarm 
+  
+  
+      var fajrTotalBegins = sum + parseInt(fajrBeginsValCheck)
+      var fajrTotalJamaah = sum + parseInt(fajrjamahValCheck)
+      var fajrTotalAlarm = sum + parseInt(fajralarmValCheck)
+  
+  
+      console.log("fajr time----", fajrTotalBegins);
+  
+      var totalFajrBegingsHour = JSON.stringify(Math.floor(fajrTotalBegins / 60))
+      var totalFajrBegingsMinutes = JSON.stringify((fajrTotalBegins - Math.floor(fajrTotalBegins / 60) * 60))
+      var totalValFajeBegins
+  
+      totalValFajeBegins = `${totalFajrBegingsHour.length == 2 ?totalFajrBegingsHour:`0${totalFajrBegingsHour}`}:${totalFajrBegingsMinutes.length == 2 ?totalFajrBegingsMinutes:`0${totalFajrBegingsMinutes}`}` 
+            global.maghribBegins =totalValFajeBegins
+           
+  
+  
+  
+      var totalFajrJamaahHour = JSON.stringify(Math.floor(fajrTotalJamaah / 60))
+      var totalFajrJammahMinutes = JSON.stringify((fajrTotalJamaah - Math.floor(fajrTotalJamaah / 60) * 60))
+      var totalValFajeJammah
+      totalValFajeJammah = `${totalFajrJamaahHour.length == 2 ?totalFajrJamaahHour:`0${totalFajrJamaahHour}`}:${totalFajrJammahMinutes.length == 2 ?totalFajrJammahMinutes:`0${totalFajrJammahMinutes}`}` 
+      global.maghribJamah =totalValFajeJammah
+  
+     
+  
+  
+      var totalFajrAlarmHour = JSON.stringify(Math.floor(fajrTotalAlarm / 60))
+      var totalFajrAlarmMinutes = JSON.stringify((fajrTotalAlarm - Math.floor(fajrTotalAlarm / 60) * 60))
+      var totalValFajeAlarm
+      totalValFajeAlarm = `${totalFajrAlarmHour.length == 2 ?totalFajrAlarmHour:`0${totalFajrAlarmHour}`}:${totalFajrAlarmMinutes.length == 2 ?totalFajrAlarmMinutes:`0${totalFajrAlarmMinutes}`}` 
+      global.maghribAlarm =totalValFajeAlarm
+  
+  
+  
+      
+  
+  
+  
+    }
+  
+  
+    const convertIshaTime = (getFajr, begins, jamah, alarm) => {
+  
+      var getHours = getFajr.slice(0, 2) //4
+      var getMinutes = getFajr.slice(3, 5) //53
+      var totalMin = (60 * getHours) //240
+      var sum = parseInt(totalMin) + parseInt(getMinutes) //293
+  
+  
+      var fajrBeginsValCheck = begins 
+      var fajrjamahValCheck = jamah 
+      var fajralarmValCheck = alarm 
+  
+  
+      var fajrTotalBegins = sum + parseInt(fajrBeginsValCheck)
+      var fajrTotalJamaah = sum + parseInt(fajrjamahValCheck)
+      var fajrTotalAlarm = sum + parseInt(fajralarmValCheck)
+  
+  
+      console.log("fajr time----", fajrTotalBegins);
+  
+      var totalFajrBegingsHour = JSON.stringify(Math.floor(fajrTotalBegins / 60))
+      var totalFajrBegingsMinutes = JSON.stringify((fajrTotalBegins - Math.floor(fajrTotalBegins / 60) * 60))
+      var totalValFajeBegins
+  
+      totalValFajeBegins = `${totalFajrBegingsHour.length == 2 ?totalFajrBegingsHour:`0${totalFajrBegingsHour}`}:${totalFajrBegingsMinutes.length == 2 ?totalFajrBegingsMinutes:`0${totalFajrBegingsMinutes}`}` 
+            global.ishaBegins =totalValFajeBegins
+           
+  
+  
+  
+      var totalFajrJamaahHour = JSON.stringify(Math.floor(fajrTotalJamaah / 60))
+      var totalFajrJammahMinutes = JSON.stringify((fajrTotalJamaah - Math.floor(fajrTotalJamaah / 60) * 60))
+      var totalValFajeJammah
+      totalValFajeJammah = `${totalFajrJamaahHour.length == 2 ?totalFajrJamaahHour:`0${totalFajrJamaahHour}`}:${totalFajrJammahMinutes.length == 2 ?totalFajrJammahMinutes:`0${totalFajrJammahMinutes}`}` 
+      global.ishaJamah =totalValFajeJammah
+  
+     
+  
+  
+      var totalFajrAlarmHour = JSON.stringify(Math.floor(fajrTotalAlarm / 60))
+      var totalFajrAlarmMinutes = JSON.stringify((fajrTotalAlarm - Math.floor(fajrTotalAlarm / 60) * 60))
+      var totalValFajeAlarm
+      totalValFajeAlarm = `${totalFajrAlarmHour.length == 2 ?totalFajrAlarmHour:`0${totalFajrAlarmHour}`}:${totalFajrAlarmMinutes.length == 2 ?totalFajrAlarmMinutes:`0${totalFajrAlarmMinutes}`}` 
+      global.ishaAlarm =totalValFajeAlarm
+  
+  
+  
+  
+  
+    }
+
     const getPrayerList = async () => {
         const token = await AsyncStorage.getItem('token')
     
@@ -166,36 +427,12 @@ const PinLogin = ({ route, navigation }) => {
         })
           .then((response) => {
             console.log("setting response data===>", response.data.data[0]);
-            global.fajrrBegins = response.data.data[0].type1.begins_time
-            global.fajrrJamah = response.data.data[0].type1.jamah_time
-            global.fajrrAlarm = response.data.data[0].type1.alarm_time
-            global.fajrPrayer = response.data.data[0].type1.prayerTime
-    
-            global.zuhrBegins = response.data.data[0].type2.begins_time
-            global.zuhrJamah = response.data.data[0].type2.jamah_time
-            global.zuhrAlarm = response.data.data[0].type2.alarm_time
-            global.duhrPrayer = response.data.data[0].type2.prayerTime
-    
-            global.asrBegins = response.data.data[0].type3.begins_time
-            global.asrJamah = response.data.data[0].type3.jamah_time
-            global.asrAlarm = response.data.data[0].type3.alarm_time
-            global.asrPrayer = response.data.data[0].type3.prayerTime
-    
-            global.maghribBegins = response.data.data[0].type4.begins_time
-            global.maghribJamah = response.data.data[0].type4.jamah_time
-            global.maghribAlarm = response.data.data[0].type4.alarm_time
-            global.magribPrayer = response.data.data[0].type4.prayerTime
-    
-            global.ishaBegins = response.data.data[0].type5.begins_time
-            global.ishaJamah = response.data.data[0].type5.jamah_time
-            global.ishaAlarm = response.data.data[0].type5.alarm_time
-            global.ishaPrayer = response.data.data[0].type5.prayerTime
-    
-            // global.ishaBegins = response.data.data[0].type5.begins_time
-            // global.ishaJamah = response.data.data[0].type5.jamah_time
-            // global.ishaAlarm = response.data.data[0].type5.alarm_time
-            global.sunPrayer = response.data.data[0].type6.prayerTime
-    
+            convertFajrTime(response.data.data[0].type1.prayerTime, response.data.data[0].type1.begins_time, response.data.data[0].type1.jamah_time, response.data.data[0].type1.alarm_time)
+        convertDuhrTime(response.data.data[0].type2.prayerTime, response.data.data[0].type2.begins_time, response.data.data[0].type2.jamah_time, response.data.data[0].type2.alarm_time)
+        convertAsrTime(response.data.data[0].type3.prayerTime, response.data.data[0].type3.begins_time, response.data.data[0].type3.jamah_time, response.data.data[0].type3.alarm_time)
+        convertMaghribTime(response.data.data[0].type4.prayerTime, response.data.data[0].type4.begins_time, response.data.data[0].type4.jamah_time, response.data.data[0].type4.alarm_time)
+        convertIshaTime(response.data.data[0].type5.prayerTime, response.data.data[0].type5.begins_time, response.data.data[0].type5.jamah_time, response.data.data[0].type5.alarm_time)
+        global.sun = response.data.data[0].type6.prayerTime
     
     
             // props.navigation.navigate('Drawer')
@@ -211,7 +448,7 @@ const PinLogin = ({ route, navigation }) => {
         getPrayerList()
         // requestLocationPermission()
         getData()
-        get
+        
         var currentDate = new Date(),
             month = ("0" + (currentDate.getMonth() + 1)).slice(-2),
             day = ("0" + currentDate.getDate()).slice(-2),

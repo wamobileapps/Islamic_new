@@ -23,6 +23,8 @@ import com.reactnativecommunity.geolocation.GeolocationPackage;
 import com.reactnativecommunity.slider.ReactSliderPackage;
 // react-native-background-timer
 import com.ocetnik.timer.BackgroundTimerPackage;
+// react-native-geocoder
+import com.devfd.RNGeocoder.RNGeocoderPackage;
 // react-native-gesture-handler
 import com.swmansion.gesturehandler.react.RNGestureHandlerPackage;
 // react-native-image-picker
@@ -96,6 +98,7 @@ public class PackageList {
       new GeolocationPackage(),
       new ReactSliderPackage(),
       new BackgroundTimerPackage(),
+      new RNGeocoderPackage(),
       new RNGestureHandlerPackage(),
       new ImagePickerPackage(),
       new KeychainPackage(),

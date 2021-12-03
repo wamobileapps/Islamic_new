@@ -24,12 +24,14 @@ var countryArray = [];
 global.moodData = []
 
 const MyDrawer=({navigation})=> {
-  
   const [name, setName] = useState('')
   const[number, setNumber] = useState('')
   const[imageUser, setUserImage] = useState('')
 
+
+
   useEffect(()=>{
+    
 
     const unsubscribe = navigation.addListener('focus', () => {
       getProfile()
@@ -40,6 +42,9 @@ const MyDrawer=({navigation})=> {
      
 
   const getProfile=async()=>{
+    
+
+
     global.moodData = []
     getGraphData()
     moodGraph()
@@ -74,34 +79,39 @@ const MyDrawer=({navigation})=> {
 
   
   const getDataMonth=()=>{
+
+
+
+
     var date = new Date();
     global.month = date.getMonth()
   
     var lMonth = parseInt(global.calMonth)
-    // alert(global.calMonth)
-    
+    var lMonthh = global.calMonth
+    global.calYear = moment().format('YYYY')
+  
     var firstDay =
       new Date(date.getFullYear(),lMonth, 1);
 
     var lastDay =
-      new Date(date.getFullYear(),lMonth, 0);
+      new Date(date.getFullYear(),lMonth , 0);
 
-      
-      global.selectMonth =  moment(firstDay).format("MMM"); 
-      var month  = global.selectMonth
-     
+      console.log("get month daya--->",lMonth,firstDay,  lastDay, "====", typeof global.calMonth, parseInt(lMonthh));
+
+      global.selectMonth =  moment(lMonth, 'MM').format('MMM'); 
+      var monthh  = moment(lMonth, 'MM').format('MMM')
+      var month = moment(firstDay).format("MMM")
     var start_date = moment(firstDay).format("DD"); 
     var year = moment(firstDay).format("YYYY");
 
     var last_date = moment(lastDay).format("DD"); 
    global.last_date = last_date
-    console.log("get month daya--->",  lastDay, "====", global.calMonth);
 
-    var s_Date= `${start_date} ${month} ${year} -`
+    var s_Date= `${start_date} ${monthh} ${year} -`
     global.sDate = s_Date
+
     
-    
-    var l_Date= ` ${last_date} ${month} ${year}`
+    var l_Date= ` ${last_date} ${monthh} ${year}`
     global.lDate = l_Date
   }
 
@@ -199,19 +209,7 @@ const MyDrawer=({navigation})=> {
     console.log("arrayOfArrayss: ",arrayOfArrayss);
     global.moodData = arrayOfArrayss
 
-        // var myarray = [];
-        // for (var i = 0; i < videoData.length; i++) {
-        //   for (let j = 0; j < videoData.length; j++) {
-        //     myarray.push(videoData[j][i]);
-        //   }
-    
-        // }
-
-// var mynew  = [];
-//         rootArray.map((item) => {
-//           mynew
-//         })
-        
+       
         })
         .catch((error) => {
             console.log('error', error)
