@@ -80,7 +80,7 @@ const BookDetail = ({ navigation, route }) => {
                         <Text style={{ fontSize: 16, fontFamily: 'Montserrat-Bold' }}>{bookList.title}</Text>
                         <View style={{ flexDirection: 'row' , marginTop: 5}}>
                             <Text style={{ fontSize: 12, fontFamily: 'Montserrat-SemiBold' }}>{bookList.author}</Text>
-                            <Text style={{ fontSize: 12, fontFamily: 'Montserrat-Regular' }}> (admin)</Text>
+                            <Text style={{ fontSize: 12, fontFamily: 'Montserrat-Regular' }}> (Admin)</Text>
                         </View>
 
                         <TouchableOpacity onPress={()=>navigation.navigate('BookChapter')}  style={{width: 82, marginTop: 40, height: 28, borderRadius: 14, backgroundColor: '#FAE9D7',alignItems: 'center', justifyContent: 'center'}}>

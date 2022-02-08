@@ -134,6 +134,7 @@ const Login = ({ navigation }) => {
         global.pin == "null" ? navigation.navigate('CreatePin') : navigation.navigate('PinLogin')
         global.birthday = response.data.birthday
         global.date = date
+        global.userId = response.data._id
       })
       .catch((error) => {
         console.log('error', error)

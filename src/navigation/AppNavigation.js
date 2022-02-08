@@ -47,7 +47,8 @@ import Tree from '../screen/MyTree';
 import MyMoodGraph from '../screen/MyModdGraph';
 import Setting from "../screen/Setting";
 import PrayerSetting from '../screen/PrayerSeting';
-import ManuallyTime from '../screen/ManaulyTime'
+import ManuallyTime from '../screen/ManaulyTime';
+import Sp from '../screen/sp'
 
 const Stack = createStackNavigator();
 
@@ -60,8 +61,8 @@ const AppNavigation = () => {
     <NavigationContainer>
       <Stack.Navigator mode="modal" screenOptions={{
         headerShown: false,
-      }}>
-        <Stack.Screen name="Splash" component={Splash} options={{ gestureEnabled: false }} />
+      }} >
+        <Stack.Screen name="Splash" component={Sp} options={{ gestureEnabled: false }} />
         <Stack.Screen name="Login" component={Login} options={{ gestureEnabled: false }} />
         <Stack.Screen name="Signup" component={Signup} options={{ gestureEnabled: false }} />
         <Stack.Screen name="CreatePin" component={CreatePin} options={{ gestureEnabled: false }} />

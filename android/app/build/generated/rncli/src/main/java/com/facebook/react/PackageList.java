@@ -21,18 +21,30 @@ import com.reactnativecommunity.checkbox.ReactCheckBoxPackage;
 import com.reactnativecommunity.geolocation.GeolocationPackage;
 // @react-native-community/slider
 import com.reactnativecommunity.slider.ReactSliderPackage;
+// @react-native-firebase/app
+import io.invertase.firebase.app.ReactNativeFirebaseAppPackage;
+// @react-native-firebase/messaging
+import io.invertase.firebase.messaging.ReactNativeFirebaseMessagingPackage;
+// react-native-alarm-notification
+import com.emekalites.react.alarm.notification.ANPackage;
+// react-native-background-actions
+import com.asterinet.react.bgactions.BackgroundActionsPackage;
 // react-native-background-timer
 import com.ocetnik.timer.BackgroundTimerPackage;
 // react-native-geocoder
 import com.devfd.RNGeocoder.RNGeocoderPackage;
 // react-native-gesture-handler
 import com.swmansion.gesturehandler.react.RNGestureHandlerPackage;
+// react-native-headless-work-manager
+import com.infuse.headlessworkmanager.HeadlessWorkManagerPackage;
 // react-native-image-picker
 import com.imagepicker.ImagePickerPackage;
 // react-native-keychain
 import com.oblador.keychain.KeychainPackage;
 // react-native-orientation
 import com.github.yamill.orientation.OrientationPackage;
+// react-native-push-notification
+import com.dieam.reactnativepushnotification.ReactNativePushNotificationPackage;
 // react-native-reanimated
 import com.swmansion.reanimated.ReanimatedPackage;
 // react-native-safe-area-context
@@ -97,12 +109,18 @@ public class PackageList {
       new ReactCheckBoxPackage(),
       new GeolocationPackage(),
       new ReactSliderPackage(),
+      new ReactNativeFirebaseAppPackage(),
+      new ReactNativeFirebaseMessagingPackage(),
+      new ANPackage(),
+      new BackgroundActionsPackage(),
       new BackgroundTimerPackage(),
       new RNGeocoderPackage(),
       new RNGestureHandlerPackage(),
+      new HeadlessWorkManagerPackage(),
       new ImagePickerPackage(),
       new KeychainPackage(),
       new OrientationPackage(),
+      new ReactNativePushNotificationPackage(),
       new ReanimatedPackage(),
       new SafeAreaContextPackage(),
       new RNScreensPackage(),

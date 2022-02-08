@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { StyleSheet, View, Text, Image, TouchableOpacity, Modal, Dimensions, TextInput, ImageBackground, FlatList, ScrollView } from "react-native";
-import { VictoryLabel, VictoryPie } from "victory-native";
+import { VictoryCursorContainer, VictoryLabel, VictoryPie } from "victory-native";
 import Svg, { Circle } from 'react-native-svg';
 import Iconback from 'react-native-vector-icons/Entypo';
 import axios from "axios";
@@ -20,7 +20,7 @@ const dataList = [
     "val": 'You'
   },
   {
-    "name": "Ethic",
+    "name": "Ethnic",
     "val": 'You'
   },
   {
@@ -29,7 +29,7 @@ const dataList = [
   }
 ]
 const General = "General"
-const Ethic = "Ethic"
+const Ethic = "Ethnic"
 const You = "You"
 const Tazkia = ({ navigation, route }) => {
 
@@ -362,7 +362,7 @@ const Tazkia = ({ navigation, route }) => {
 
 
 
-      <TouchableOpacity onPress={() => getGeneralData(item.item.name)} style={{ justifyContent: 'space-evenly', marginLeft: 10, marginRight: 10, flexDirection: 'row', width: 100, borderRadius: 10, backgroundColor: 'white', }}>
+      <TouchableOpacity onPress={() => getGeneralData(item.item.name)} style={{ justifyContent: 'space-evenly', marginLeft: 10, marginRight: 10, flexDirection: 'row', width: 100, borderRadius: 10, backgroundColor: 'white',height: 50 }}>
         <View style={{ alignItems: 'center', justifyContent: 'center' }}>
           <Text style={{ marginLeft: 5, marginRight: 5, fontSize: 13, fontFamily: 'Montserrat-Bold' }}>{item.item.name}</Text>
           <Text style={{ fontSize: 13, fontFamily: 'Montserrat-Bold' }}>You</Text>
@@ -372,6 +372,12 @@ const Tazkia = ({ navigation, route }) => {
 
     )
   }
+
+const getRadius=(string)=>{
+let length=string.length/2
+return 25* length
+
+}
 
 
   return (
@@ -427,33 +433,39 @@ const Tazkia = ({ navigation, route }) => {
               // padAngle={0.3}
               // labelPosition='centroid'
               labelPlacement='parallel'
+              // containerComponent={
+              //   <VictoryCursorContainer
+              //     cursorLabel={({ datum }) => `${datum.x.toPrecision(2)}, ${datum.y.toPrecision(2)}`}
+              //   />
+              // }
 
               // labelComponent={<VictoryLabel 
               // verticalAnchor="end"
-              // style={{ color: '#28323B', fontSize:10, fontFamily: 'Montserrat-Bold', }}
+              // style={{ color: '#28323B', fontSize:10,top:0,position:'absolute', fontFamily: 'Montserrat-Bold', }}
               // />}
 
               style={{
                 data: {
-                  backgroundColor: 'black'
+                  backgroundColor: 'black',justifyContent:'flex-start',alignItems:'flex-start'
                 },
                 labels: {
-                  fontSize: 10, fill: "#454545", fontWeight: 'bold'
+                  fontSize: 10, fill: "#454545", fontWeight: 'bold',position:'absolute',left:0
                 },
 
 
 
               }}
               colorScale={colorRating}
-              data={global.arrayData}
-              // data={[
-              //        { x: 3, y: 5, label: "External ghjhjsd"},
-              //        { x: 3, y: 5, label: "Takia"},
-              //        { x: 3, y: 5, label: "xd"},
-              //        { x: 3, y: 5, label: "Internal " },
-              //        { x: 3, y: 5, label: "External"},
-              //        { x: 3, y: 5, label: "Takia"},
-              //        { x: 3, y: 5, label: "def"}]}
+              // radius={({ datum }) =>  getRadius(datum.label)}
+              // data={global.arrayData}
+              data={[
+                     { x: 3, y: 5, label: "External ghjhjsd"},
+                     { x: 3, y: 5, label: "Takia"},
+                     { x: 3, y: 5, label: "xd"},
+                     { x: 3, y: 5, label: "Internal " },
+                     { x: 3, y: 5, label: "External"},
+                     { x: 3, y: 5, label: "Takia"},
+                     { x: 3, y: 5, label: "def"}]}
 
               events={[{
                 target: "data",
@@ -528,34 +540,35 @@ const Tazkia = ({ navigation, route }) => {
                 style={{
                   borderWidth: 1,
                   borderColor: 'gray',
-                  height: 350
+                  height: 400,
+                 marginLeft: 20, marginRight:20
                 }}
-                theme={{
-                  backgroundColor: '#ffffff',
-                  calendarBackground: '#ffffff',
-                  textSectionTitleColor: '#b6c1cd',
-                  textSectionTitleDisabledColor: '#d9e1e8',
-                  selectedDayBackgroundColor: '#00adf5',
-                  selectedDayTextColor: '#ffffff',
-                  todayTextColor: '#00adf5',
-                  dayTextColor: '#2d4150',
-                  textDisabledColor: '#d9e1e8',
-                  dotColor: '#00adf5',
-                  selectedDotColor: '#ffffff',
-                  arrowColor: 'orange',
-                  disabledArrowColor: '#d9e1e8',
-                  monthTextColor: 'blue',
-                  indicatorColor: 'blue',
-                  textDayFontFamily: 'monospace',
-                  textMonthFontFamily: 'monospace',
-                  textDayHeaderFontFamily: 'monospace',
-                  textDayFontWeight: '300',
-                  textMonthFontWeight: 'bold',
-                  textDayHeaderFontWeight: '300',
-                  textDayFontSize: 16,
-                  textMonthFontSize: 16,
-                  textDayHeaderFontSize: 16
-                }}
+                // theme={{
+                //   // backgroundColor: '#ffffff',
+                //   // calendarBackground: '#ffffff',
+                //   textSectionTitleColor: '#b6c1cd',
+                //   textSectionTitleDisabledColor: '#d9e1e8',
+                //   selectedDayBackgroundColor: '#00adf5',
+                //   selectedDayTextColor: '#ffffff',
+                //   todayTextColor: '#00adf5',
+                //   dayTextColor: '#2d4150',
+                //   textDisabledColor: '#d9e1e8',
+                //   dotColor: '#00adf5',
+                //   selectedDotColor: '#ffffff',
+                //   arrowColor: 'orange',
+                //   disabledArrowColor: '#d9e1e8',
+                //   monthTextColor: 'blue',
+                //   indicatorColor: 'blue',
+                //   textDayFontFamily: 'monospace',
+                //   textMonthFontFamily: 'monospace',
+                //   textDayHeaderFontFamily: 'monospace',
+                //   textDayFontWeight: '300',
+                //   textMonthFontWeight: 'bold',
+                //   textDayHeaderFontWeight: '300',
+                //   textDayFontSize: 16,
+                //   textMonthFontSize: 16,
+                //   textDayHeaderFontSize: 16
+                // }}
               />
             </View>
 
@@ -1376,15 +1389,15 @@ const styles = StyleSheet.create({
     flex: 1,
 
   },
-  centeredView: {
-    flex: 1,
-    justifyContent: 'center',
-    backgroundColor: 'rgba(0,0,0,0.7)'
-  },
+  // centeredView: {
+  //   flex: 1,
+  //   justifyContent: 'center',
+  //   backgroundColor: 'rgba(0,0,0,0.7)'
+  // },
   centeredView: {
     flex: 1,
     justifyContent: "center",
-    alignItems: "center",
+    // alignItems: "center",
 
 
 

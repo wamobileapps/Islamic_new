@@ -12,6 +12,8 @@ import { RFValue } from "react-native-responsive-fontsize";
 import { baseUrl } from '../Api/COntstant';
 import Geolocation from '@react-native-community/geolocation';
 import moment from 'moment';
+import SpinnerModal from '../components/SpinnerModal';
+import Icon from 'react-native-vector-icons/MaterialIcons'
 
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
@@ -65,7 +67,7 @@ const config = {
 
 global.entry = []
 const Home = ({ navigation, route }) => {
-
+  const [isLoading, setisLoading] = useState(true)
 
 
   const [total, totalTravlled] = useState('')
@@ -82,6 +84,7 @@ const Home = ({ navigation, route }) => {
   var bloodTravel = 19000 / 86400;
 
   useEffect(() => {
+
     Orientation.lockToPortrait();
    
 
@@ -222,78 +225,22 @@ const Home = ({ navigation, route }) => {
 
 
 
+    // setTimeout(()=>{
+      setisLoading(false)
 
-
+    // }, 100)
 
     const unsubscribe = navigation.addListener('focus', () => {
       getDashboardData()
     });
-    return () => clearInterval(minuteInterval, interval, intervall), unsubscribe;
+    return () => clearInterval(minuteInterval, interval, intervall), unsubscribe; // willUnmonut
   }, []);
 
 
-  //===============================================get current loaction=========================================
-  const requestLocationPermission = async () => {
-
-    try {
-
-      const granted = await PermissionsAndroid.request(
-        PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION, {
-
-      },
-      )
-
-      if (granted === PermissionsAndroid.RESULTS.GRANTED) {
-        Geolocation.getCurrentPosition(info => {
-
-
-          
-
-          console.log("info=====>", info)
-        },
-          // (error) => alert("Error: Are location services on?"),
-          // { enableHighAccuracy: true }
-          {
-            enableHighAccuracy: false,
-            timeout: 18000000,
-            maximumAge: 0,
-            forceRequestLocation: true
-
-          }
-        );
-
-
-      }
-
-    }
-    catch (err) {
-      console.log("err")
-    }
-
-  };
-
   
 
-
-
-  // const getBeginsData = async () => {
-  //   const token = await AsyncStorage.getItem('token')
-  //   axios.get(`https://api.pray.zone/v2/times/today.json?city=${global.calCity}`)
-  //       .then((response) => {
-  //           console.log("get given date data====>", response.data.results.datetime[0].times);
-           
-          
-  //           global.fajr = response.data.results.datetime[0].times.Fajr
-  //           global.sun = response.data.results.datetime[0].times.Sunrise
-  //           global.zuhr = response.data.results.datetime[0].times.Dhuhr
-  //           global.asr = response.data.results.datetime[0].times.Asr
-  //           global.maghrib = response.data.results.datetime[0].times.Maghrib
-  //           global.isha = response.data.results.datetime[0].times.Isha
-  //         })
-  // };
-
-
   const getDashboardData = async () => {
+    setisLoading(true)
     // requestLocationPermission();
     Orientation.lockToPortrait();
 
@@ -350,7 +297,12 @@ const Home = ({ navigation, route }) => {
         global.totalRatingsData = response.data.types
         console.log("response.data.types===>", global.totalRatingsData);
 
+        setTimeout(()=>{
+      setisLoading(false)
 
+      }, 3000)
+  
+        // setisLoading(false)
 
       })
       .catch((error) => {
@@ -547,13 +499,8 @@ const Home = ({ navigation, route }) => {
     navigation.navigate('Muhasabah', { icon: icons })
   }
 
-
-  
-
   return (
-
     <SafeAreaView style={{ flex: 1,  }}>
-
       <ImageBackground source={upImage} style={{ width: windowWidth, height: windowHeight, }}>
         <View style={{ flexDirection: 'row', borderBottomLeftRadius: 60, borderBottomRightRadius: 60, }}>
           <TouchableOpacity onPress={() => navigation.openDrawer()}>
@@ -561,70 +508,56 @@ const Home = ({ navigation, route }) => {
           </TouchableOpacity>
           <Text style={{ fontSize: 16, color: '#000', marginTop: 20, color: '#454545', fontFamily: 'Montserrat-Bold', marginLeft: 20, textAlign: 'center' }}>Dashboard</Text>
         </View>
-
-
-
-
         <View onLayout={(event) => {
           var { x, y, width, height } = event.nativeEvent.layout;
           console.log("value of x===>", width, "height", height)
         }} style={{ top: windowHeight > 630 ? '4%' : '4%' }}>
-
           <View style={{ backgroundColor: 'white',flexDirection: 'row', marginLeft: 20, paddingTop: paddingTopBottom, paddingBottom: paddingTopBottom, alignItems: 'flex-start', justifyContent: 'center', marginBottom: marGinBottom, marginRight: 20, elevation: 5, borderRadius: 20 }}>
           <View style={{  marginLeft: 20,  justifyContent: 'center'}}>
-              <Text style={{  fontFamily: 'Montserrat-Bold', fontSize: RFValue(10), color: '#363636' }}></Text>
-              <Text style={{  fontFamily: 'Montserrat-Bold', fontSize: RFValue(10), color: '#C18446',  marginTop: 10  }}>Begins</Text>
-              <Text style={{  fontFamily: 'Montserrat-Bold', fontSize: RFValue(10), color: '#C18446', marginTop: 10 }}>Jamaah</Text>
-              <Text style={{  fontFamily: 'Montserrat-Bold', fontSize: RFValue(10), color: '#C18446', marginTop: 10 }}>Alarm</Text>
+              <View style={{flexDirection:'row'}}>
+              <Image source={require('../images/sun.png')} style={{ width: 15, height: 15,  }} />
+                 <Text style={{  fontFamily: 'Montserrat-SemiBold', fontSize: RFValue(11), color: '#363636', marginLeft: 2 }}>{global.sun}</Text>
+              </View>
+              <Text style={{  fontFamily: 'Montserrat-Bold', fontSize: RFValue(10), color: '#C18446',  marginTop: 3, marginLeft: 5  }}>Begins</Text>
+              <Text style={{  fontFamily: 'Montserrat-Bold', fontSize: RFValue(10), color: '#C18446', marginTop: 3, marginLeft: 5 }}>Jamaah</Text>
+              <Text style={{  fontFamily: 'Montserrat-Bold', fontSize: RFValue(10), color: '#C18446', marginTop: 3 , marginLeft: 5}}>Alarm</Text>
             </View>
-            
             <View style={{  marginLeft: 10, justifyContent: 'center' , alignItems: 'center' }}>
               <Text style={{  fontFamily: 'Montserrat-Bold', fontSize: RFValue(10), color: '#363636' }}>Fajr</Text>
-              <Text style={{  fontFamily: 'Montserrat-SemiBold', fontSize: RFValue(9.5), color: '#363636',  marginTop: 10 }}>{global.fajrrBegins}</Text>
-              <Text style={{  fontFamily: 'Montserrat-SemiBold', fontSize: RFValue(9.5), color: '#363636' ,  marginTop: 10}}>{global.fajrrJamah}</Text>
-              <Text style={{  fontFamily: 'Montserrat-SemiBold', fontSize: RFValue(9.5), color: '#363636' ,  marginTop: 10}}>{global.fajrrAlarm}</Text>
+              <Text style={{  fontFamily: 'Montserrat-SemiBold', fontSize: RFValue(11), color: '#363636',  marginTop: 3 }}>{global.fajrrBegins}</Text>
+              <Text style={{  fontFamily: 'Montserrat-SemiBold', fontSize: RFValue(11), color: '#363636' ,  marginTop: 3}}>{global.fajrrJamah}</Text>
+              <Text style={{  fontFamily: 'Montserrat-SemiBold', fontSize: RFValue(11), color: '#363636' ,  marginTop: 3}}>{global.fajrrAlarm}</Text>
             </View>
-
-            <View style={{  marginLeft: 10, justifyContent: 'center' , alignItems: 'center' }}>
+            {/* <View style={{  marginLeft: 10, justifyContent: 'center' , alignItems: 'center' }}>
               <Text style={{  fontFamily: 'Montserrat-Bold', fontSize: RFValue(10), color: '#363636' }}>Sun</Text>
               <Text style={{  fontFamily: 'Montserrat-SemiBold', fontSize: RFValue(9.5), color: '#363636',  marginTop: 10 }}>{global.sun}</Text>
               <Text style={{  fontFamily: 'Montserrat-SemiBold', fontSize: RFValue(9.5), color: '#363636' ,  marginTop: 10}}>-</Text>
               <Text style={{  fontFamily: 'Montserrat-SemiBold', fontSize: RFValue(9.5), color: '#363636' ,  marginTop: 10}}>-</Text>
-            </View>
-
+            </View> */}
             <View style={{  marginLeft: 10,  justifyContent: 'center', alignItems: 'center'}}>
               <Text style={{  fontFamily: 'Montserrat-Bold', fontSize: RFValue(10), color: '#363636' }}>Zuhr</Text>
-              <Text style={{  fontFamily: 'Montserrat-SemiBold', fontSize: RFValue(9.5), color: '#363636',  marginTop: 10 }}>{global.zuhrBegins}</Text>
-              <Text style={{  fontFamily: 'Montserrat-SemiBold', fontSize: RFValue(9.5), color: '#363636' ,  marginTop: 10}}>{global.zuhrJamah}</Text>
-              <Text style={{  fontFamily: 'Montserrat-SemiBold', fontSize: RFValue(9.5), color: '#363636' ,  marginTop: 10}}>{global.zuhrAlarm}</Text>
-
+              <Text style={{  fontFamily: 'Montserrat-SemiBold', fontSize: RFValue(11), color: '#363636',  marginTop: 3 }}>{global.zuhrBegins}</Text>
+              <Text style={{  fontFamily: 'Montserrat-SemiBold', fontSize: RFValue(11), color: '#363636' ,  marginTop: 3}}>{global.zuhrJamah}</Text>
+              <Text style={{  fontFamily: 'Montserrat-SemiBold', fontSize: RFValue(11), color: '#363636' ,  marginTop: 3}}>{global.zuhrAlarm}</Text>
             </View>
-
             <View style={{  marginLeft: 10, justifyContent: 'center', alignItems: 'center'}}>
               <Text style={{  fontFamily: 'Montserrat-Bold', fontSize: RFValue(10), color: '#363636' }}>Asr</Text>
-              <Text style={{  fontFamily: 'Montserrat-SemiBold', fontSize: RFValue(9.5), color: '#363636',  marginTop: 10 }}>{global.asrBegins}</Text>
-              <Text style={{  fontFamily: 'Montserrat-SemiBold', fontSize: RFValue(9.5), color: '#363636' ,  marginTop: 10}}>{global.asrJamah}</Text>
-              <Text style={{  fontFamily: 'Montserrat-SemiBold', fontSize: RFValue(9.5), color: '#363636' ,  marginTop: 10}}>{global.asrAlarm}</Text>
+              <Text style={{  fontFamily: 'Montserrat-SemiBold', fontSize: RFValue(11), color: '#363636',  marginTop: 3 }}>{global.asrBegins}</Text>
+              <Text style={{  fontFamily: 'Montserrat-SemiBold', fontSize: RFValue(11), color: '#363636' ,  marginTop: 3}}>{global.asrJamah}</Text>
+              <Text style={{  fontFamily: 'Montserrat-SemiBold', fontSize: RFValue(11), color: '#363636' ,  marginTop: 3}}>{global.asrAlarm}</Text>
             </View>
-
             <View style={{  marginLeft: 10, justifyContent: 'center', alignItems: 'center'}}>
               <Text style={{  fontFamily: 'Montserrat-Bold', fontSize: RFValue(10), color: '#363636' }}>Magh</Text>
-              <Text style={{  fontFamily: 'Montserrat-SemiBold', fontSize: RFValue(9.5), color: '#363636',  marginTop: 10 }}>{global.maghribBegins}</Text>
-              <Text style={{  fontFamily: 'Montserrat-SemiBold', fontSize: RFValue(9.5), color: '#363636' ,  marginTop: 10}}>{global.maghribJamah}</Text>
-              <Text style={{  fontFamily: 'Montserrat-SemiBold', fontSize: RFValue(9.5), color: '#363636' ,  marginTop: 10}}>{global.maghribAlarm}</Text>
-
+              <Text style={{  fontFamily: 'Montserrat-SemiBold', fontSize: RFValue(11), color: '#363636',  marginTop: 3 }}>{global.maghribBegins}</Text>
+              <Text style={{  fontFamily: 'Montserrat-SemiBold', fontSize: RFValue(11), color: '#363636' ,  marginTop: 3}}>{global.maghribJamah}</Text>
+              <Text style={{  fontFamily: 'Montserrat-SemiBold', fontSize: RFValue(11), color: '#363636' ,  marginTop: 3}}>{global.maghribAlarm}</Text>
             </View>
-
             <View style={{  marginLeft: 10,  justifyContent: 'center', alignItems: 'center', marginRight: 20}}>
               <Text style={{  fontFamily: 'Montserrat-Bold', fontSize: RFValue(10), color: '#363636' }}>Isha</Text>
-              <Text style={{  fontFamily: 'Montserrat-SemiBold', fontSize: RFValue(9.5), color: '#363636',  marginTop: 10 }}>{global.ishaBegins}</Text>
-              <Text style={{  fontFamily: 'Montserrat-SemiBold', fontSize: RFValue(9.5), color: '#363636' ,  marginTop: 10}}>{global.ishaJamah}</Text>
-              <Text style={{  fontFamily: 'Montserrat-SemiBold', fontSize: RFValue(9.5), color: '#363636' ,  marginTop: 10}}>{global.ishaAlarm}</Text>
-
+              <Text style={{  fontFamily: 'Montserrat-SemiBold', fontSize: RFValue(11), color: '#363636',  marginTop: 3 }}>{global.ishaBegins}</Text>
+              <Text style={{  fontFamily: 'Montserrat-SemiBold', fontSize: RFValue(11), color: '#363636' ,  marginTop: 3}}>{global.ishaJamah}</Text>
+              <Text style={{  fontFamily: 'Montserrat-SemiBold', fontSize: RFValue(11), color: '#363636' ,  marginTop: 3}}>{global.ishaAlarm}</Text>
             </View>
-
-            
-
             {/* <View style={{  marginRight: 20 , justifyContent: 'space-evenly',marginTop:10}}>
               <Text style={{ marginLeft: 20, fontFamily: 'Montserrat-SemiBold', fontSize: RFValue(12), color: '#C18446',  }}>Begins</Text>
               <Text style={{ marginLeft: '9%', fontFamily: 'Montserrat-Medium', fontSize: RFValue(12), color: '#363636' }}>{global.fajr}</Text>
@@ -632,37 +565,21 @@ const Home = ({ navigation, route }) => {
               <Text style={{ marginLeft: 20, fontFamily: 'Montserrat-Medium', fontSize: RFValue(12), color: '#363636' }}>{global.asr}</Text>
               <Text style={{ marginLeft: 20, fontFamily: 'Montserrat-Medium', fontSize: RFValue(12), color: '#363636' }}>{global.maghrib}</Text>
               <Text style={{ marginLeft: 20, fontFamily: 'Montserrat-Medium', fontSize: RFValue(12), color: '#363636' }}>{global.isha}</Text>
-
             </View>
-
             <Text style={{ marginLeft: 20, fontFamily: 'Montserrat-SemiBold', fontSize: RFValue(12), color: '#C18446', marginTop: 10 }}>Jamaah</Text> */}
           </View>
-
-
-
-
           <View style={{ backgroundColor: 'white', alignItems: 'center', marginLeft: 20, marginRight: 20, elevation: 5, borderRadius: 20 }}>
-
-
             <FlatList
               data={global.totalRatingsData}
               style={{ paddingTop: paddingTopBottomCircle, paddingBottom: paddingTopBottomCircle, }}
-
               numColumns={4}
-
               renderItem={({ item, index }) => {
-
                 let progress = item.progress
-
                 return (
                   index > 3 ?
                     <TouchableOpacity onPress={() => item.name == 'Daily Ibadah' ? getDailyIbadhdata(item.icons) :
                       item.name == 'My Mood' ? getMuhasabahData(item.icons) : getTazkiaScreen(item)}
                       style={{ justifyContent: 'center', alignItems: 'center', marginLeft: index == 4 ? -5 : config.deviceWidth * .001, }}>
-
-
-
-
                       <ProgressCircle
                         outerCircleStyle={{ marginLeft: 10 }}
                         percent={`${Math.round(item.progress)}`}
@@ -674,23 +591,12 @@ const Home = ({ navigation, route }) => {
                       >
                         <Text style={{ fontSize: RFValue(13), fontFamily: 'Montserrat-Bold', }}>{`${Math.round(item.progress)}%`}</Text>
                       </ProgressCircle>
-
-
-
-
-
                       <Text style={{ fontSize: RFValue(10), marginTop: 5, color: '#363636', marginLeft: 10, fontFamily: 'Montserrat-Bold', alignItems: 'center' }}>{item.name}</Text>
-
                     </TouchableOpacity>
-
                     :
-
                     <TouchableOpacity onPress={() => item.name == 'Daily Ibadah' ? getDailyIbadhdata(item.icons) :
                       item.name == 'Muhasabah' ? getMuhasabahData(item.icons) : getTazkiaScreen(item)}
                       style={{ justifyContent: 'center', alignItems: 'center', marginBottom: 15, }}>
-
-
-
                       <View style={{ alignItems: 'center', justifyContent: 'center', marginLeft: index == 0 ? -10 : config.deviceWidth * .002 }}>
                         <ProgressCircle
                           outerCircleStyle={{ marginLeft: 10, }}
@@ -703,32 +609,21 @@ const Home = ({ navigation, route }) => {
                         >
                           <Text style={{ fontSize: RFValue(14), fontFamily: 'Montserrat-Bold', }}>{`${Math.round(item.progress)}%`}</Text>
                         </ProgressCircle>
-
-
-
                         <Text style={{ fontSize: RFValue(10), marginTop: 5, color: '#363636', marginLeft: 10, fontFamily: 'Montserrat-Bold', alignItems: 'center' }}>{item.name}</Text>
                       </View>
                     </TouchableOpacity>
                 )
               }}
             />
-
-
-
           </View>
-
-
           <View style={{ backgroundColor: 'white', marginLeft: 20, marginRight: 20, marginTop: marginBottom, paddingTop: paddingTopBottom, paddingBottom: paddingTopBottom, elevation: 5, borderRadius: 20 }}>
-
             <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
               <View style={{ width: '43%', borderWidth: 1, borderColor: '#ECC090', borderStyle: 'dashed', borderRadius: 8, height: 45, backgroundColor: '#FCF5EC', marginBottom: marginBottom, marginLeft: 15, justifyContent: 'center', alignItems: 'center' }}>
                 <Text style={{ fontSize: 9, color: '#000', color: '#363636', fontFamily: 'Montserrat-Medium', textAlign: 'center' }}>Blood travelled (kms)</Text>
                 <View style={{ flexDirection: 'row', }}>
                   {getBloodTravelled()}
                 </View>
-
               </View>
-
               <View style={{ width: '43%', borderWidth: 1, borderColor: '#ECC090', borderStyle: 'dashed', borderRadius: 8, backgroundColor: '#FCF5EC', marginBottom: marginBottom, marginRight: 15, justifyContent: 'center', alignItems: 'center' }}>
                 <Text style={{ fontSize: 9, color: '#000', color: '#363636', fontFamily: 'Montserrat-Medium', textAlign: 'center' }}>Minutes on earth</Text>
                 <View style={{ flexDirection: 'row' }}>
@@ -736,7 +631,6 @@ const Home = ({ navigation, route }) => {
                 </View>
               </View>
             </View>
-
             <View style={{ flexDirection: 'row', justifyContent: 'space-between', }}>
               <View style={{ width: '43%', borderWidth: 1, borderColor: '#ECC090', borderStyle: 'dashed', borderRadius: 8, height: 45, backgroundColor: '#FCF5EC', marginLeft: 15, justifyContent: 'center', alignItems: 'center' }}>
                 <Text style={{ fontSize: 9, color: '#000', color: '#363636', fontFamily: 'Montserrat-Medium', textAlign: 'center' }}>Total heart beats</Text>
@@ -744,7 +638,6 @@ const Home = ({ navigation, route }) => {
                   {getTotalHeartBeat()}
                 </View>
               </View>
-
               <View style={{ width: '43%', borderWidth: 1, borderColor: '#ECC090', borderStyle: 'dashed', borderRadius: 8, height: 45, backgroundColor: '#FCF5EC', marginRight: 15, justifyContent: 'center', alignItems: 'center' }}>
                 <Text style={{ fontSize: 9, color: '#000', color: '#363636', fontFamily: 'Montserrat-Medium', textAlign: 'center' }}>Your Total Breaths</Text>
                 <View style={{ flexDirection: 'row' }}>
@@ -752,19 +645,15 @@ const Home = ({ navigation, route }) => {
                 </View>
               </View>
             </View>
-
           </View>
-
-
-
-
-
+          {/* <SpinnerModal
+          visible={isLoading}
+          heading="Please Wait ..."
+        /> */}
         </View>
       </ImageBackground>
     </SafeAreaView>
-
   )
-
 }
 
 export default Home

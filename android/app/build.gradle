@@ -189,12 +189,15 @@ dependencies {
     //noinspection GradleDynamicVersion
     implementation project(':react-native-video')
     implementation project(':react-native-thumbnail')
-
+    implementation 'com.google.firebase:firebase-core:9.6.1'
     implementation "com.facebook.react:react-native:+"  // From node_modules
     implementation "androidx.appcompat:appcompat:1.0.0"
     implementation project(':react-native-art')
     implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.0.0"
-
+    // implementation platform('com.google.firebase:firebase-bom:28.0.1')
+    implementation platform('com.google.firebase:firebase-bom:29.0.3')
+    implementation 'com.google.firebase:firebase-analytics'
+    implementation 'com.google.firebase:firebase-messaging:20.1.6'
     debugImplementation("com.facebook.flipper:flipper:${FLIPPER_VERSION}") {
       exclude group:'com.facebook.fbjni'
     }
@@ -226,3 +229,4 @@ task copyDownloadableDepsToLibs(type: Copy) {
 
 apply from: file("../../node_modules/@react-native-community/cli-platform-android/native_modules.gradle"); applyNativeModulesAppBuildGradle(project)
 apply from: "../../node_modules/react-native-vector-icons/fonts.gradle"
+apply plugin: 'com.google.gms.google-services'

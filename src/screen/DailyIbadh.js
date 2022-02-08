@@ -459,46 +459,6 @@ class App extends React.Component {
                   colorScale={"qualitative"}
                 >
 
-                  {/* {this.allArrayData()} */}
-
-
-                  {/* {arrayOfArrays.map((item,index) => {
-                    console.log("item---", item[index].x);
-                    return ( 
-                       <VictoryBar
-                        barWidth={15}
-                        domainPadding={{ x: 30 }}
-                        style={{
-                          data: { fill: "#BF8B65" }
-                        }}
-                        data={item}
-                          events={[{
-                        target: "data",
-                        eventHandlers: {
-                          onPressIn: () => {
-                            return [
-                              {
-                                target: "data",
-                                mutation: (props) => {
-                                  // this.setState({ showModal: !this.state.showModal })
-                                  // this.setState({ xValue: this.state.dataIbadh[props.index].title, yValue: this.state.dataIbadh[props.index].options, cValue: this.state.dataIbadh[props.index] })
-
-                                  console.log("inside loop props=====>", this.state.dataIbadh[props.index]);
-                                  console.log("props=====>", props);
-                                  const fill = props.style && props.style.fill;
-                                  // return fill === "black" ? { style: { fill: "green" } } : { style: { fill: "black" } };
-                                }
-                              }
-                            ];
-                          }
-                        }
-                      }]}
-                      /> 
-
-                     );
-                  })
-                } */}
-
 
 
                   <VictoryBar
@@ -591,34 +551,6 @@ class App extends React.Component {
                     data={your_data2}
                   />
 
-                  {/* <VictoryBar domainPadding={{ x: 30 }}
-                  barWidth={15}
-                  style={{
-                    data: { fill: "#D9A782" }
-                  }}
-                  events={[{
-                    target: "data",
-                    eventHandlers: {
-                      onPressIn: () => {
-                        return [
-                          {
-                            target: "data",
-                            mutation: (props) => {
-
-                              this.setState({ showModal: !this.state.showModal })
-                              this.setState({ xValue: this.state.dataIbadh[props.index].title, yValue: this.state.dataIbadh[props.index].options, cValue: this.state.dataIbadh[props.index] })
-                              console.log("props=====>", props);
-
-                              const fill = props.style && props.style.fill;
-                              // return fill === "black" ? { style: { fill: "green" } } : { style: { fill: "black" } };
-                            }
-                          }
-                        ];
-                      }
-                    }
-                  }]}
-                  data={your_data2}
-                /> */}
 
 
 

@@ -372,15 +372,18 @@ export default class Conflict extends Component {
               {this.state.dataToRenderCircleX.map((item) => {
                 return (
 
-                  <View style={{ flexDirection: "column", justifyContent: "space-evenly", marginTop: 5 }}>
+                  <View style={{ flexDirection: "column", justifyContent: "center", marginTop: 5,  alignItems: 'center' }}>
+                       <View style={{ height: 15, width: wp('20%'), borderColor: "black", borderRadius: 8, alignItems: "center", justifyContent: 'center', backgroundColor: '#F9F1EB', elevation: 2 }}>
+                            <Text style={{ textAlign: "center", fontSize: RFValue(9), fontFamily: 'Montserrat-SemiBold', color: '#454545' }}>{item.name}</Text>
 
-                    <View style={{
+                        </View>
+                    {/* <View style={{
                       width: wp('22%'), borderColor: this.state.dataToRenderCircleX.length == 3 ? "#DFAF8C" : "#DFAF8C",
                       borderWidth: 1, alignSelf: 'center', justifyContent: 'center', borderRadius: 8, alignSelf: "center", backgroundColor: '#F9F1EB', elevation: 2
                     }}>
                       <Text style={{ textAlign: "center", fontSize: RFValue(9), fontFamily: 'Montserrat-SemiBold', color: '#454545' }}>{item.name}</Text>
 
-                    </View>
+                    </View> */}
                   </View>
                 )
               })}
@@ -444,15 +447,18 @@ export default class Conflict extends Component {
               {this.state.dataToRenderCircleZ.map((item) => {
                 return (
 
-                  <View style={{ flexDirection: "column", justifyContent: "space-evenly", marginTop: 5 }}>
+                  <View style={{ flexDirection: "column", justifyContent: "center", alignItems: 'center', marginTop: 5 }}>
+<View style={{ height: 15, width: wp('20%'), borderColor: "black", borderRadius: 8, alignItems: "center", justifyContent: 'center', backgroundColor: '#F9F1EB', elevation: 2 }}>
+                            <Text style={{ textAlign: "center", fontSize: RFValue(9), fontFamily: 'Montserrat-SemiBold', color: '#454545' }}>{item.name}</Text>
 
-                    <View style={{
+                        </View>
+                    {/* <View style={{
                       width: wp('22%'), borderColor: this.state.dataToRenderCircleY.length == 3 ? "#DFAF8C" : "#DFAF8C",
                       borderWidth: 1, alignSelf: 'center', justifyContent: 'center', borderRadius: 8, alignSelf: "center", backgroundColor: '#F9F1EB', elevation: 2
                     }}>
                       <Text style={{ textAlign: "center", fontSize: RFValue(9), fontFamily: 'Montserrat-SemiBold', color: '#454545' }}>{item.name}</Text>
 
-                    </View>
+                    </View> */}
                   </View>
                 )
               })}

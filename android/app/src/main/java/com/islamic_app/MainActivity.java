@@ -2,6 +2,14 @@ package com.islamic_app;
 
 import com.facebook.react.ReactActivity;
 
+import android.content.Intent;
+import android.os.Bundle;
+import org.json.JSONObject;
+
+import com.emekalites.react.alarm.notification.BundleJSONConverter;
+import com.facebook.react.modules.core.DeviceEventManagerModule;
+
+
 public class MainActivity extends ReactActivity {
 
   /**
@@ -12,4 +20,19 @@ public class MainActivity extends ReactActivity {
   protected String getMainComponentName() {
     return "islamic_app";
   }
+
+
+  @Override
+    public void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
+        try {
+            Bundle bundle = intent.getExtras();
+            if (bundle != null) {
+                JSONObject data = BundleJSONConverter.convertToJSON(bundle);
+                getReactInstanceManager().getCurrentReactContext().getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class).emit("OnNotificationOpened", data.toString());
+            }
+        } catch (Exception e) {
+            System.err.println("Exception when handling notification opened. " + e);
+        }
+    }
 }

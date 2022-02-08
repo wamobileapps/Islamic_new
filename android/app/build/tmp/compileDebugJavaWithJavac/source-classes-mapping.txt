@@ -1,8 +1,19 @@
 com/islamic_app/MainActivity.java
  com.islamic_app.MainActivity
+com/islamic_app/HeartbeartService.java
+ com.islamic_app.HeartbeartService
+ com.islamic_app.HeartbeartService$1
+com/islamic_app/HeartbeatEventService.java
+ com.islamic_app.HeartbeatEventService
+com/islamic_app/HeartbeatPackage.java
+ com.islamic_app.HeartbeatPackage
+com/islamic_app/BootUpReceiver.java
+ com.islamic_app.BootUpReceiver
 com/islamic_app/MainApplication.java
  com.islamic_app.MainApplication
  com.islamic_app.MainApplication$1
+com/islamic_app/HeartbeatModule.java
+ com.islamic_app.HeartbeatModule
 com/islamic_app/ReactNativeFlipper.java
  com.islamic_app.ReactNativeFlipper
  com.islamic_app.ReactNativeFlipper$1
@@ -10,5 +21,7 @@ com/islamic_app/ReactNativeFlipper.java
  com.islamic_app.ReactNativeFlipper$2$1
 com/islamic_app/BuildConfig.java
  com.islamic_app.BuildConfig
+com/islamic_app/YourService.java
+ com.islamic_app.YourService
 com/facebook/react/PackageList.java
  com.facebook.react.PackageList

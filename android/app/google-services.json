@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "136437729679",
+    "firebase_url": "https://mulsimapp-default-rtdb.firebaseio.com",
+    "project_id": "mulsimapp",
+    "storage_bucket": "mulsimapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:136437729679:android:a44f46ba18aef1797823fa",
+        "android_client_info": {
+          "package_name": "com.islamic_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "136437729679-bjm06k840nev2um72a6dekq6072hd19e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyASmhiEtr-Rer-ignSqgP4d-EwaNB5enCo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "136437729679-bjm06k840nev2um72a6dekq6072hd19e.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

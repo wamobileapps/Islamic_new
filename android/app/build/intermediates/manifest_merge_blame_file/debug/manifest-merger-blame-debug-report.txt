@@ -15,100 +15,788 @@
 12-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:4:5-67
 12-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:4:22-64
 13    <uses-permission android:name="android.permission.VIBRATE" />
-13-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:5:1-61
-13-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:5:18-59
+13-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:5:5-65
+13-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:5:22-63
 14    <uses-permission android:name="android.permission.CAMERA" />
-14-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:6:1-60
-14-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:6:18-58
+14-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:6:5-64
+14-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:6:22-62
 15    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-15-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:7:1-76
-15-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:7:18-74
+15-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:7:5-80
+15-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:7:22-78
 16    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-16-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:8:1-75
-16-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:8:18-72
-17    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-17-->[com.facebook.flipper:flipper:0.75.1] /Users/webastral/.gradle/caches/transforms-2/files-2.1/a8f6015f96666ab8d93bfe5b64998bc8/jetified-flipper-0.75.1/AndroidManifest.xml:16:5-76
-17-->[com.facebook.flipper:flipper:0.75.1] /Users/webastral/.gradle/caches/transforms-2/files-2.1/a8f6015f96666ab8d93bfe5b64998bc8/jetified-flipper-0.75.1/AndroidManifest.xml:16:22-73
-18    <uses-permission android:name="android.permission.WAKE_LOCK" />
-18-->[:react-native-background-timer] /Users/webastral/Downloads/islamic_app/node_modules/react-native-background-timer/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:11:5-68
-18-->[:react-native-background-timer] /Users/webastral/Downloads/islamic_app/node_modules/react-native-background-timer/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:11:22-65
-19    <uses-permission android:name="android.permission.USE_BIOMETRIC" />
-19-->[:react-native-keychain] /Users/webastral/Downloads/islamic_app/node_modules/react-native-keychain/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:11:5-72
-19-->[:react-native-keychain] /Users/webastral/Downloads/islamic_app/node_modules/react-native-keychain/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:11:22-69
-20    <uses-permission android:name="android.permission.USE_FINGERPRINT" />
-20-->[:react-native-keychain] /Users/webastral/Downloads/islamic_app/node_modules/react-native-keychain/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:12:5-74
-20-->[:react-native-keychain] /Users/webastral/Downloads/islamic_app/node_modules/react-native-keychain/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:12:22-71
-21
-22    <application
-22-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:9:5-32:19
-23        android:name="com.islamic_app.MainApplication"
-23-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:10:7-38
-24        android:allowBackup="false"
-24-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:14:7-34
-25        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-25-->[androidx.core:core:1.3.1] /Users/webastral/.gradle/caches/transforms-2/files-2.1/3975ffd70914deb17405b14313b8e4ba/core-1.3.1/AndroidManifest.xml:24:18-86
-26        android:debuggable="true"
-27        android:icon="@mipmap/ic_launcher"
-27-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:12:7-41
-28        android:label="@string/app_name"
-28-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:11:7-39
-29        android:roundIcon="@mipmap/ic_launcher_round"
-29-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:13:7-52
-30        android:theme="@style/AppTheme"
-30-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:16:7-38
-31        android:usesCleartextTraffic="true" >
-31-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:15:7-42
-32        <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" />
-32-->/Users/webastral/Downloads/islamic_app/android/app/src/debug/AndroidManifest.xml:11:9-86
-32-->/Users/webastral/Downloads/islamic_app/android/app/src/debug/AndroidManifest.xml:11:19-83
-33        <activity
-33-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:17:7-27:18
-34            android:name="com.islamic_app.MainActivity"
-34-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:18:9-37
-35            android:configChanges="keyboard|keyboardHidden|orientation|screenSize|uiMode"
-35-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:20:9-86
-36            android:label="@string/app_name"
-36-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:19:9-41
-37            android:launchMode="singleTask"
-37-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:21:9-40
-38            android:windowSoftInputMode="adjustResize" >
-38-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:22:9-51
-39            <intent-filter>
-39-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:23:9-26:25
-40                <action android:name="android.intent.action.MAIN" />
-40-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:24:13-65
-40-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:24:21-62
-41
-42                <category android:name="android.intent.category.LAUNCHER" />
-42-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:25:13-73
-42-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:25:23-70
-43            </intent-filter>
-44        </activity>
-45
-46        <meta-data
-46-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:29:7-31:64
-47            android:name="com.google.android.geo.API_KEY"
-47-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:30:7-52
-48            android:value="AIzaSyCV5HmY_q1S8_0Kp0uhAxEchmaruTxwD0g" />
-48-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:31:7-62
-49
-50        <provider
-50-->[:react-native-image-picker] /Users/webastral/Downloads/islamic_app/node_modules/react-native-image-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:12:9-20:20
-51            android:name="com.imagepicker.ImagePickerProvider"
-51-->[:react-native-image-picker] /Users/webastral/Downloads/islamic_app/node_modules/react-native-image-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:13:13-63
-52            android:authorities="com.islamic_app.imagepickerprovider"
-52-->[:react-native-image-picker] /Users/webastral/Downloads/islamic_app/node_modules/react-native-image-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:14:13-71
-53            android:exported="false"
-53-->[:react-native-image-picker] /Users/webastral/Downloads/islamic_app/node_modules/react-native-image-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:15:13-37
-54            android:grantUriPermissions="true" >
-54-->[:react-native-image-picker] /Users/webastral/Downloads/islamic_app/node_modules/react-native-image-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:16:13-47
-55            <meta-data
-55-->[:react-native-image-picker] /Users/webastral/Downloads/islamic_app/node_modules/react-native-image-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:17:13-19:70
-56                android:name="android.support.FILE_PROVIDER_PATHS"
-56-->[:react-native-image-picker] /Users/webastral/Downloads/islamic_app/node_modules/react-native-image-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:18:17-67
-57                android:resource="@xml/imagepicker_provider_paths" />
-57-->[:react-native-image-picker] /Users/webastral/Downloads/islamic_app/node_modules/react-native-image-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:19:17-67
-58        </provider>
-59    </application>
-60
-61</manifest>
+16-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:8:5-79
+16-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:8:22-76
+17    <uses-permission android:name="android.permission.WAKE_LOCK" />
+17-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:9:5-68
+17-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:9:22-65
+18    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+18-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:10:5-81
+18-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:10:22-78
+19
+20    <permission
+21        android:name="com.islamic_app.permission.C2D_MESSAGE"
+22        android:protectionLevel="signature" />
+23
+24    <uses-permission android:name="com.islamic_app.permission.C2D_MESSAGE" />
+25    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+25-->[com.facebook.flipper:flipper:0.75.1] /Users/webastral/.gradle/caches/transforms-2/files-2.1/e1d669587456380c8d4e62dfc92484ee/jetified-flipper-0.75.1/AndroidManifest.xml:16:5-76
+25-->[com.facebook.flipper:flipper:0.75.1] /Users/webastral/.gradle/caches/transforms-2/files-2.1/e1d669587456380c8d4e62dfc92484ee/jetified-flipper-0.75.1/AndroidManifest.xml:16:22-73
+26    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+26-->[:react-native-firebase_messaging] /Users/webastral/Downloads/islamic_app/node_modules/@react-native-firebase/messaging/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:13:5-79
+26-->[:react-native-firebase_messaging] /Users/webastral/Downloads/islamic_app/node_modules/@react-native-firebase/messaging/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:13:22-76
+27    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+27-->[:react-native-background-actions] /Users/webastral/Downloads/islamic_app/node_modules/react-native-background-actions/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:9:5-77
+27-->[:react-native-background-actions] /Users/webastral/Downloads/islamic_app/node_modules/react-native-background-actions/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:9:22-74
+28    <uses-permission android:name="android.permission.USE_BIOMETRIC" />
+28-->[:react-native-keychain] /Users/webastral/Downloads/islamic_app/node_modules/react-native-keychain/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:11:5-72
+28-->[:react-native-keychain] /Users/webastral/Downloads/islamic_app/node_modules/react-native-keychain/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:11:22-69
+29    <uses-permission android:name="android.permission.USE_FINGERPRINT" /> <!-- Required by older versions of Google Play services to create IID tokens -->
+29-->[:react-native-keychain] /Users/webastral/Downloads/islamic_app/node_modules/react-native-keychain/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:12:5-74
+29-->[:react-native-keychain] /Users/webastral/Downloads/islamic_app/node_modules/react-native-keychain/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:12:22-71
+30    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+30-->[com.google.firebase:firebase-messaging:23.0.0] /Users/webastral/.gradle/caches/transforms-2/files-2.1/e6ad883d1f76f2cc26fc26aeb6f5dc2f/jetified-firebase-messaging-23.0.0/AndroidManifest.xml:25:5-82
+30-->[com.google.firebase:firebase-messaging:23.0.0] /Users/webastral/.gradle/caches/transforms-2/files-2.1/e6ad883d1f76f2cc26fc26aeb6f5dc2f/jetified-firebase-messaging-23.0.0/AndroidManifest.xml:25:22-79
+31    <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" /> <!-- Include required permissions for Advertising Id -->
+31-->[com.google.android.gms:play-services-measurement:20.0.2] /Users/webastral/.gradle/caches/transforms-2/files-2.1/3cd2eb63e92693afc4ff3966b3c2bee5/jetified-play-services-measurement-20.0.2/AndroidManifest.xml:26:5-110
+31-->[com.google.android.gms:play-services-measurement:20.0.2] /Users/webastral/.gradle/caches/transforms-2/files-2.1/3cd2eb63e92693afc4ff3966b3c2bee5/jetified-play-services-measurement-20.0.2/AndroidManifest.xml:26:22-107
+32    <uses-permission android:name="com.google.android.gms.permission.AD_ID" /> <!-- for android -->
+32-->[com.google.android.gms:play-services-ads-identifier:18.0.0] /Users/webastral/.gradle/caches/transforms-2/files-2.1/1824c36e08c596fdb0cf53eaf6c786dd/jetified-play-services-ads-identifier-18.0.0/AndroidManifest.xml:23:5-79
+32-->[com.google.android.gms:play-services-ads-identifier:18.0.0] /Users/webastral/.gradle/caches/transforms-2/files-2.1/1824c36e08c596fdb0cf53eaf6c786dd/jetified-play-services-ads-identifier-18.0.0/AndroidManifest.xml:23:22-76
+33    <!-- <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS"/> -->
+34    <!-- <uses-permission android:name="com.android.launcher.permission.WRITE_SETTINGS"/> -->
+35    <!-- <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT" /> -->
+36    <!-- <uses-permission android:name="com.android.launcher.permission.UNINSTALL_SHORTCUT" /> -->
+37    <!-- for Samsung -->
+38    <uses-permission android:name="com.sec.android.provider.badge.permission.READ" />
+38-->[me.leolin:ShortcutBadger:1.1.22] /Users/webastral/.gradle/caches/transforms-2/files-2.1/c11a7244ba86c9c1a426f4cd384f8398/jetified-ShortcutBadger-1.1.22/AndroidManifest.xml:19:5-86
+38-->[me.leolin:ShortcutBadger:1.1.22] /Users/webastral/.gradle/caches/transforms-2/files-2.1/c11a7244ba86c9c1a426f4cd384f8398/jetified-ShortcutBadger-1.1.22/AndroidManifest.xml:19:22-83
+39    <uses-permission android:name="com.sec.android.provider.badge.permission.WRITE" /> <!-- for htc -->
+39-->[me.leolin:ShortcutBadger:1.1.22] /Users/webastral/.gradle/caches/transforms-2/files-2.1/c11a7244ba86c9c1a426f4cd384f8398/jetified-ShortcutBadger-1.1.22/AndroidManifest.xml:20:5-87
+39-->[me.leolin:ShortcutBadger:1.1.22] /Users/webastral/.gradle/caches/transforms-2/files-2.1/c11a7244ba86c9c1a426f4cd384f8398/jetified-ShortcutBadger-1.1.22/AndroidManifest.xml:20:22-84
+40    <uses-permission android:name="com.htc.launcher.permission.READ_SETTINGS" />
+40-->[me.leolin:ShortcutBadger:1.1.22] /Users/webastral/.gradle/caches/transforms-2/files-2.1/c11a7244ba86c9c1a426f4cd384f8398/jetified-ShortcutBadger-1.1.22/AndroidManifest.xml:23:5-81
+40-->[me.leolin:ShortcutBadger:1.1.22] /Users/webastral/.gradle/caches/transforms-2/files-2.1/c11a7244ba86c9c1a426f4cd384f8398/jetified-ShortcutBadger-1.1.22/AndroidManifest.xml:23:22-78
+41    <uses-permission android:name="com.htc.launcher.permission.UPDATE_SHORTCUT" /> <!-- for sony -->
+41-->[me.leolin:ShortcutBadger:1.1.22] /Users/webastral/.gradle/caches/transforms-2/files-2.1/c11a7244ba86c9c1a426f4cd384f8398/jetified-ShortcutBadger-1.1.22/AndroidManifest.xml:24:5-83
+41-->[me.leolin:ShortcutBadger:1.1.22] /Users/webastral/.gradle/caches/transforms-2/files-2.1/c11a7244ba86c9c1a426f4cd384f8398/jetified-ShortcutBadger-1.1.22/AndroidManifest.xml:24:22-80
+42    <uses-permission android:name="com.sonyericsson.home.permission.BROADCAST_BADGE" />
+42-->[me.leolin:ShortcutBadger:1.1.22] /Users/webastral/.gradle/caches/transforms-2/files-2.1/c11a7244ba86c9c1a426f4cd384f8398/jetified-ShortcutBadger-1.1.22/AndroidManifest.xml:27:5-88
+42-->[me.leolin:ShortcutBadger:1.1.22] /Users/webastral/.gradle/caches/transforms-2/files-2.1/c11a7244ba86c9c1a426f4cd384f8398/jetified-ShortcutBadger-1.1.22/AndroidManifest.xml:27:22-85
+43    <uses-permission android:name="com.sonymobile.home.permission.PROVIDER_INSERT_BADGE" /> <!-- for apex -->
+43-->[me.leolin:ShortcutBadger:1.1.22] /Users/webastral/.gradle/caches/transforms-2/files-2.1/c11a7244ba86c9c1a426f4cd384f8398/jetified-ShortcutBadger-1.1.22/AndroidManifest.xml:28:5-92
+43-->[me.leolin:ShortcutBadger:1.1.22] /Users/webastral/.gradle/caches/transforms-2/files-2.1/c11a7244ba86c9c1a426f4cd384f8398/jetified-ShortcutBadger-1.1.22/AndroidManifest.xml:28:22-89
+44    <uses-permission android:name="com.anddoes.launcher.permission.UPDATE_COUNT" /> <!-- for solid -->
+44-->[me.leolin:ShortcutBadger:1.1.22] /Users/webastral/.gradle/caches/transforms-2/files-2.1/c11a7244ba86c9c1a426f4cd384f8398/jetified-ShortcutBadger-1.1.22/AndroidManifest.xml:31:5-84
+44-->[me.leolin:ShortcutBadger:1.1.22] /Users/webastral/.gradle/caches/transforms-2/files-2.1/c11a7244ba86c9c1a426f4cd384f8398/jetified-ShortcutBadger-1.1.22/AndroidManifest.xml:31:22-81
+45    <uses-permission android:name="com.majeur.launcher.permission.UPDATE_BADGE" /> <!-- for huawei -->
+45-->[me.leolin:ShortcutBadger:1.1.22] /Users/webastral/.gradle/caches/transforms-2/files-2.1/c11a7244ba86c9c1a426f4cd384f8398/jetified-ShortcutBadger-1.1.22/AndroidManifest.xml:34:5-83
+45-->[me.leolin:ShortcutBadger:1.1.22] /Users/webastral/.gradle/caches/transforms-2/files-2.1/c11a7244ba86c9c1a426f4cd384f8398/jetified-ShortcutBadger-1.1.22/AndroidManifest.xml:34:22-80
+46    <uses-permission android:name="com.huawei.android.launcher.permission.CHANGE_BADGE" />
+46-->[me.leolin:ShortcutBadger:1.1.22] /Users/webastral/.gradle/caches/transforms-2/files-2.1/c11a7244ba86c9c1a426f4cd384f8398/jetified-ShortcutBadger-1.1.22/AndroidManifest.xml:37:5-91
+46-->[me.leolin:ShortcutBadger:1.1.22] /Users/webastral/.gradle/caches/transforms-2/files-2.1/c11a7244ba86c9c1a426f4cd384f8398/jetified-ShortcutBadger-1.1.22/AndroidManifest.xml:37:22-88
+47    <uses-permission android:name="com.huawei.android.launcher.permission.READ_SETTINGS" />
+47-->[me.leolin:ShortcutBadger:1.1.22] /Users/webastral/.gradle/caches/transforms-2/files-2.1/c11a7244ba86c9c1a426f4cd384f8398/jetified-ShortcutBadger-1.1.22/AndroidManifest.xml:38:5-92
+47-->[me.leolin:ShortcutBadger:1.1.22] /Users/webastral/.gradle/caches/transforms-2/files-2.1/c11a7244ba86c9c1a426f4cd384f8398/jetified-ShortcutBadger-1.1.22/AndroidManifest.xml:38:22-89
+48    <uses-permission android:name="com.huawei.android.launcher.permission.WRITE_SETTINGS" /> <!-- for ZUK -->
+48-->[me.leolin:ShortcutBadger:1.1.22] /Users/webastral/.gradle/caches/transforms-2/files-2.1/c11a7244ba86c9c1a426f4cd384f8398/jetified-ShortcutBadger-1.1.22/AndroidManifest.xml:39:5-93
+48-->[me.leolin:ShortcutBadger:1.1.22] /Users/webastral/.gradle/caches/transforms-2/files-2.1/c11a7244ba86c9c1a426f4cd384f8398/jetified-ShortcutBadger-1.1.22/AndroidManifest.xml:39:22-90
+49    <uses-permission android:name="android.permission.READ_APP_BADGE" /> <!-- for OPPO -->
+49-->[me.leolin:ShortcutBadger:1.1.22] /Users/webastral/.gradle/caches/transforms-2/files-2.1/c11a7244ba86c9c1a426f4cd384f8398/jetified-ShortcutBadger-1.1.22/AndroidManifest.xml:42:5-73
+49-->[me.leolin:ShortcutBadger:1.1.22] /Users/webastral/.gradle/caches/transforms-2/files-2.1/c11a7244ba86c9c1a426f4cd384f8398/jetified-ShortcutBadger-1.1.22/AndroidManifest.xml:42:22-70
+50    <uses-permission android:name="com.oppo.launcher.permission.READ_SETTINGS" />
+50-->[me.leolin:ShortcutBadger:1.1.22] /Users/webastral/.gradle/caches/transforms-2/files-2.1/c11a7244ba86c9c1a426f4cd384f8398/jetified-ShortcutBadger-1.1.22/AndroidManifest.xml:45:5-82
+50-->[me.leolin:ShortcutBadger:1.1.22] /Users/webastral/.gradle/caches/transforms-2/files-2.1/c11a7244ba86c9c1a426f4cd384f8398/jetified-ShortcutBadger-1.1.22/AndroidManifest.xml:45:22-79
+51    <uses-permission android:name="com.oppo.launcher.permission.WRITE_SETTINGS" /> <!-- for EvMe -->
+51-->[me.leolin:ShortcutBadger:1.1.22] /Users/webastral/.gradle/caches/transforms-2/files-2.1/c11a7244ba86c9c1a426f4cd384f8398/jetified-ShortcutBadger-1.1.22/AndroidManifest.xml:46:5-83
+51-->[me.leolin:ShortcutBadger:1.1.22] /Users/webastral/.gradle/caches/transforms-2/files-2.1/c11a7244ba86c9c1a426f4cd384f8398/jetified-ShortcutBadger-1.1.22/AndroidManifest.xml:46:22-80
+52    <uses-permission android:name="me.everything.badger.permission.BADGE_COUNT_READ" />
+52-->[me.leolin:ShortcutBadger:1.1.22] /Users/webastral/.gradle/caches/transforms-2/files-2.1/c11a7244ba86c9c1a426f4cd384f8398/jetified-ShortcutBadger-1.1.22/AndroidManifest.xml:49:5-88
+52-->[me.leolin:ShortcutBadger:1.1.22] /Users/webastral/.gradle/caches/transforms-2/files-2.1/c11a7244ba86c9c1a426f4cd384f8398/jetified-ShortcutBadger-1.1.22/AndroidManifest.xml:49:22-85
+53    <uses-permission android:name="me.everything.badger.permission.BADGE_COUNT_WRITE" />
+53-->[me.leolin:ShortcutBadger:1.1.22] /Users/webastral/.gradle/caches/transforms-2/files-2.1/c11a7244ba86c9c1a426f4cd384f8398/jetified-ShortcutBadger-1.1.22/AndroidManifest.xml:50:5-89
+53-->[me.leolin:ShortcutBadger:1.1.22] /Users/webastral/.gradle/caches/transforms-2/files-2.1/c11a7244ba86c9c1a426f4cd384f8398/jetified-ShortcutBadger-1.1.22/AndroidManifest.xml:50:22-86
+54
+55    <application
+55-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:19:5-165:19
+56        android:name="com.islamic_app.MainApplication"
+56-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:20:7-38
+57        android:allowBackup="false"
+57-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:24:7-34
+58        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+58-->[androidx.core:core:1.3.1] /Users/webastral/.gradle/caches/transforms-2/files-2.1/8f4dfadce8b90b8fa7f72007c5536a1d/core-1.3.1/AndroidManifest.xml:24:18-86
+59        android:debuggable="true"
+60        android:icon="@mipmap/ic_launcher"
+60-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:22:7-41
+61        android:label="@string/app_name"
+61-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:21:7-39
+62        android:roundIcon="@mipmap/ic_launcher_round"
+62-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:23:7-52
+63        android:theme="@style/AppTheme"
+63-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:26:7-38
+64        android:usesCleartextTraffic="true" >
+64-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:25:7-42
+65        <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" />
+65-->/Users/webastral/Downloads/islamic_app/android/app/src/debug/AndroidManifest.xml:11:9-86
+65-->/Users/webastral/Downloads/islamic_app/android/app/src/debug/AndroidManifest.xml:11:19-83
+66        <activity
+66-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:27:7-37:18
+67            android:name="com.islamic_app.MainActivity"
+67-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:28:9-37
+68            android:configChanges="keyboard|keyboardHidden|orientation|screenSize|uiMode"
+68-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:30:9-86
+69            android:label="@string/app_name"
+69-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:29:9-41
+70            android:launchMode="singleTask"
+70-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:31:9-40
+71            android:windowSoftInputMode="adjustResize" >
+71-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:32:9-51
+72            <intent-filter>
+72-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:33:9-36:25
+73                <action android:name="android.intent.action.MAIN" />
+73-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:34:13-65
+73-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:34:21-62
+74
+75                <category android:name="android.intent.category.LAUNCHER" />
+75-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:35:13-73
+75-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:35:23-70
+76            </intent-filter>
+77        </activity>
+78
+79        <meta-data
+79-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:39:7-41:64
+80            android:name="com.google.android.geo.API_KEY"
+80-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:40:7-52
+81            android:value="AIzaSyCV5HmY_q1S8_0Kp0uhAxEchmaruTxwD0g" />
+81-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:41:7-62
+82        <!--
+83 <meta-data
+84  android:name="com.google.firebase.messaging.default_notification_channel_id"
+85  android:value="@string/default_notification_channel_id" />
+86        -->
+87        <receiver
+87-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:48:7-56:20
+88            android:name="com.emekalites.react.alarm.notification.AlarmReceiver"
+88-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:49:13-81
+89            android:enabled="true"
+89-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:50:13-35
+90            android:exported="true" >
+90-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:51:13-36
+91            <intent-filter>
+91-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:52:13-55:29
+92                <action android:name="ACTION_DISMISS" />
+92-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:53:17-57
+92-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:53:25-54
+93                <action android:name="ACTION_SNOOZE" />
+93-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:54:17-56
+93-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:54:25-53
+94            </intent-filter>
+95        </receiver>
+96        <receiver
+96-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:58:9-61:39
+97            android:name="com.emekalites.react.alarm.notification.AlarmDismissReceiver"
+97-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:59:13-88
+98            android:enabled="true"
+98-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:60:13-35
+99            android:exported="true" />
+99-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:61:13-36
+100        <receiver
+100-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:63:9-74:20
+101            android:name="com.emekalites.react.alarm.notification.AlarmBootReceiver"
+101-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:64:13-85
+102            android:directBootAware="true"
+102-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:65:13-43
+103            android:enabled="false"
+103-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:66:13-36
+104            android:exported="true" >
+104-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:67:13-36
+105            <intent-filter>
+105-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:68:13-73:29
+106                <action android:name="android.intent.action.BOOT_COMPLETED" />
+106-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:69:17-79
+106-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:69:25-76
+107                <action android:name="android.intent.action.QUICKBOOT_POWERON" />
+107-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:70:17-82
+107-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:70:25-79
+108                <action android:name="com.htc.intent.action.QUICKBOOT_POWERON" />
+108-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:71:17-82
+108-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:71:25-79
+109                <action android:name="android.intent.action.LOCKED_BOOT_COMPLETED" />
+109-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:72:17-86
+109-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:72:25-83
+110            </intent-filter>
+111        </receiver> <!-- <service android:name="com.dieam.reactnativepushnotification.modules.RNPushNotificationRegistrationService"/> -->
+112        <meta-data
+112-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:80:2-81:67
+113            android:name="com.dieam.reactnativepushnotification.notification_channel_name"
+113-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:80:14-92
+114            android:value="YOUR NOTIFICATION CHANNEL NAME" />
+114-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:81:19-65
+115        <meta-data
+115-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:82:3-83:70
+116            android:name="com.dieam.reactnativepushnotification.notification_channel_description"
+116-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:82:15-100
+117            android:value="YOUR NOTIFICATION CHANNEL DESCRIPTION" />
+117-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:83:15-68
+118        <meta-data
+118-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:84:3-85:56
+119            android:name="com.dieam.reactnativepushnotification.notification_color"
+119-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:84:15-86
+120            android:resource="@android:color/white" />
+120-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:85:15-54
+121        <!--
+122 <receiver
+123      android:name="com.google.android.gms.gcm.GcmReceiver"
+124      android:exported="true"
+125      android:permission="com.google.android.c2dm.permission.SEND" >
+126      <intent-filter>fv
+127          <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+128          <category android:name="${applicationId}" />
+129      </intent-filter>
+130  </receiver>
+131        -->
+132        <service
+132-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:99:10-103:19
+133            android:name="com.islamic_app.HeartbeartService"
+133-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:100:13-61
+134            android:enabled="true"
+134-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:101:13-35
+135            android:exported="false" >
+135-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:102:13-37
+136        </service>
+137        <service android:name="com.islamic_app.HeartbeatEventService" >
+137-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:104:9-106:19
+137-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:105:13-65
+138        </service>
+139
+140        <receiver
+140-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:110:9-118:20
+141            android:name="com.islamic_app.BootUpReceiver"
+141-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:111:13-58
+142            android:enabled="true"
+142-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:112:13-35
+143            android:permission="android.permission.RECEIVE_BOOT_COMPLETED" >
+143-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:113:13-75
+144            <intent-filter>
+144-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:114:13-117:29
+145                <action android:name="android.intent.action.BOOT_COMPLETED" />
+145-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:69:17-79
+145-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:69:25-76
+146
+147                <category android:name="android.intent.category.DEFAULT" />
+147-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:116:17-76
+147-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:116:27-73
+148            </intent-filter>
+149        </receiver>
+150
+151        <service
+151-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:119:2-125:19
+152            android:name="com.dieam.reactnativepushnotification.modules.RNPushNotificationListenerService"
+152-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:120:13-107
+153            android:exported="false" >
+153-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:121:13-37
+154            <intent-filter>
+154-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:122:13-124:29
+155                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+155-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:123:17-78
+155-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:123:25-75
+156            </intent-filter>
+157        </service>
+158        <!--
+159 <service 
+160			android:name="com.wix.reactnativenotifications.fcm.FcmInstanceIdListenerService" 
+161			android:exported="false"> 
+162			<intent-filter> 
+163				<action android:name="com.google.firebase.MESSAGING_EVENT" /> 
+164			</intent-filter> 
+165		</service>
+166        -->
+167        <receiver android:name="com.dieam.reactnativepushnotification.modules.RNPushNotificationPublisher" />
+167-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:136:1-101
+167-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:136:11-99
+168        <receiver android:name="com.dieam.reactnativepushnotification.modules.RNPushNotificationBootEventReceiver" >
+168-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:137:1-141:12
+168-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:137:11-107
+169            <intent-filter>
+169-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:138:5-140:21
+170                <action android:name="android.intent.action.BOOT_COMPLETED" />
+170-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:69:17-79
+170-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:69:25-76
+171            </intent-filter>
+172        </receiver>
+173
+174        <service android:name="com.dieam.reactnativepushnotification.modules.RNPushNotificationRegistrationService" />
+174-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:142:1-110
+174-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:142:10-108
+175        <!--
+176 <receiver android:name="com.dieam.reactnativepushnotification.modules.RNPushNotificationPublisher" />
+177  <receiver android:name="com.dieam.reactnativepushnotification.modules.RNPushNotificationBootEventReceiver">
+178      <intent-filter>
+179          <action android:name="android.intent.action.BOOT_COMPLETED" />
+180      </intent-filter>
+181  </receiver>
+182  <service android:name="com.dieam.reactnativepushnotification.modules.RNPushNotificationRegistrationService"/>
+183        -->
+184        <service
+184-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:119:2-125:19
+185            android:name="com.dieam.reactnativepushnotification.modules.RNPushNotificationListenerService"
+185-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:120:13-107
+186            android:exported="false" >
+186-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:121:13-37
+187            <intent-filter>
+187-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:122:13-124:29
+188                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+188-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:123:17-78
+188-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:123:25-75
+189            </intent-filter>
+190        </service>
+191        <service
+191-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:161:3-162:68
+192            android:name="com.islamic_app.YourService"
+192-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:161:12-39
+193            android:permission="android.permission.BIND_JOB_SERVICE" />
+193-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:162:10-66
+194        <service android:name="io.invertase.firebase.messaging.ReactNativeFirebaseMessagingHeadlessService" />
+194-->[:react-native-firebase_messaging] /Users/webastral/Downloads/islamic_app/node_modules/@react-native-firebase/messaging/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:16:9-111
+194-->[:react-native-firebase_messaging] /Users/webastral/Downloads/islamic_app/node_modules/@react-native-firebase/messaging/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:16:18-108
+195        <service
+195-->[:react-native-firebase_messaging] /Users/webastral/Downloads/islamic_app/node_modules/@react-native-firebase/messaging/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:17:9-23:19
+196            android:name="io.invertase.firebase.messaging.ReactNativeFirebaseMessagingService"
+196-->[:react-native-firebase_messaging] /Users/webastral/Downloads/islamic_app/node_modules/@react-native-firebase/messaging/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:18:13-95
+197            android:exported="false" >
+197-->[:react-native-firebase_messaging] /Users/webastral/Downloads/islamic_app/node_modules/@react-native-firebase/messaging/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:19:13-37
+198            <intent-filter>
+198-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:122:13-124:29
+199                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+199-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:123:17-78
+199-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:123:25-75
+200            </intent-filter>
+201        </service>
+202
+203        <receiver
+203-->[:react-native-firebase_messaging] /Users/webastral/Downloads/islamic_app/node_modules/@react-native-firebase/messaging/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:25:9-32:20
+204            android:name="io.invertase.firebase.messaging.ReactNativeFirebaseMessagingReceiver"
+204-->[:react-native-firebase_messaging] /Users/webastral/Downloads/islamic_app/node_modules/@react-native-firebase/messaging/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:26:13-96
+205            android:exported="true"
+205-->[:react-native-firebase_messaging] /Users/webastral/Downloads/islamic_app/node_modules/@react-native-firebase/messaging/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:27:13-36
+206            android:permission="com.google.android.c2dm.permission.SEND" >
+206-->[:react-native-firebase_messaging] /Users/webastral/Downloads/islamic_app/node_modules/@react-native-firebase/messaging/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:28:13-73
+207            <intent-filter>
+207-->[:react-native-firebase_messaging] /Users/webastral/Downloads/islamic_app/node_modules/@react-native-firebase/messaging/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:29:13-31:29
+208                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+208-->[:react-native-firebase_messaging] /Users/webastral/Downloads/islamic_app/node_modules/@react-native-firebase/messaging/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:30:17-81
+208-->[:react-native-firebase_messaging] /Users/webastral/Downloads/islamic_app/node_modules/@react-native-firebase/messaging/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:30:25-78
+209            </intent-filter>
+210        </receiver>
+211
+212        <meta-data
+212-->[:react-native-firebase_messaging] /Users/webastral/Downloads/islamic_app/node_modules/@react-native-firebase/messaging/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:34:9-36:36
+213            android:name="firebase_messaging_auto_init_enabled"
+213-->[:react-native-firebase_messaging] /Users/webastral/Downloads/islamic_app/node_modules/@react-native-firebase/messaging/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:35:13-64
+214            android:value="true" />
+214-->[:react-native-firebase_messaging] /Users/webastral/Downloads/islamic_app/node_modules/@react-native-firebase/messaging/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:36:13-33
+215        <meta-data
+215-->[:react-native-firebase_messaging] /Users/webastral/Downloads/islamic_app/node_modules/@react-native-firebase/messaging/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:37:9-39:32
+216            android:name="com.google.firebase.messaging.default_notification_channel_id"
+216-->[:react-native-firebase_messaging] /Users/webastral/Downloads/islamic_app/node_modules/@react-native-firebase/messaging/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:38:13-89
+217            android:value="" />
+217-->[:react-native-firebase_messaging] /Users/webastral/Downloads/islamic_app/node_modules/@react-native-firebase/messaging/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:39:13-29
+218        <meta-data
+218-->[:react-native-firebase_messaging] /Users/webastral/Downloads/islamic_app/node_modules/@react-native-firebase/messaging/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:40:9-42:47
+219            android:name="com.google.firebase.messaging.default_notification_color"
+219-->[:react-native-firebase_messaging] /Users/webastral/Downloads/islamic_app/node_modules/@react-native-firebase/messaging/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:41:13-84
+220            android:resource="@color/white" />
+220-->[:react-native-firebase_messaging] /Users/webastral/Downloads/islamic_app/node_modules/@react-native-firebase/messaging/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:42:13-44
+221        <meta-data
+221-->[:react-native-firebase_app] /Users/webastral/Downloads/islamic_app/node_modules/@react-native-firebase/app/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:12:9-14:36
+222            android:name="app_data_collection_default_enabled"
+222-->[:react-native-firebase_app] /Users/webastral/Downloads/islamic_app/node_modules/@react-native-firebase/app/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:13:13-63
+223            android:value="true" />
+223-->[:react-native-firebase_app] /Users/webastral/Downloads/islamic_app/node_modules/@react-native-firebase/app/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:14:13-33
+224
+225        <service
+225-->[:react-native-firebase_app] /Users/webastral/Downloads/islamic_app/node_modules/@react-native-firebase/app/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:16:9-20:19
+226            android:name="com.google.firebase.components.ComponentDiscoveryService"
+226-->[:react-native-firebase_app] /Users/webastral/Downloads/islamic_app/node_modules/@react-native-firebase/app/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:16:18-89
+227            android:directBootAware="true"
+227-->[com.google.firebase:firebase-common:20.0.0] /Users/webastral/.gradle/caches/transforms-2/files-2.1/dd3c2617c0f6359f3b13e51ce6c2db19/jetified-firebase-common-20.0.0/AndroidManifest.xml:35:13-43
+228            android:exported="false" >
+228-->[com.google.firebase:firebase-messaging:23.0.0] /Users/webastral/.gradle/caches/transforms-2/files-2.1/e6ad883d1f76f2cc26fc26aeb6f5dc2f/jetified-firebase-messaging-23.0.0/AndroidManifest.xml:51:13-37
+229            <meta-data
+229-->[:react-native-firebase_app] /Users/webastral/Downloads/islamic_app/node_modules/@react-native-firebase/app/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:17:13-19:85
+230                android:name="com.google.firebase.components:io.invertase.firebase.app.ReactNativeFirebaseAppRegistrar"
+230-->[:react-native-firebase_app] /Users/webastral/Downloads/islamic_app/node_modules/@react-native-firebase/app/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:18:17-120
+231                android:value="com.google.firebase.components.ComponentRegistrar" />
+231-->[:react-native-firebase_app] /Users/webastral/Downloads/islamic_app/node_modules/@react-native-firebase/app/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:19:17-82
+232            <meta-data
+232-->[com.google.firebase:firebase-messaging:23.0.0] /Users/webastral/.gradle/caches/transforms-2/files-2.1/e6ad883d1f76f2cc26fc26aeb6f5dc2f/jetified-firebase-messaging-23.0.0/AndroidManifest.xml:52:13-54:85
+233                android:name="com.google.firebase.components:com.google.firebase.messaging.FirebaseMessagingRegistrar"
+233-->[com.google.firebase:firebase-messaging:23.0.0] /Users/webastral/.gradle/caches/transforms-2/files-2.1/e6ad883d1f76f2cc26fc26aeb6f5dc2f/jetified-firebase-messaging-23.0.0/AndroidManifest.xml:53:17-119
+234                android:value="com.google.firebase.components.ComponentRegistrar" />
+234-->[com.google.firebase:firebase-messaging:23.0.0] /Users/webastral/.gradle/caches/transforms-2/files-2.1/e6ad883d1f76f2cc26fc26aeb6f5dc2f/jetified-firebase-messaging-23.0.0/AndroidManifest.xml:54:17-82
+235            <meta-data
+235-->[com.google.firebase:firebase-datatransport:18.0.0] /Users/webastral/.gradle/caches/transforms-2/files-2.1/bf606e5670d7119405b2092a26d708a8/jetified-firebase-datatransport-18.0.0/AndroidManifest.xml:28:13-30:85
+236                android:name="com.google.firebase.components:com.google.firebase.datatransport.TransportRegistrar"
+236-->[com.google.firebase:firebase-datatransport:18.0.0] /Users/webastral/.gradle/caches/transforms-2/files-2.1/bf606e5670d7119405b2092a26d708a8/jetified-firebase-datatransport-18.0.0/AndroidManifest.xml:29:17-115
+237                android:value="com.google.firebase.components.ComponentRegistrar" />
+237-->[com.google.firebase:firebase-datatransport:18.0.0] /Users/webastral/.gradle/caches/transforms-2/files-2.1/bf606e5670d7119405b2092a26d708a8/jetified-firebase-datatransport-18.0.0/AndroidManifest.xml:30:17-82
+238            <meta-data
+238-->[com.google.android.gms:play-services-measurement-api:20.0.2] /Users/webastral/.gradle/caches/transforms-2/files-2.1/3fdf579b845f6bc15737cd3ea1881e32/jetified-play-services-measurement-api-20.0.2/AndroidManifest.xml:30:13-32:85
+239                android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar"
+239-->[com.google.android.gms:play-services-measurement-api:20.0.2] /Users/webastral/.gradle/caches/transforms-2/files-2.1/3fdf579b845f6bc15737cd3ea1881e32/jetified-play-services-measurement-api-20.0.2/AndroidManifest.xml:31:17-139
+240                android:value="com.google.firebase.components.ComponentRegistrar" />
+240-->[com.google.android.gms:play-services-measurement-api:20.0.2] /Users/webastral/.gradle/caches/transforms-2/files-2.1/3fdf579b845f6bc15737cd3ea1881e32/jetified-play-services-measurement-api-20.0.2/AndroidManifest.xml:32:17-82
+241            <meta-data
+241-->[com.google.firebase:firebase-installations:17.0.0] /Users/webastral/.gradle/caches/transforms-2/files-2.1/9e5d573d5846ec4abfa4160f8fee727f/jetified-firebase-installations-17.0.0/AndroidManifest.xml:18:13-20:85
+242                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar"
+242-->[com.google.firebase:firebase-installations:17.0.0] /Users/webastral/.gradle/caches/transforms-2/files-2.1/9e5d573d5846ec4abfa4160f8fee727f/jetified-firebase-installations-17.0.0/AndroidManifest.xml:19:17-127
+243                android:value="com.google.firebase.components.ComponentRegistrar" />
+243-->[com.google.firebase:firebase-installations:17.0.0] /Users/webastral/.gradle/caches/transforms-2/files-2.1/9e5d573d5846ec4abfa4160f8fee727f/jetified-firebase-installations-17.0.0/AndroidManifest.xml:20:17-82
+244        </service>
+245
+246        <provider
+246-->[:react-native-firebase_app] /Users/webastral/Downloads/islamic_app/node_modules/@react-native-firebase/app/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:22:9-26:38
+247            android:name="io.invertase.firebase.app.ReactNativeFirebaseAppInitProvider"
+247-->[:react-native-firebase_app] /Users/webastral/Downloads/islamic_app/node_modules/@react-native-firebase/app/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:23:13-88
+248            android:authorities="com.islamic_app.reactnativefirebaseappinitprovider"
+248-->[:react-native-firebase_app] /Users/webastral/Downloads/islamic_app/node_modules/@react-native-firebase/app/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:24:13-86
+249            android:exported="false"
+249-->[:react-native-firebase_app] /Users/webastral/Downloads/islamic_app/node_modules/@react-native-firebase/app/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:25:13-37
+250            android:initOrder="99" />
+250-->[:react-native-firebase_app] /Users/webastral/Downloads/islamic_app/node_modules/@react-native-firebase/app/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:26:13-35
+251        <provider
+251-->[:react-native-image-picker] /Users/webastral/Downloads/islamic_app/node_modules/react-native-image-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:12:9-20:20
+252            android:name="com.imagepicker.ImagePickerProvider"
+252-->[:react-native-image-picker] /Users/webastral/Downloads/islamic_app/node_modules/react-native-image-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:13:13-63
+253            android:authorities="com.islamic_app.imagepickerprovider"
+253-->[:react-native-image-picker] /Users/webastral/Downloads/islamic_app/node_modules/react-native-image-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:14:13-71
+254            android:exported="false"
+254-->[:react-native-image-picker] /Users/webastral/Downloads/islamic_app/node_modules/react-native-image-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:15:13-37
+255            android:grantUriPermissions="true" >
+255-->[:react-native-image-picker] /Users/webastral/Downloads/islamic_app/node_modules/react-native-image-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:16:13-47
+256            <meta-data
+256-->[:react-native-image-picker] /Users/webastral/Downloads/islamic_app/node_modules/react-native-image-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:17:13-19:70
+257                android:name="android.support.FILE_PROVIDER_PATHS"
+257-->[:react-native-image-picker] /Users/webastral/Downloads/islamic_app/node_modules/react-native-image-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:18:17-67
+258                android:resource="@xml/imagepicker_provider_paths" />
+258-->[:react-native-image-picker] /Users/webastral/Downloads/islamic_app/node_modules/react-native-image-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:19:17-67
+259        </provider>
+260
+261        <receiver
+261-->[com.google.firebase:firebase-messaging:23.0.0] /Users/webastral/.gradle/caches/transforms-2/files-2.1/e6ad883d1f76f2cc26fc26aeb6f5dc2f/jetified-firebase-messaging-23.0.0/AndroidManifest.xml:28:9-35:20
+262            android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver"
+262-->[com.google.firebase:firebase-messaging:23.0.0] /Users/webastral/.gradle/caches/transforms-2/files-2.1/e6ad883d1f76f2cc26fc26aeb6f5dc2f/jetified-firebase-messaging-23.0.0/AndroidManifest.xml:29:13-78
+263            android:exported="true"
+263-->[com.google.firebase:firebase-messaging:23.0.0] /Users/webastral/.gradle/caches/transforms-2/files-2.1/e6ad883d1f76f2cc26fc26aeb6f5dc2f/jetified-firebase-messaging-23.0.0/AndroidManifest.xml:30:13-36
+264            android:permission="com.google.android.c2dm.permission.SEND" >
+264-->[com.google.firebase:firebase-messaging:23.0.0] /Users/webastral/.gradle/caches/transforms-2/files-2.1/e6ad883d1f76f2cc26fc26aeb6f5dc2f/jetified-firebase-messaging-23.0.0/AndroidManifest.xml:31:13-73
+265            <intent-filter>
+265-->[:react-native-firebase_messaging] /Users/webastral/Downloads/islamic_app/node_modules/@react-native-firebase/messaging/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:29:13-31:29
+266                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+266-->[:react-native-firebase_messaging] /Users/webastral/Downloads/islamic_app/node_modules/@react-native-firebase/messaging/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:30:17-81
+266-->[:react-native-firebase_messaging] /Users/webastral/Downloads/islamic_app/node_modules/@react-native-firebase/messaging/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:30:25-78
+267            </intent-filter>
+268        </receiver>
+269        <!--
+270             FirebaseMessagingService performs security checks at runtime,
+271             but set to not exported to explicitly avoid allowing another app to call it.
+272        -->
+273        <service
+273-->[com.google.firebase:firebase-messaging:23.0.0] /Users/webastral/.gradle/caches/transforms-2/files-2.1/e6ad883d1f76f2cc26fc26aeb6f5dc2f/jetified-firebase-messaging-23.0.0/AndroidManifest.xml:41:9-48:19
+274            android:name="com.google.firebase.messaging.FirebaseMessagingService"
+274-->[com.google.firebase:firebase-messaging:23.0.0] /Users/webastral/.gradle/caches/transforms-2/files-2.1/e6ad883d1f76f2cc26fc26aeb6f5dc2f/jetified-firebase-messaging-23.0.0/AndroidManifest.xml:42:13-82
+275            android:directBootAware="true"
+275-->[com.google.firebase:firebase-messaging:23.0.0] /Users/webastral/.gradle/caches/transforms-2/files-2.1/e6ad883d1f76f2cc26fc26aeb6f5dc2f/jetified-firebase-messaging-23.0.0/AndroidManifest.xml:43:13-43
+276            android:exported="false" >
+276-->[com.google.firebase:firebase-messaging:23.0.0] /Users/webastral/.gradle/caches/transforms-2/files-2.1/e6ad883d1f76f2cc26fc26aeb6f5dc2f/jetified-firebase-messaging-23.0.0/AndroidManifest.xml:44:13-37
+277            <intent-filter android:priority="-500" >
+277-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:122:13-124:29
+278                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+278-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:123:17-78
+278-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:123:25-75
+279            </intent-filter>
+280        </service>
+281        <service
+281-->[com.google.android.datatransport:transport-backend-cct:3.0.0] /Users/webastral/.gradle/caches/transforms-2/files-2.1/a714cb4a880dc5cdf911bc88638a231f/jetified-transport-backend-cct-3.0.0/AndroidManifest.xml:29:9-35:19
+282            android:name="com.google.android.datatransport.runtime.backends.TransportBackendDiscovery"
+282-->[com.google.android.datatransport:transport-backend-cct:3.0.0] /Users/webastral/.gradle/caches/transforms-2/files-2.1/a714cb4a880dc5cdf911bc88638a231f/jetified-transport-backend-cct-3.0.0/AndroidManifest.xml:30:13-103
+283            android:exported="false" >
+283-->[com.google.android.datatransport:transport-backend-cct:3.0.0] /Users/webastral/.gradle/caches/transforms-2/files-2.1/a714cb4a880dc5cdf911bc88638a231f/jetified-transport-backend-cct-3.0.0/AndroidManifest.xml:31:13-37
+284            <meta-data
+284-->[com.google.android.datatransport:transport-backend-cct:3.0.0] /Users/webastral/.gradle/caches/transforms-2/files-2.1/a714cb4a880dc5cdf911bc88638a231f/jetified-transport-backend-cct-3.0.0/AndroidManifest.xml:32:13-34:39
+285                android:name="backend:com.google.android.datatransport.cct.CctBackendFactory"
+285-->[com.google.android.datatransport:transport-backend-cct:3.0.0] /Users/webastral/.gradle/caches/transforms-2/files-2.1/a714cb4a880dc5cdf911bc88638a231f/jetified-transport-backend-cct-3.0.0/AndroidManifest.xml:33:17-94
+286                android:value="cct" />
+286-->[com.google.android.datatransport:transport-backend-cct:3.0.0] /Users/webastral/.gradle/caches/transforms-2/files-2.1/a714cb4a880dc5cdf911bc88638a231f/jetified-transport-backend-cct-3.0.0/AndroidManifest.xml:34:17-36
+287        </service>
+288
+289        <provider
+289-->[com.google.firebase:firebase-common:20.0.0] /Users/webastral/.gradle/caches/transforms-2/files-2.1/dd3c2617c0f6359f3b13e51ce6c2db19/jetified-firebase-common-20.0.0/AndroidManifest.xml:26:9-31:39
+290            android:name="com.google.firebase.provider.FirebaseInitProvider"
+290-->[com.google.firebase:firebase-common:20.0.0] /Users/webastral/.gradle/caches/transforms-2/files-2.1/dd3c2617c0f6359f3b13e51ce6c2db19/jetified-firebase-common-20.0.0/AndroidManifest.xml:27:13-77
+291            android:authorities="com.islamic_app.firebaseinitprovider"
+291-->[com.google.firebase:firebase-common:20.0.0] /Users/webastral/.gradle/caches/transforms-2/files-2.1/dd3c2617c0f6359f3b13e51ce6c2db19/jetified-firebase-common-20.0.0/AndroidManifest.xml:28:13-72
+292            android:directBootAware="true"
+292-->[com.google.firebase:firebase-common:20.0.0] /Users/webastral/.gradle/caches/transforms-2/files-2.1/dd3c2617c0f6359f3b13e51ce6c2db19/jetified-firebase-common-20.0.0/AndroidManifest.xml:29:13-43
+293            android:exported="false"
+293-->[com.google.firebase:firebase-common:20.0.0] /Users/webastral/.gradle/caches/transforms-2/files-2.1/dd3c2617c0f6359f3b13e51ce6c2db19/jetified-firebase-common-20.0.0/AndroidManifest.xml:30:13-37
+294            android:initOrder="100" />
+294-->[com.google.firebase:firebase-common:20.0.0] /Users/webastral/.gradle/caches/transforms-2/files-2.1/dd3c2617c0f6359f3b13e51ce6c2db19/jetified-firebase-common-20.0.0/AndroidManifest.xml:31:13-36
+295        <provider
+295-->[androidx.work:work-runtime:2.2.0] /Users/webastral/.gradle/caches/transforms-2/files-2.1/2bc3db952fef692a1c514de0ecdf1fa2/work-runtime-2.2.0/AndroidManifest.xml:30:9-36:35
+296            android:name="androidx.work.impl.WorkManagerInitializer"
+296-->[androidx.work:work-runtime:2.2.0] /Users/webastral/.gradle/caches/transforms-2/files-2.1/2bc3db952fef692a1c514de0ecdf1fa2/work-runtime-2.2.0/AndroidManifest.xml:31:13-69
+297            android:authorities="com.islamic_app.workmanager-init"
+297-->[androidx.work:work-runtime:2.2.0] /Users/webastral/.gradle/caches/transforms-2/files-2.1/2bc3db952fef692a1c514de0ecdf1fa2/work-runtime-2.2.0/AndroidManifest.xml:32:13-68
+298            android:directBootAware="false"
+298-->[androidx.work:work-runtime:2.2.0] /Users/webastral/.gradle/caches/transforms-2/files-2.1/2bc3db952fef692a1c514de0ecdf1fa2/work-runtime-2.2.0/AndroidManifest.xml:33:13-44
+299            android:exported="false"
+299-->[androidx.work:work-runtime:2.2.0] /Users/webastral/.gradle/caches/transforms-2/files-2.1/2bc3db952fef692a1c514de0ecdf1fa2/work-runtime-2.2.0/AndroidManifest.xml:34:13-37
+300            android:multiprocess="true" />
+300-->[androidx.work:work-runtime:2.2.0] /Users/webastral/.gradle/caches/transforms-2/files-2.1/2bc3db952fef692a1c514de0ecdf1fa2/work-runtime-2.2.0/AndroidManifest.xml:35:13-40
+301
+302        <service
+302-->[androidx.work:work-runtime:2.2.0] /Users/webastral/.gradle/caches/transforms-2/files-2.1/2bc3db952fef692a1c514de0ecdf1fa2/work-runtime-2.2.0/AndroidManifest.xml:38:9-43:35
+303            android:name="androidx.work.impl.background.systemalarm.SystemAlarmService"
+303-->[androidx.work:work-runtime:2.2.0] /Users/webastral/.gradle/caches/transforms-2/files-2.1/2bc3db952fef692a1c514de0ecdf1fa2/work-runtime-2.2.0/AndroidManifest.xml:39:13-88
+304            android:directBootAware="false"
+304-->[androidx.work:work-runtime:2.2.0] /Users/webastral/.gradle/caches/transforms-2/files-2.1/2bc3db952fef692a1c514de0ecdf1fa2/work-runtime-2.2.0/AndroidManifest.xml:40:13-44
+305            android:enabled="@bool/enable_system_alarm_service_default"
+305-->[androidx.work:work-runtime:2.2.0] /Users/webastral/.gradle/caches/transforms-2/files-2.1/2bc3db952fef692a1c514de0ecdf1fa2/work-runtime-2.2.0/AndroidManifest.xml:41:13-72
+306            android:exported="false" />
+306-->[androidx.work:work-runtime:2.2.0] /Users/webastral/.gradle/caches/transforms-2/files-2.1/2bc3db952fef692a1c514de0ecdf1fa2/work-runtime-2.2.0/AndroidManifest.xml:42:13-37
+307        <service
+307-->[androidx.work:work-runtime:2.2.0] /Users/webastral/.gradle/caches/transforms-2/files-2.1/2bc3db952fef692a1c514de0ecdf1fa2/work-runtime-2.2.0/AndroidManifest.xml:44:9-50:35
+308            android:name="androidx.work.impl.background.systemjob.SystemJobService"
+308-->[androidx.work:work-runtime:2.2.0] /Users/webastral/.gradle/caches/transforms-2/files-2.1/2bc3db952fef692a1c514de0ecdf1fa2/work-runtime-2.2.0/AndroidManifest.xml:45:13-84
+309            android:directBootAware="false"
+309-->[androidx.work:work-runtime:2.2.0] /Users/webastral/.gradle/caches/transforms-2/files-2.1/2bc3db952fef692a1c514de0ecdf1fa2/work-runtime-2.2.0/AndroidManifest.xml:46:13-44
+310            android:enabled="@bool/enable_system_job_service_default"
+310-->[androidx.work:work-runtime:2.2.0] /Users/webastral/.gradle/caches/transforms-2/files-2.1/2bc3db952fef692a1c514de0ecdf1fa2/work-runtime-2.2.0/AndroidManifest.xml:47:13-70
+311            android:exported="true"
+311-->[androidx.work:work-runtime:2.2.0] /Users/webastral/.gradle/caches/transforms-2/files-2.1/2bc3db952fef692a1c514de0ecdf1fa2/work-runtime-2.2.0/AndroidManifest.xml:48:13-36
+312            android:permission="android.permission.BIND_JOB_SERVICE" />
+312-->[androidx.work:work-runtime:2.2.0] /Users/webastral/.gradle/caches/transforms-2/files-2.1/2bc3db952fef692a1c514de0ecdf1fa2/work-runtime-2.2.0/AndroidManifest.xml:49:13-69
+313
+314        <receiver
+314-->[androidx.work:work-runtime:2.2.0] /Users/webastral/.gradle/caches/transforms-2/files-2.1/2bc3db952fef692a1c514de0ecdf1fa2/work-runtime-2.2.0/AndroidManifest.xml:52:9-57:35
+315            android:name="androidx.work.impl.utils.ForceStopRunnable$BroadcastReceiver"
+315-->[androidx.work:work-runtime:2.2.0] /Users/webastral/.gradle/caches/transforms-2/files-2.1/2bc3db952fef692a1c514de0ecdf1fa2/work-runtime-2.2.0/AndroidManifest.xml:53:13-88
+316            android:directBootAware="false"
+316-->[androidx.work:work-runtime:2.2.0] /Users/webastral/.gradle/caches/transforms-2/files-2.1/2bc3db952fef692a1c514de0ecdf1fa2/work-runtime-2.2.0/AndroidManifest.xml:54:13-44
+317            android:enabled="true"
+317-->[androidx.work:work-runtime:2.2.0] /Users/webastral/.gradle/caches/transforms-2/files-2.1/2bc3db952fef692a1c514de0ecdf1fa2/work-runtime-2.2.0/AndroidManifest.xml:55:13-35
+318            android:exported="false" />
+318-->[androidx.work:work-runtime:2.2.0] /Users/webastral/.gradle/caches/transforms-2/files-2.1/2bc3db952fef692a1c514de0ecdf1fa2/work-runtime-2.2.0/AndroidManifest.xml:56:13-37
+319        <receiver
+319-->[androidx.work:work-runtime:2.2.0] /Users/webastral/.gradle/caches/transforms-2/files-2.1/2bc3db952fef692a1c514de0ecdf1fa2/work-runtime-2.2.0/AndroidManifest.xml:58:9-68:20
+320            android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryChargingProxy"
+320-->[androidx.work:work-runtime:2.2.0] /Users/webastral/.gradle/caches/transforms-2/files-2.1/2bc3db952fef692a1c514de0ecdf1fa2/work-runtime-2.2.0/AndroidManifest.xml:59:13-106
+321            android:directBootAware="false"
+321-->[androidx.work:work-runtime:2.2.0] /Users/webastral/.gradle/caches/transforms-2/files-2.1/2bc3db952fef692a1c514de0ecdf1fa2/work-runtime-2.2.0/AndroidManifest.xml:60:13-44
+322            android:enabled="false"
+322-->[androidx.work:work-runtime:2.2.0] /Users/webastral/.gradle/caches/transforms-2/files-2.1/2bc3db952fef692a1c514de0ecdf1fa2/work-runtime-2.2.0/AndroidManifest.xml:61:13-36
+323            android:exported="false" >
+323-->[androidx.work:work-runtime:2.2.0] /Users/webastral/.gradle/caches/transforms-2/files-2.1/2bc3db952fef692a1c514de0ecdf1fa2/work-runtime-2.2.0/AndroidManifest.xml:62:13-37
+324            <intent-filter>
+324-->[androidx.work:work-runtime:2.2.0] /Users/webastral/.gradle/caches/transforms-2/files-2.1/2bc3db952fef692a1c514de0ecdf1fa2/work-runtime-2.2.0/AndroidManifest.xml:64:13-67:29
+325                <action android:name="android.intent.action.ACTION_POWER_CONNECTED" />
+325-->[androidx.work:work-runtime:2.2.0] /Users/webastral/.gradle/caches/transforms-2/files-2.1/2bc3db952fef692a1c514de0ecdf1fa2/work-runtime-2.2.0/AndroidManifest.xml:65:17-87
+325-->[androidx.work:work-runtime:2.2.0] /Users/webastral/.gradle/caches/transforms-2/files-2.1/2bc3db952fef692a1c514de0ecdf1fa2/work-runtime-2.2.0/AndroidManifest.xml:65:25-84
+326                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED" />
+326-->[androidx.work:work-runtime:2.2.0] /Users/webastral/.gradle/caches/transforms-2/files-2.1/2bc3db952fef692a1c514de0ecdf1fa2/work-runtime-2.2.0/AndroidManifest.xml:66:17-90
+326-->[androidx.work:work-runtime:2.2.0] /Users/webastral/.gradle/caches/transforms-2/files-2.1/2bc3db952fef692a1c514de0ecdf1fa2/work-runtime-2.2.0/AndroidManifest.xml:66:25-87
+327            </intent-filter>
+328        </receiver>
+329        <receiver
+329-->[androidx.work:work-runtime:2.2.0] /Users/webastral/.gradle/caches/transforms-2/files-2.1/2bc3db952fef692a1c514de0ecdf1fa2/work-runtime-2.2.0/AndroidManifest.xml:69:9-79:20
+330            android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryNotLowProxy"
+330-->[androidx.work:work-runtime:2.2.0] /Users/webastral/.gradle/caches/transforms-2/files-2.1/2bc3db952fef692a1c514de0ecdf1fa2/work-runtime-2.2.0/AndroidManifest.xml:70:13-104
+331            android:directBootAware="false"
+331-->[androidx.work:work-runtime:2.2.0] /Users/webastral/.gradle/caches/transforms-2/files-2.1/2bc3db952fef692a1c514de0ecdf1fa2/work-runtime-2.2.0/AndroidManifest.xml:71:13-44
+332            android:enabled="false"
+332-->[androidx.work:work-runtime:2.2.0] /Users/webastral/.gradle/caches/transforms-2/files-2.1/2bc3db952fef692a1c514de0ecdf1fa2/work-runtime-2.2.0/AndroidManifest.xml:72:13-36
+333            android:exported="false" >
+333-->[androidx.work:work-runtime:2.2.0] /Users/webastral/.gradle/caches/transforms-2/files-2.1/2bc3db952fef692a1c514de0ecdf1fa2/work-runtime-2.2.0/AndroidManifest.xml:73:13-37
+334            <intent-filter>
+334-->[androidx.work:work-runtime:2.2.0] /Users/webastral/.gradle/caches/transforms-2/files-2.1/2bc3db952fef692a1c514de0ecdf1fa2/work-runtime-2.2.0/AndroidManifest.xml:75:13-78:29
+335                <action android:name="android.intent.action.BATTERY_OKAY" />
+335-->[androidx.work:work-runtime:2.2.0] /Users/webastral/.gradle/caches/transforms-2/files-2.1/2bc3db952fef692a1c514de0ecdf1fa2/work-runtime-2.2.0/AndroidManifest.xml:76:17-77
+335-->[androidx.work:work-runtime:2.2.0] /Users/webastral/.gradle/caches/transforms-2/files-2.1/2bc3db952fef692a1c514de0ecdf1fa2/work-runtime-2.2.0/AndroidManifest.xml:76:25-74
+336                <action android:name="android.intent.action.BATTERY_LOW" />
+336-->[androidx.work:work-runtime:2.2.0] /Users/webastral/.gradle/caches/transforms-2/files-2.1/2bc3db952fef692a1c514de0ecdf1fa2/work-runtime-2.2.0/AndroidManifest.xml:77:17-76
+336-->[androidx.work:work-runtime:2.2.0] /Users/webastral/.gradle/caches/transforms-2/files-2.1/2bc3db952fef692a1c514de0ecdf1fa2/work-runtime-2.2.0/AndroidManifest.xml:77:25-73
+337            </intent-filter>
+338        </receiver>
+339        <receiver
+339-->[androidx.work:work-runtime:2.2.0] /Users/webastral/.gradle/caches/transforms-2/files-2.1/2bc3db952fef692a1c514de0ecdf1fa2/work-runtime-2.2.0/AndroidManifest.xml:80:9-90:20
+340            android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$StorageNotLowProxy"
+340-->[androidx.work:work-runtime:2.2.0] /Users/webastral/.gradle/caches/transforms-2/files-2.1/2bc3db952fef692a1c514de0ecdf1fa2/work-runtime-2.2.0/AndroidManifest.xml:81:13-104
+341            android:directBootAware="false"
+341-->[androidx.work:work-runtime:2.2.0] /Users/webastral/.gradle/caches/transforms-2/files-2.1/2bc3db952fef692a1c514de0ecdf1fa2/work-runtime-2.2.0/AndroidManifest.xml:82:13-44
+342            android:enabled="false"
+342-->[androidx.work:work-runtime:2.2.0] /Users/webastral/.gradle/caches/transforms-2/files-2.1/2bc3db952fef692a1c514de0ecdf1fa2/work-runtime-2.2.0/AndroidManifest.xml:83:13-36
+343            android:exported="false" >
+343-->[androidx.work:work-runtime:2.2.0] /Users/webastral/.gradle/caches/transforms-2/files-2.1/2bc3db952fef692a1c514de0ecdf1fa2/work-runtime-2.2.0/AndroidManifest.xml:84:13-37
+344            <intent-filter>
+344-->[androidx.work:work-runtime:2.2.0] /Users/webastral/.gradle/caches/transforms-2/files-2.1/2bc3db952fef692a1c514de0ecdf1fa2/work-runtime-2.2.0/AndroidManifest.xml:86:13-89:29
+345                <action android:name="android.intent.action.DEVICE_STORAGE_LOW" />
+345-->[androidx.work:work-runtime:2.2.0] /Users/webastral/.gradle/caches/transforms-2/files-2.1/2bc3db952fef692a1c514de0ecdf1fa2/work-runtime-2.2.0/AndroidManifest.xml:87:17-83
+345-->[androidx.work:work-runtime:2.2.0] /Users/webastral/.gradle/caches/transforms-2/files-2.1/2bc3db952fef692a1c514de0ecdf1fa2/work-runtime-2.2.0/AndroidManifest.xml:87:25-80
+346                <action android:name="android.intent.action.DEVICE_STORAGE_OK" />
+346-->[androidx.work:work-runtime:2.2.0] /Users/webastral/.gradle/caches/transforms-2/files-2.1/2bc3db952fef692a1c514de0ecdf1fa2/work-runtime-2.2.0/AndroidManifest.xml:88:17-82
+346-->[androidx.work:work-runtime:2.2.0] /Users/webastral/.gradle/caches/transforms-2/files-2.1/2bc3db952fef692a1c514de0ecdf1fa2/work-runtime-2.2.0/AndroidManifest.xml:88:25-79
+347            </intent-filter>
+348        </receiver>
+349        <receiver
+349-->[androidx.work:work-runtime:2.2.0] /Users/webastral/.gradle/caches/transforms-2/files-2.1/2bc3db952fef692a1c514de0ecdf1fa2/work-runtime-2.2.0/AndroidManifest.xml:91:9-100:20
+350            android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$NetworkStateProxy"
+350-->[androidx.work:work-runtime:2.2.0] /Users/webastral/.gradle/caches/transforms-2/files-2.1/2bc3db952fef692a1c514de0ecdf1fa2/work-runtime-2.2.0/AndroidManifest.xml:92:13-103
+351            android:directBootAware="false"
+351-->[androidx.work:work-runtime:2.2.0] /Users/webastral/.gradle/caches/transforms-2/files-2.1/2bc3db952fef692a1c514de0ecdf1fa2/work-runtime-2.2.0/AndroidManifest.xml:93:13-44
+352            android:enabled="false"
+352-->[androidx.work:work-runtime:2.2.0] /Users/webastral/.gradle/caches/transforms-2/files-2.1/2bc3db952fef692a1c514de0ecdf1fa2/work-runtime-2.2.0/AndroidManifest.xml:94:13-36
+353            android:exported="false" >
+353-->[androidx.work:work-runtime:2.2.0] /Users/webastral/.gradle/caches/transforms-2/files-2.1/2bc3db952fef692a1c514de0ecdf1fa2/work-runtime-2.2.0/AndroidManifest.xml:95:13-37
+354            <intent-filter>
+354-->[androidx.work:work-runtime:2.2.0] /Users/webastral/.gradle/caches/transforms-2/files-2.1/2bc3db952fef692a1c514de0ecdf1fa2/work-runtime-2.2.0/AndroidManifest.xml:97:13-99:29
+355                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+355-->[androidx.work:work-runtime:2.2.0] /Users/webastral/.gradle/caches/transforms-2/files-2.1/2bc3db952fef692a1c514de0ecdf1fa2/work-runtime-2.2.0/AndroidManifest.xml:98:17-79
+355-->[androidx.work:work-runtime:2.2.0] /Users/webastral/.gradle/caches/transforms-2/files-2.1/2bc3db952fef692a1c514de0ecdf1fa2/work-runtime-2.2.0/AndroidManifest.xml:98:25-76
+356            </intent-filter>
+357        </receiver>
+358        <receiver
+358-->[androidx.work:work-runtime:2.2.0] /Users/webastral/.gradle/caches/transforms-2/files-2.1/2bc3db952fef692a1c514de0ecdf1fa2/work-runtime-2.2.0/AndroidManifest.xml:101:9-112:20
+359            android:name="androidx.work.impl.background.systemalarm.RescheduleReceiver"
+359-->[androidx.work:work-runtime:2.2.0] /Users/webastral/.gradle/caches/transforms-2/files-2.1/2bc3db952fef692a1c514de0ecdf1fa2/work-runtime-2.2.0/AndroidManifest.xml:102:13-88
+360            android:directBootAware="false"
+360-->[androidx.work:work-runtime:2.2.0] /Users/webastral/.gradle/caches/transforms-2/files-2.1/2bc3db952fef692a1c514de0ecdf1fa2/work-runtime-2.2.0/AndroidManifest.xml:103:13-44
+361            android:enabled="false"
+361-->[androidx.work:work-runtime:2.2.0] /Users/webastral/.gradle/caches/transforms-2/files-2.1/2bc3db952fef692a1c514de0ecdf1fa2/work-runtime-2.2.0/AndroidManifest.xml:104:13-36
+362            android:exported="false" >
+362-->[androidx.work:work-runtime:2.2.0] /Users/webastral/.gradle/caches/transforms-2/files-2.1/2bc3db952fef692a1c514de0ecdf1fa2/work-runtime-2.2.0/AndroidManifest.xml:105:13-37
+363            <intent-filter>
+363-->[androidx.work:work-runtime:2.2.0] /Users/webastral/.gradle/caches/transforms-2/files-2.1/2bc3db952fef692a1c514de0ecdf1fa2/work-runtime-2.2.0/AndroidManifest.xml:107:13-111:29
+364                <action android:name="android.intent.action.BOOT_COMPLETED" />
+364-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:69:17-79
+364-->/Users/webastral/Downloads/islamic_app/android/app/src/main/AndroidManifest.xml:69:25-76
+365                <action android:name="android.intent.action.TIME_SET" />
+365-->[androidx.work:work-runtime:2.2.0] /Users/webastral/.gradle/caches/transforms-2/files-2.1/2bc3db952fef692a1c514de0ecdf1fa2/work-runtime-2.2.0/AndroidManifest.xml:109:17-73
+365-->[androidx.work:work-runtime:2.2.0] /Users/webastral/.gradle/caches/transforms-2/files-2.1/2bc3db952fef692a1c514de0ecdf1fa2/work-runtime-2.2.0/AndroidManifest.xml:109:25-70
+366                <action android:name="android.intent.action.TIMEZONE_CHANGED" />
+366-->[androidx.work:work-runtime:2.2.0] /Users/webastral/.gradle/caches/transforms-2/files-2.1/2bc3db952fef692a1c514de0ecdf1fa2/work-runtime-2.2.0/AndroidManifest.xml:110:17-81
+366-->[androidx.work:work-runtime:2.2.0] /Users/webastral/.gradle/caches/transforms-2/files-2.1/2bc3db952fef692a1c514de0ecdf1fa2/work-runtime-2.2.0/AndroidManifest.xml:110:25-78
+367            </intent-filter>
+368        </receiver>
+369        <receiver
+369-->[androidx.work:work-runtime:2.2.0] /Users/webastral/.gradle/caches/transforms-2/files-2.1/2bc3db952fef692a1c514de0ecdf1fa2/work-runtime-2.2.0/AndroidManifest.xml:113:9-122:20
+370            android:name="androidx.work.impl.background.systemalarm.ConstraintProxyUpdateReceiver"
+370-->[androidx.work:work-runtime:2.2.0] /Users/webastral/.gradle/caches/transforms-2/files-2.1/2bc3db952fef692a1c514de0ecdf1fa2/work-runtime-2.2.0/AndroidManifest.xml:114:13-99
+371            android:directBootAware="false"
+371-->[androidx.work:work-runtime:2.2.0] /Users/webastral/.gradle/caches/transforms-2/files-2.1/2bc3db952fef692a1c514de0ecdf1fa2/work-runtime-2.2.0/AndroidManifest.xml:115:13-44
+372            android:enabled="@bool/enable_system_alarm_service_default"
+372-->[androidx.work:work-runtime:2.2.0] /Users/webastral/.gradle/caches/transforms-2/files-2.1/2bc3db952fef692a1c514de0ecdf1fa2/work-runtime-2.2.0/AndroidManifest.xml:116:13-72
+373            android:exported="false" >
+373-->[androidx.work:work-runtime:2.2.0] /Users/webastral/.gradle/caches/transforms-2/files-2.1/2bc3db952fef692a1c514de0ecdf1fa2/work-runtime-2.2.0/AndroidManifest.xml:117:13-37
+374            <intent-filter>
+374-->[androidx.work:work-runtime:2.2.0] /Users/webastral/.gradle/caches/transforms-2/files-2.1/2bc3db952fef692a1c514de0ecdf1fa2/work-runtime-2.2.0/AndroidManifest.xml:119:13-121:29
+375                <action android:name="androidx.work.impl.background.systemalarm.UpdateProxies" />
+375-->[androidx.work:work-runtime:2.2.0] /Users/webastral/.gradle/caches/transforms-2/files-2.1/2bc3db952fef692a1c514de0ecdf1fa2/work-runtime-2.2.0/AndroidManifest.xml:120:17-98
+375-->[androidx.work:work-runtime:2.2.0] /Users/webastral/.gradle/caches/transforms-2/files-2.1/2bc3db952fef692a1c514de0ecdf1fa2/work-runtime-2.2.0/AndroidManifest.xml:120:25-95
+376            </intent-filter>
+377        </receiver>
+378
+379        <service
+379-->[androidx.room:room-runtime:2.1.0] /Users/webastral/.gradle/caches/transforms-2/files-2.1/6e4fe4cfba75380818d794bf585423e4/room-runtime-2.1.0/AndroidManifest.xml:25:9-27:40
+380            android:name="androidx.room.MultiInstanceInvalidationService"
+380-->[androidx.room:room-runtime:2.1.0] /Users/webastral/.gradle/caches/transforms-2/files-2.1/6e4fe4cfba75380818d794bf585423e4/room-runtime-2.1.0/AndroidManifest.xml:26:13-74
+381            android:exported="false" />
+381-->[androidx.room:room-runtime:2.1.0] /Users/webastral/.gradle/caches/transforms-2/files-2.1/6e4fe4cfba75380818d794bf585423e4/room-runtime-2.1.0/AndroidManifest.xml:27:13-37
+382        <service
+382-->[com.google.android.datatransport:transport-runtime:3.0.0] /Users/webastral/.gradle/caches/transforms-2/files-2.1/6eef7893740655964b346960fbe11f26/jetified-transport-runtime-3.0.0/AndroidManifest.xml:26:9-30:19
+383            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService"
+383-->[com.google.android.datatransport:transport-runtime:3.0.0] /Users/webastral/.gradle/caches/transforms-2/files-2.1/6eef7893740655964b346960fbe11f26/jetified-transport-runtime-3.0.0/AndroidManifest.xml:27:13-117
+384            android:exported="false"
+384-->[com.google.android.datatransport:transport-runtime:3.0.0] /Users/webastral/.gradle/caches/transforms-2/files-2.1/6eef7893740655964b346960fbe11f26/jetified-transport-runtime-3.0.0/AndroidManifest.xml:28:13-37
+385            android:permission="android.permission.BIND_JOB_SERVICE" >
+385-->[com.google.android.datatransport:transport-runtime:3.0.0] /Users/webastral/.gradle/caches/transforms-2/files-2.1/6eef7893740655964b346960fbe11f26/jetified-transport-runtime-3.0.0/AndroidManifest.xml:29:13-69
+386        </service>
+387
+388        <receiver
+388-->[com.google.android.datatransport:transport-runtime:3.0.0] /Users/webastral/.gradle/caches/transforms-2/files-2.1/6eef7893740655964b346960fbe11f26/jetified-transport-runtime-3.0.0/AndroidManifest.xml:32:9-34:40
+389            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver"
+389-->[com.google.android.datatransport:transport-runtime:3.0.0] /Users/webastral/.gradle/caches/transforms-2/files-2.1/6eef7893740655964b346960fbe11f26/jetified-transport-runtime-3.0.0/AndroidManifest.xml:33:13-132
+390            android:exported="false" />
+390-->[com.google.android.datatransport:transport-runtime:3.0.0] /Users/webastral/.gradle/caches/transforms-2/files-2.1/6eef7893740655964b346960fbe11f26/jetified-transport-runtime-3.0.0/AndroidManifest.xml:34:13-37
+391
+392        <activity
+392-->[com.google.android.gms:play-services-auth:20.0.0] /Users/webastral/.gradle/caches/transforms-2/files-2.1/66583a9beff8bc88b2529a686ede8cf0/jetified-play-services-auth-20.0.0/AndroidManifest.xml:23:9-27:75
+393            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
+393-->[com.google.android.gms:play-services-auth:20.0.0] /Users/webastral/.gradle/caches/transforms-2/files-2.1/66583a9beff8bc88b2529a686ede8cf0/jetified-play-services-auth-20.0.0/AndroidManifest.xml:24:13-93
+394            android:excludeFromRecents="true"
+394-->[com.google.android.gms:play-services-auth:20.0.0] /Users/webastral/.gradle/caches/transforms-2/files-2.1/66583a9beff8bc88b2529a686ede8cf0/jetified-play-services-auth-20.0.0/AndroidManifest.xml:25:13-46
+395            android:exported="false"
+395-->[com.google.android.gms:play-services-auth:20.0.0] /Users/webastral/.gradle/caches/transforms-2/files-2.1/66583a9beff8bc88b2529a686ede8cf0/jetified-play-services-auth-20.0.0/AndroidManifest.xml:26:13-37
+396            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+396-->[com.google.android.gms:play-services-auth:20.0.0] /Users/webastral/.gradle/caches/transforms-2/files-2.1/66583a9beff8bc88b2529a686ede8cf0/jetified-play-services-auth-20.0.0/AndroidManifest.xml:27:13-72
+397        <!--
+398            Service handling Google Sign-In user revocation. For apps that do not integrate with
+399            Google Sign-In, this service will never be started.
+400        -->
+401        <service
+401-->[com.google.android.gms:play-services-auth:20.0.0] /Users/webastral/.gradle/caches/transforms-2/files-2.1/66583a9beff8bc88b2529a686ede8cf0/jetified-play-services-auth-20.0.0/AndroidManifest.xml:33:9-37:51
+402            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
+402-->[com.google.android.gms:play-services-auth:20.0.0] /Users/webastral/.gradle/caches/transforms-2/files-2.1/66583a9beff8bc88b2529a686ede8cf0/jetified-play-services-auth-20.0.0/AndroidManifest.xml:34:13-89
+403            android:exported="true"
+403-->[com.google.android.gms:play-services-auth:20.0.0] /Users/webastral/.gradle/caches/transforms-2/files-2.1/66583a9beff8bc88b2529a686ede8cf0/jetified-play-services-auth-20.0.0/AndroidManifest.xml:35:13-36
+404            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"
+404-->[com.google.android.gms:play-services-auth:20.0.0] /Users/webastral/.gradle/caches/transforms-2/files-2.1/66583a9beff8bc88b2529a686ede8cf0/jetified-play-services-auth-20.0.0/AndroidManifest.xml:36:13-107
+405            android:visibleToInstantApps="true" />
+405-->[com.google.android.gms:play-services-auth:20.0.0] /Users/webastral/.gradle/caches/transforms-2/files-2.1/66583a9beff8bc88b2529a686ede8cf0/jetified-play-services-auth-20.0.0/AndroidManifest.xml:37:13-48
+406
+407        <receiver
+407-->[com.google.android.gms:play-services-measurement:20.0.2] /Users/webastral/.gradle/caches/transforms-2/files-2.1/3cd2eb63e92693afc4ff3966b3c2bee5/jetified-play-services-measurement-20.0.2/AndroidManifest.xml:29:9-33:20
+408            android:name="com.google.android.gms.measurement.AppMeasurementReceiver"
+408-->[com.google.android.gms:play-services-measurement:20.0.2] /Users/webastral/.gradle/caches/transforms-2/files-2.1/3cd2eb63e92693afc4ff3966b3c2bee5/jetified-play-services-measurement-20.0.2/AndroidManifest.xml:30:13-85
+409            android:enabled="true"
+409-->[com.google.android.gms:play-services-measurement:20.0.2] /Users/webastral/.gradle/caches/transforms-2/files-2.1/3cd2eb63e92693afc4ff3966b3c2bee5/jetified-play-services-measurement-20.0.2/AndroidManifest.xml:31:13-35
+410            android:exported="false" >
+410-->[com.google.android.gms:play-services-measurement:20.0.2] /Users/webastral/.gradle/caches/transforms-2/files-2.1/3cd2eb63e92693afc4ff3966b3c2bee5/jetified-play-services-measurement-20.0.2/AndroidManifest.xml:32:13-37
+411        </receiver>
+412
+413        <service
+413-->[com.google.android.gms:play-services-measurement:20.0.2] /Users/webastral/.gradle/caches/transforms-2/files-2.1/3cd2eb63e92693afc4ff3966b3c2bee5/jetified-play-services-measurement-20.0.2/AndroidManifest.xml:35:9-38:40
+414            android:name="com.google.android.gms.measurement.AppMeasurementService"
+414-->[com.google.android.gms:play-services-measurement:20.0.2] /Users/webastral/.gradle/caches/transforms-2/files-2.1/3cd2eb63e92693afc4ff3966b3c2bee5/jetified-play-services-measurement-20.0.2/AndroidManifest.xml:36:13-84
+415            android:enabled="true"
+415-->[com.google.android.gms:play-services-measurement:20.0.2] /Users/webastral/.gradle/caches/transforms-2/files-2.1/3cd2eb63e92693afc4ff3966b3c2bee5/jetified-play-services-measurement-20.0.2/AndroidManifest.xml:37:13-35
+416            android:exported="false" />
+416-->[com.google.android.gms:play-services-measurement:20.0.2] /Users/webastral/.gradle/caches/transforms-2/files-2.1/3cd2eb63e92693afc4ff3966b3c2bee5/jetified-play-services-measurement-20.0.2/AndroidManifest.xml:38:13-37
+417        <service
+417-->[com.google.android.gms:play-services-measurement:20.0.2] /Users/webastral/.gradle/caches/transforms-2/files-2.1/3cd2eb63e92693afc4ff3966b3c2bee5/jetified-play-services-measurement-20.0.2/AndroidManifest.xml:39:9-43:72
+418            android:name="com.google.android.gms.measurement.AppMeasurementJobService"
+418-->[com.google.android.gms:play-services-measurement:20.0.2] /Users/webastral/.gradle/caches/transforms-2/files-2.1/3cd2eb63e92693afc4ff3966b3c2bee5/jetified-play-services-measurement-20.0.2/AndroidManifest.xml:40:13-87
+419            android:enabled="true"
+419-->[com.google.android.gms:play-services-measurement:20.0.2] /Users/webastral/.gradle/caches/transforms-2/files-2.1/3cd2eb63e92693afc4ff3966b3c2bee5/jetified-play-services-measurement-20.0.2/AndroidManifest.xml:41:13-35
+420            android:exported="false"
+420-->[com.google.android.gms:play-services-measurement:20.0.2] /Users/webastral/.gradle/caches/transforms-2/files-2.1/3cd2eb63e92693afc4ff3966b3c2bee5/jetified-play-services-measurement-20.0.2/AndroidManifest.xml:42:13-37
+421            android:permission="android.permission.BIND_JOB_SERVICE" />
+421-->[com.google.android.gms:play-services-measurement:20.0.2] /Users/webastral/.gradle/caches/transforms-2/files-2.1/3cd2eb63e92693afc4ff3966b3c2bee5/jetified-play-services-measurement-20.0.2/AndroidManifest.xml:43:13-69
+422
+423        <activity
+423-->[com.google.android.gms:play-services-base:18.0.0] /Users/webastral/.gradle/caches/transforms-2/files-2.1/5aa1cc7480396c38797377e2be9a682c/jetified-play-services-base-18.0.0/AndroidManifest.xml:20:9-22:45
+424            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+424-->[com.google.android.gms:play-services-base:18.0.0] /Users/webastral/.gradle/caches/transforms-2/files-2.1/5aa1cc7480396c38797377e2be9a682c/jetified-play-services-base-18.0.0/AndroidManifest.xml:20:19-85
+425            android:exported="false"
+425-->[com.google.android.gms:play-services-base:18.0.0] /Users/webastral/.gradle/caches/transforms-2/files-2.1/5aa1cc7480396c38797377e2be9a682c/jetified-play-services-base-18.0.0/AndroidManifest.xml:22:19-43
+426            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+426-->[com.google.android.gms:play-services-base:18.0.0] /Users/webastral/.gradle/caches/transforms-2/files-2.1/5aa1cc7480396c38797377e2be9a682c/jetified-play-services-base-18.0.0/AndroidManifest.xml:21:19-78
+427
+428        <meta-data
+428-->[com.google.android.gms:play-services-basement:18.0.0] /Users/webastral/.gradle/caches/transforms-2/files-2.1/378950dd3a9f8af7f851256459e0c72d/jetified-play-services-basement-18.0.0/AndroidManifest.xml:21:9-23:69
+429            android:name="com.google.android.gms.version"
+429-->[com.google.android.gms:play-services-basement:18.0.0] /Users/webastral/.gradle/caches/transforms-2/files-2.1/378950dd3a9f8af7f851256459e0c72d/jetified-play-services-basement-18.0.0/AndroidManifest.xml:22:13-58
+430            android:value="@integer/google_play_services_version" />
+430-->[com.google.android.gms:play-services-basement:18.0.0] /Users/webastral/.gradle/caches/transforms-2/files-2.1/378950dd3a9f8af7f851256459e0c72d/jetified-play-services-basement-18.0.0/AndroidManifest.xml:23:13-66
+431    </application>
+432
+433</manifest>

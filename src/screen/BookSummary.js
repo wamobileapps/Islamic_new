@@ -17,7 +17,7 @@ const data = [
     name: 'Book Summary'
   },
   {
-    name: '24 hours in my life'
+    name: '24 Hours In My Life'
   }
 ]
 
@@ -88,7 +88,7 @@ const BookSummary = ({ navigation }) => {
 
     setDescription(item.description)
 
-    const webViewStyle = StyleSheet.create({ p: { color: "#454545", fontSize: 10, fontFamily: 'Montserrat-Regular' } });
+    const webViewStyle = StyleSheet.create({ p: { color: "#454545", fontSize: 11, fontFamily: 'Montserrat-Regular' } });
 
 
 
@@ -101,7 +101,7 @@ const BookSummary = ({ navigation }) => {
           })
 
         }
-        style={{ borderColor: '#ECC090', borderStyle: 'dashed', borderRadius: 8, marginLeft: 20, marginRight: 20, backgroundColor: 'white', borderWidth: 1, flexDirection: 'row', marginBottom: 20 }}>
+        style={{ borderColor: '#ECC090', borderStyle: 'dashed', borderRadius: 8, marginLeft: 15, marginRight: 15, backgroundColor: 'white', borderWidth: 1, flexDirection: 'row', marginBottom: 20 }}>
         <Image source={{ uri: `http://112.196.64.119:8000/books/${item.image}` }} style={{ marginBottom: 10, height: 108, width: 70, marginLeft: 10, marginTop: 10, borderRadius: 6, resizeMode: 'cover' }} />
 
         <View style={{ marginLeft: 10, marginTop: 6, }}>
@@ -150,7 +150,7 @@ const BookSummary = ({ navigation }) => {
     return (
       <TouchableOpacity key={index} style={{
         // height: 115,
-        borderWidth: 1, marginLeft: 20, marginRight: 20, marginTop: 20, padding: 4,
+        borderWidth: 1, marginLeft: 20, marginRight: 20, marginBottom: 20, padding: 4,
         backgroundColor: 'white',
         borderColor: '#ECC090', borderStyle: 'dashed', borderRadius: 8,
       }}>
@@ -198,7 +198,7 @@ const BookSummary = ({ navigation }) => {
 
 
       {dropDown ?
-        <View style={{ width: '50%', height: 80, position: 'absolute', justifyContent: 'center', alignItems: 'center', backgroundColor: '#EBC7A1', top: 18, left: 50, borderRadius: 10 }}>
+        <View style={{ width: '50%', height: 65, position: 'absolute', justifyContent: 'center', alignItems: 'center', backgroundColor: '#EBC7A1', top: 18, left: 50, borderRadius: 10 }}>
           <FlatList
             data={data}
             renderItem={(item) => {

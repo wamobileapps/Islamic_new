@@ -206,7 +206,7 @@ export default class myMood extends Component {
                 <Text style={{ textAlign: "center", fontFamily: "Montserrat-Bold", fontSize: RFValue(8), color: '#454545' }}>{item.name}</Text>
             </TouchableOpacity>
 
-
+ 
 
         )
 
@@ -218,7 +218,7 @@ export default class myMood extends Component {
         // if (allID.length == 3 && this.state.atWork != '' && this.state.iAm != '') {
         const token = await AsyncStorage.getItem('token')
 
-        console.log("this.state.dataToRenderCircleX.length===>", this.state.dataToRenderCircleX.length, "===", this.state.dataToRenderCircleX.length <= 3)
+        console.log("this.state.dataToRenderCircleX.length===>", global.userId, this.state.dataToRenderCircleX.length, "===", this.state.dataToRenderCircleX.length <= 3)
 
 
 
@@ -243,7 +243,7 @@ export default class myMood extends Component {
         })
             .then((response) => {
 
-                console.log('====>mood list updated data', response.data.data.rating)
+                console.log('====>mood list updated data', response.data.data)
                
 
 

@@ -69,7 +69,7 @@ const Logo = (props) => {
         global.password = response.data.password
         global.date = date
         global.birthday = response.data.birthday
-
+        global.userId = response.data._id
 
       })
       .catch((error) => {

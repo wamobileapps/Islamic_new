@@ -13,7 +13,7 @@ return (
         <View style={{ 
             justifyContent: 'center', alignItems: 'center', 
             margin: 20, marginBottom: 30, marginTop: 30, 
-            backgroundColor: 'black', height: 80, width : "95%", 
+            backgroundColor: 'white', height: 80, width : "95%", 
             borderRadius: 10, flexDirection: 'row', position: 'absolute'}}>
            
            <ActivityIndicator 
